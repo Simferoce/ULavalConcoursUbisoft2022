@@ -5,7 +5,7 @@ using UnityEngine;
 public class Aim : MonoBehaviour
 {
     [SerializeField] private Camera _camera = null;
-    private Plane _plane = new Plane(Vector3.up, 0);
+    private Plane _plane = new Plane(Vector3.up, -1);
 
     // Start is called before the first frame update
     void Start()

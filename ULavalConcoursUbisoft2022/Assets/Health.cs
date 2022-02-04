@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     [SerializeField] private float _healthPoint = 0.0f;
     public float HealthPoint { get { return _healthPoint; } private set { _healthPoint = value; } }
 
+    [SerializeField] private Animation _animation = null;
+
     public void Awake()
     {
         HealthPoint = MaxHealth;
@@ -18,5 +20,10 @@ public class Health : MonoBehaviour
     public void Hit(float damage)
     {
         HealthPoint -= damage;
+        if (_animation)
+        {
+            //Old Animation system only for protype. Do not use that for final. Use the Animator
+            _animation.Play();
+        }
     }
 }

@@ -9,21 +9,28 @@ public class AI : MonoBehaviour
     private enum StateEnum
     {
         Wander = 0,
-        Flee = 1,
+        Agressive = 1,
+        Flee = 2,
     }
 
     private abstract class State
     {
-        public abstract void Init(MonoBehaviour context);
+        protected MonoBehaviour _context = null;
+
+        public virtual void Init(MonoBehaviour context)
+        {
+            _context = context;
+        }
         public abstract void Enter();
         public abstract int Update();
         public abstract void Exit();
     }
 
+    [Serializable]
     private class StateMachine
     {
         private State[] states;
-        private int currentStateIndex = -1;
+        [SerializeField] private int currentStateIndex = -1;
 
         public void Init(State[] states, int startIndex, MonoBehaviour context)
         {
@@ -54,14 +61,14 @@ public class AI : MonoBehaviour
     {
         [SerializeField] private float _distanceStopFleeing = 0.0f;
         [SerializeField] private NavMeshAgent _navMeshAgent = null;
+        [SerializeField] private float _speed = 0.0f;
 
         private Player _player = null;
         private bool _movingBackward = false;
-        private MonoBehaviour _context = null;
 
         public override void Enter()
         {
-           
+            _navMeshAgent.speed = _speed;
         }
 
         public override void Exit()
@@ -71,7 +78,7 @@ public class AI : MonoBehaviour
 
         public override void Init(MonoBehaviour context)
         {
-            _context = context;
+            base.Init(context);
             _player = FindObjectOfType<Player>();
         }
 
@@ -111,35 +118,32 @@ public class AI : MonoBehaviour
     [Serializable]
     private class Wander : State
     {
-        [SerializeField] private float _distanceStartFleeing = 0.0f;
+        [SerializeField] private float _distanceDetectPlayer = 0.0f;
         [SerializeField] private float _MaxRangeWander = 0.0f;
         [SerializeField] private NavMeshAgent _navMeshAgent = null;
         [SerializeField] private Vector2 delayWander = Vector2.zero;
         [SerializeField] private float _speed = 0.0f;
 
         private Player _player = null;
-        private MonoBehaviour _context = null;
         private float _lastWander = 0.0f;
         private float _currentOffSetWander = 0.0f;
 
         private Vector3 _origin = Vector3.zero;
-        private float _originSpeed = 0.0f;
         public override void Enter()
         {
             _currentOffSetWander = UnityEngine.Random.Range(delayWander.x, delayWander.y);
-            _originSpeed = _navMeshAgent.speed;
             _navMeshAgent.speed = _speed;
         }
 
         public override void Exit()
         {
-            _navMeshAgent.speed = _originSpeed;
+
         }
 
         public override void Init(MonoBehaviour context)
         {
+            base.Init(context);
             _player = FindObjectOfType<Player>();
-            _context = context;
             _origin = _context.transform.position;
         }
 
@@ -148,9 +152,9 @@ public class AI : MonoBehaviour
             Vector3 playerPositionOnPlane = Vector3.ProjectOnPlane(_player.transform.position, Vector3.up);
             Vector3 aiPositionOnPlane = Vector3.ProjectOnPlane(_context.transform.position, Vector3.up);
 
-            if (Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) < _distanceStartFleeing)
+            if (Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) < _distanceDetectPlayer)
             {
-                return (int)StateEnum.Flee;
+                return (int)StateEnum.Agressive;
             }
 
             if(Time.time - _currentOffSetWander > _lastWander)
@@ -165,7 +169,6 @@ public class AI : MonoBehaviour
                     destination = hit.point;
                 }
 
-                Debug.Log(destination);
                 _navMeshAgent.SetDestination(destination);
             }
 
@@ -179,14 +182,91 @@ public class AI : MonoBehaviour
         }
     }
 
+    [Serializable]
+    private class Agressive : State
+    {
+        [SerializeField] private NavMeshAgent _navMeshAgent = null;
+        [SerializeField] private float _speed = 0.0f;
+        [SerializeField] private float _startFleeingRange = 0.0f;
+        [SerializeField] private float _stopChasingPlayerRange = 0.0f;
+        [SerializeField] private Entity _entity = null;
+        [SerializeField] private float _distanceKeptBetweenItselfAndPlayer = 0.0f;
+
+        private Player _player = null;
+
+        public override void Enter()
+        {
+            _navMeshAgent.speed = _speed;
+        }
+
+        public override void Exit()
+        {
+            
+        }
+
+        public override void Init(MonoBehaviour context)
+        {
+            base.Init(context);
+            _player = FindObjectOfType<Player>();
+        }
+
+        public override int Update()
+        {
+            Vector3 playerPositionOnPlane = Vector3.ProjectOnPlane(_player.transform.position, Vector3.up);
+            Vector3 aiPositionOnPlane = Vector3.ProjectOnPlane(_context.transform.position, Vector3.up);
+
+            Vector3 destination = _context.transform.position;
+
+            RaycastHit hit;
+            bool seePlayer = !Physics.SphereCast(_context.transform.position, 0.1f, playerPositionOnPlane - aiPositionOnPlane, out hit, (playerPositionOnPlane - aiPositionOnPlane).magnitude, LayerMask.GetMask("Wall"));
+
+            if(seePlayer)
+            {
+                destination = (aiPositionOnPlane - playerPositionOnPlane).normalized * _distanceKeptBetweenItselfAndPlayer + playerPositionOnPlane + new Vector3(0, _context.transform.position.y, 0);
+            }
+            else
+            {
+                destination = _player.transform.position;
+            }
+
+            _navMeshAgent.SetDestination(destination);
+
+            LookTowardsPlayer(_player.transform.position, _context.transform);
+            if (seePlayer && _entity.CanAttack())
+            {
+                _entity.Attack();
+            }
+
+            if (seePlayer && Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) < _startFleeingRange)
+            {
+                return (int)StateEnum.Flee;
+            }
+
+            if (Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) > _stopChasingPlayerRange)
+            {
+                return (int)StateEnum.Wander;
+            }
+
+
+
+            return -1;
+        }
+
+        private void LookTowardsPlayer(Vector3 target, Transform transform)
+        {
+            transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+        }
+    }
+
     [SerializeField] private Wander _wanderState = null;
     [SerializeField] private Flee _fleeState = null;
+    [SerializeField] private Agressive _agressive = null;
 
-    private StateMachine _stateMachine = new StateMachine();
+    [SerializeField] private StateMachine _stateMachine = new StateMachine();
 
     private void Awake()
     {
-        _stateMachine.Init(new State[] { _wanderState, _fleeState }, 0, this);
+        _stateMachine.Init(new State[] { _wanderState, _agressive, _fleeState }, 0, this);
     }
 
     private void Update()
