@@ -5,8 +5,12 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public Entity.Team Team { get; set; }
+
     [SerializeField] private float _speed = 0.0f;
+    public float Speed { get => _speed; }
+
     [SerializeField] private float _timeToLive = 0.0f;
+    public float TimeToLive { get => _timeToLive; }
 
     private void Awake()
     {
