@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Flee : State
 {
+    [Header("Parameters")]
     [SerializeField] private float _distanceStopFleeing = 0.0f;
     [SerializeField] private float _speed = 0.0f;
 

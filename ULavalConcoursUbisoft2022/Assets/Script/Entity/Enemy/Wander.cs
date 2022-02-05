@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Wander : State
 {
+    [Header("Parameters")]
     [SerializeField] private float _distanceDetectPlayer = 0.0f;
     [SerializeField] private float _MaxRangeWander = 0.0f;
     [SerializeField] private Vector2 delayWander = Vector2.zero;
@@ -15,7 +16,7 @@ public class Wander : State
     [SerializeField] private Entity _entity = null;
 
     [Header("State")]
-    [SerializeField] private State _harass = null;
+    [SerializeField] private State _whenPlayerToClose = null;
 
     private Player _player = null;
     private float _lastWander = 0.0f;
@@ -48,7 +49,8 @@ public class Wander : State
 
         if (Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) < _distanceDetectPlayer && _entity.Sees(_player.transform.position))
         {
-            ChangeState(_harass);
+            ChangeState(_whenPlayerToClose);
+            return;
         }
 
         if (Time.time - _currentOffSetWander > _lastWander)

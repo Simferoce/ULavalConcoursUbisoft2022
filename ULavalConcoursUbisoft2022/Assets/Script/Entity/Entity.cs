@@ -14,6 +14,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private WeaponHandler _weaponHandler = null;
     [SerializeField] private Health _health = null;
     [SerializeField] private Team team = Team.Neutral;
+    [SerializeField] private Transform root = null;
 
     public void Attack()
     {
@@ -46,5 +47,10 @@ public class Entity : MonoBehaviour
 
         RaycastHit hit;
         return !Physics.SphereCast(transform.position, 0.1f, seeingPositionOnAPlane - positionOnAPlane, out hit, (seeingPositionOnAPlane - positionOnAPlane).magnitude, LayerMask.GetMask("Wall"));
+    }
+
+    public void LookTowardsTarget(Vector3 target)
+    {
+        root.LookAt(new Vector3(target.x, transform.position.y, target.z));
     }
 }

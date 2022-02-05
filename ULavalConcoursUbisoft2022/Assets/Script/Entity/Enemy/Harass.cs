@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Harass : State
 {
+    [Header("Parameters")]
     [SerializeField] private float _speed = 0.0f;
     [SerializeField] private float _startFleeingRange = 0.0f;
     [SerializeField] private float _stopChasingPlayerRange = 0.0f;
@@ -60,7 +61,7 @@ public class Harass : State
 
         _navMeshAgent.SetDestination(destination);
 
-        LookTowardsPlayer(_player.transform.position, _navMeshAgent.transform);
+        _entity.LookTowardsTarget(_player.transform.position);
         if (seePlayer && _entity.AttackRange() > distance && _entity.CanAttack())
         {
             _entity.Attack();
@@ -75,10 +76,5 @@ public class Harass : State
         {
             ChangeState(_wander);
         }
-    }
-
-    private void LookTowardsPlayer(Vector3 target, Transform transform)
-    {
-        transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
     }
 }

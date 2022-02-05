@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public Entity.Team Team { get; set; }
+    [SerializeField] private Entity.Team _team;
+    public Entity.Team Team { get => _team; set => _team = value; }
 
     [SerializeField] private float _speed = 0.0f;
     public float Speed { get => _speed; }
 
+    [Tooltip("-1 => infinity")]
     [SerializeField] private float _timeToLive = 0.0f;
+    
+
     public float TimeToLive { get => _timeToLive; }
 
     private void Awake()
     {
-        Destroy(this.gameObject, _timeToLive);
+        if (_timeToLive != -1)
+        {
+            Destroy(this.gameObject, _timeToLive);
+        }
     }
 
     private void Update()
@@ -24,7 +31,7 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Wall"))
+        if (_speed != 0 && other.CompareTag("Wall"))
         {
             Destroy(this.gameObject);
         }

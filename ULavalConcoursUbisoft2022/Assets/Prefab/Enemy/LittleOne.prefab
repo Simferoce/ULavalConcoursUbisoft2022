@@ -176,7 +176,7 @@ MonoBehaviour:
   _speed: 1
   _navMeshAgent: {fileID: 7218801385976619079}
   _entity: {fileID: 7218801387661779763}
-  _harass: {fileID: 7218801386941064834}
+  _whenPlayerToClose: {fileID: 7218801386941064834}
 --- !u!114 &7218801386941064834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +294,7 @@ MonoBehaviour:
   _weaponHandler: {fileID: 7218801387661779773}
   _health: {fileID: 7218801387661779772}
   team: 2
+  root: {fileID: 7218801385976619074}
 --- !u!54 &7218801387661779775
 Rigidbody:
   m_ObjectHideFlags: 0
