@@ -34,4 +34,9 @@ public abstract class State : MonoBehaviour
         this.enabled = false;
         newState.enabled = true;
     }
+
+    public virtual bool CanChangeState()
+    {
+        return true;
+    }
 }

@@ -66,7 +66,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
-  _startFleeingRange: 4
   _stopChasingPlayerRange: 9
   _distanceKeptBetweenItselfAndPlayer: 5
   _navMeshAgent: {fileID: 1665997102756442055}
@@ -85,9 +84,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c578a1365176fa43a62e9d84db17a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startFleeingRange: 3
   _distanceStopFleeing: 4
   _speed: 2.5
   _navMeshAgent: {fileID: 1665997102756442055}
+  _entity: {fileID: 1665997103480595348}
   _wander: {fileID: 1665997102400770502}
 --- !u!1 &1665997102756441917
 GameObject:
@@ -334,7 +335,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1665997103514568755}
   - component: {fileID: 1665997103514568752}
-  - component: {fileID: 1665997103514568753}
   m_Layer: 0
   m_Name: StateMachine
   m_TagString: Untagged
@@ -371,18 +371,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntryPoint: {fileID: 1665997102400770502}
---- !u!114 &1665997103514568753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665997103514568754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []

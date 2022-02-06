@@ -7,7 +7,6 @@ public class Harass : State
 {
     [Header("Parameters")]
     [SerializeField] private float _speed = 0.0f;
-    [SerializeField] private float _startFleeingRange = 0.0f;
     [SerializeField] private float _stopChasingPlayerRange = 0.0f;
     [SerializeField] private float _distanceKeptBetweenItselfAndPlayer = 0.0f;
 
@@ -67,12 +66,12 @@ public class Harass : State
             _entity.Attack();
         }
 
-        if (seePlayer && Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) < _startFleeingRange)
+        if(_flee != null && _flee.CanChangeState())
         {
             ChangeState(_flee);
         }
 
-        if (Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) > _stopChasingPlayerRange)
+        if (_wander.CanChangeState() && Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) > _stopChasingPlayerRange)
         {
             ChangeState(_wander);
         }

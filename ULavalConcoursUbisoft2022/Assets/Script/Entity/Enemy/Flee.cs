@@ -6,17 +6,27 @@ using UnityEngine.AI;
 public class Flee : State
 {
     [Header("Parameters")]
+    [SerializeField] private float _startFleeingRange = 0.0f;
     [SerializeField] private float _distanceStopFleeing = 0.0f;
     [SerializeField] private float _speed = 0.0f;
 
     [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
+    [SerializeField] private Entity _entity = null;
 
     [Header("State")]
     [SerializeField] private Wander _wander = null;
 
     private Player _player = null;
     private bool _movingBackward = false;
+
+    public override bool CanChangeState()
+    {
+        Vector3 playerPositionOnPlane = Vector3.ProjectOnPlane(_player.transform.position, Vector3.up);
+        Vector3 aiPositionOnPlane = Vector3.ProjectOnPlane(transform.position, Vector3.up);
+
+        return _entity.Sees(_player.transform.position)  && Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) < _startFleeingRange;
+    }
 
     protected override void Init()
     {
