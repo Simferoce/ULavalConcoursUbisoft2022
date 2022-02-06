@@ -8,7 +8,7 @@ public class WeaponHandler : MonoBehaviour
 
     private Weapon _weaponData = null;
     private Attack _attack = null;
-    private BoxCollider _attackCollider = null;
+    private float _colliderRange = 0.0f;
 
     private void Awake()
     {
@@ -19,7 +19,34 @@ public class WeaponHandler : MonoBehaviour
     {
         _weaponData = weapon;
         _attack = weapon.Collider.GetComponent<Attack>();
-        _attackCollider = weapon.Collider.GetComponentInChildren<BoxCollider>();
+
+        BoxCollider attackBoxCollider = weapon.Collider.GetComponentInChildren<BoxCollider>();
+
+        if (_attack.Speed == 0.0f)
+        {
+            if (attackBoxCollider != null)
+            {
+                _colliderRange = attackBoxCollider.transform.position.z + attackBoxCollider.size.z / 2;
+            }
+            else
+            {
+                SphereCollider sphereCollider = weapon.Collider.GetComponentInChildren<SphereCollider>();
+                if (sphereCollider != null)
+                {
+                    _colliderRange = sphereCollider.radius / 2;
+                }
+                else
+                {
+                    _colliderRange = 0.0f;
+                }
+            }
+        }
+        else
+        {
+            _colliderRange = _attack.Speed * _attack.TimeToLive;
+        }
+
+       
     }
 
     private float _lastTimeUsed = 0.0f;
@@ -38,13 +65,6 @@ public class WeaponHandler : MonoBehaviour
 
     public float GetRange()
     {
-        if (_attack.Speed != 0)
-        {
-            return _attack.Speed * _attack.TimeToLive;
-        }
-        else
-        {
-            return _attackCollider.transform.position.z +_attackCollider.size.z / 2;
-        }
+        return _colliderRange;
     }
 }

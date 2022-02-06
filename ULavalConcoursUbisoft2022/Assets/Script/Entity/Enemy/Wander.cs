@@ -35,6 +35,7 @@ public class Wander : State
     {
         _currentOffSetWander = UnityEngine.Random.Range(delayWander.x, delayWander.y);
         _navMeshAgent.speed = _speed;
+        _navMeshAgent.isStopped = false;
     }
 
     protected override void OnExit()
@@ -47,7 +48,7 @@ public class Wander : State
         Vector3 playerPositionOnPlane = Vector3.ProjectOnPlane(_player.transform.position, Vector3.up);
         Vector3 aiPositionOnPlane = Vector3.ProjectOnPlane(transform.position, Vector3.up);
 
-        if (Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) < _distanceDetectPlayer && _entity.Sees(_player.transform.position))
+        if (_whenPlayerToClose.CanChangeState() && Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) < _distanceDetectPlayer && _entity.Sees(_player.transform.position))
         {
             ChangeState(_whenPlayerToClose);
             return;
