@@ -25,5 +25,17 @@ public class Health : MonoBehaviour
             //Old Animation system only for protype. Do not use that for final. Use the Animator
             _animation.Play();
         }
+
+        if (HealthPoint <= 0)
+        {
+            _animation.Play("tempAnimOnDeath");
+            Destroy(transform.parent.gameObject, 0.1f);
+        }
+
+    }
+
+    public bool IsDead()
+    {
+        return _healthPoint <= 0;
     }
 }
