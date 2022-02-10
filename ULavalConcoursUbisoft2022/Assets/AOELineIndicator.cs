@@ -12,10 +12,10 @@ public class AOELineIndicator : Indicator
         base.Init(timeBeforeImpact, size, followDirection);
 
         _size = size;
-        _projector.size = new Vector3(2, 0, 10);
+        _projector.size = new Vector3(_size.x, 0, _size.z);
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, _size.x, LayerMask.GetMask("Ground")))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 10, LayerMask.GetMask("Ground")))
         {
             _groundHeight = hit.point.y;
         }
@@ -27,12 +27,12 @@ public class AOELineIndicator : Indicator
         {
             transform.parent.forward = _followDirection.forward;
 
-            float fullSize = _size.x;
+            float fullSize = _size.y;
 
             Vector3 positionAtGroundLevel = new Vector3(transform.position.x, _groundHeight + 0.1f, transform.position.z);
-            Debug.DrawLine(positionAtGroundLevel, positionAtGroundLevel + transform.parent.forward * _size.x, Color.blue, 1);
+            Debug.DrawLine(positionAtGroundLevel, positionAtGroundLevel + transform.parent.forward * _size.y, Color.blue, 1);
             RaycastHit hit;
-            if (Physics.Raycast(positionAtGroundLevel, transform.parent.forward, out hit, _size.x, LayerMask.GetMask("Wall")))
+            if (Physics.Raycast(positionAtGroundLevel, transform.parent.forward, out hit, _size.y, LayerMask.GetMask("Wall")))
             {
                 fullSize = Vector3.Distance(Vector3.ProjectOnPlane(transform.position, Vector3.up), Vector3.ProjectOnPlane(hit.point, Vector3.up));
             }
