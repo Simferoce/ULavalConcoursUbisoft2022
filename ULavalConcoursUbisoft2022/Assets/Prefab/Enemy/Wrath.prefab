@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3830797480165022188}
   - component: {fileID: 1150105843719804573}
   - component: {fileID: 2667352110327060009}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6455558287578418069}
   - component: {fileID: 6455558287578418070}
   - component: {fileID: 6455558287578418068}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Behavior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,9 +152,10 @@ MonoBehaviour:
   _powerUpTime: 3
   _lockPercentage: 0.7
   _dependsOnWeaponAttackSpeed: 0
+  _indicatorSize: {x: 12, y: 12, z: 12}
   _entity: {fileID: 6455558288642095557}
   _navMeshAgent: {fileID: 6455558287919019414}
-  _tempVisualFeedback: {fileID: 0}
+  _indicator: {fileID: 6221546651891323503, guid: afa41baa690cc5e498e1cf20a33da552, type: 3}
   _releaseState: {fileID: 6455558287578418070}
 --- !u!114 &6455558287578418070
 MonoBehaviour:
@@ -201,7 +202,7 @@ GameObject:
   - component: {fileID: 6455558287919019368}
   - component: {fileID: 6455558287919019414}
   - component: {fileID: 6455558287919019413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wrath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +279,7 @@ GameObject:
   - component: {fileID: 6455558288642095576}
   - component: {fileID: 6455558288642095555}
   - component: {fileID: 6455558288642095554}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6455558288675017314}
   - component: {fileID: 6455558288675017313}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StateMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +433,7 @@ GameObject:
   - component: {fileID: 8804078036535900832}
   - component: {fileID: 248635929982018273}
   - component: {fileID: 7114037512971176085}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3294420571532760219}
   - component: {fileID: 1395584481742199679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
