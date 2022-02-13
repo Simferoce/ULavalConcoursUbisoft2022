@@ -9,7 +9,8 @@ public class ClassSelection : MonoBehaviour
 
     public void ChoixClasse()
     {
-        SceneManager.LoadScene("Sandbox");
-
+        SceneManager.LoadScene("PauseMenu");
+        MenuPause.GameIsPaused = false;
+        
     }
 }
