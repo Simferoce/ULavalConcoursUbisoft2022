@@ -8,13 +8,10 @@ public class PowerUp : State
     [Header("Parameters")]
     [SerializeField] private float _powerUpTime = 0.0f;
     [SerializeField] private float _lockPercentage = 0.0f;
-    [SerializeField] private bool _dependsOnWeaponAttackSpeed = false;
-    [SerializeField] private Vector3 _indicatorSize = Vector3.zero;
 
     [Header("Reference")]
     [SerializeField] private Entity _entity = null;
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
-    [SerializeField] private GameObject _indicator = null;
 
     [Header("State")]
     [SerializeField] private State _releaseState = null;
@@ -22,6 +19,9 @@ public class PowerUp : State
     private Player _player = null;
     private bool _locked = false;
     private float _powerStartTime = 0.0f;
+
+    public float PowerUpTime { get => _powerUpTime; set => _powerUpTime = value; }
+    public float LockPercentage { get => _lockPercentage; set => _lockPercentage = value; }
 
     protected override void Init()
     {
@@ -32,9 +32,6 @@ public class PowerUp : State
     {
         _navMeshAgent.isStopped = true;
         _powerStartTime = Time.time;
-        GameObject gameObject = Instantiate(_indicator, this.transform.position, Quaternion.identity);
-        Indicator indicator = gameObject.GetComponentInChildren<Indicator>();
-        indicator.Init(_powerUpTime, _indicatorSize, _entity.transform);
     }
 
     protected override void OnExit()
@@ -61,10 +58,5 @@ public class PowerUp : State
         }
 
 
-    }
-
-    public override bool CanChangeState()
-    {
-        return !_dependsOnWeaponAttackSpeed || _entity.CanAttack();
     }
 }

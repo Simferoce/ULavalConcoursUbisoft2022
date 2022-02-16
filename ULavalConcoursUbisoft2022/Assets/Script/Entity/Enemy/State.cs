@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class State : MonoBehaviour
 {
+    public event Action OnStateDisable;
+
     protected abstract void Init();
     protected abstract void OnEnter();
     protected abstract void OnUpdate();
@@ -32,7 +35,17 @@ public abstract class State : MonoBehaviour
     protected void ChangeState(State newState)
     {
         this.enabled = false;
-        newState.enabled = true;
+        OnStateDisable?.Invoke();
+
+        if (newState != null)
+        {
+            newState.enabled = true;
+        }  
+    }
+
+    public void EnableState()
+    {
+        this.enabled = true;
     }
 
     public virtual bool CanChangeState()

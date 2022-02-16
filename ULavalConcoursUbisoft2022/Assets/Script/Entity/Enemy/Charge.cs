@@ -18,6 +18,9 @@ public class Charge : State
     [Header("State")]
     [SerializeField] private State _chargeStateFinish = null;
 
+    public float Speed { get => _speed; set => _speed = value; }
+    public float MaxRange { get => _maxRange; set => _maxRange = value; }
+    public float Acceleration { get => _acceleration; set => _acceleration = value; }
 
     private float _originAcceleration = 0.0f;
     private Vector3 _destination;

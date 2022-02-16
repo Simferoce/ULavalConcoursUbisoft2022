@@ -12,13 +12,13 @@ public class Indicator : MonoBehaviour
     protected float _startTime = 0.0f;
     protected Transform _followDirection = null;
 
-    public virtual void Init(float timeBeforeImpact, Vector3 size, Transform followDirection = null)
+    public virtual void Init(float timeBeforeImpact, Vector2 size, Transform followDirection = null)
     {
         _timeBeforeImpact = timeBeforeImpact;
         _startTime = Time.time;
         _initialized = true;
         _projector.transform.localScale = Vector3.zero;
         _followDirection = followDirection;
-        _projector.size = size;
+        _projector.size = new Vector3(size.x, size.y, 20);
     }
 }

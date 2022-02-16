@@ -14,6 +14,8 @@ public class Incapacited : State
     [Header("State")]
     [SerializeField] private State _resumeState = null;
 
+    public float Time { get => _time; set => _time = value; }
+
     protected override void Init()
     {
         

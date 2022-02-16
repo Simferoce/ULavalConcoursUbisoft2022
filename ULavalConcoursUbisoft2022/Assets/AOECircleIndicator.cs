@@ -5,11 +5,9 @@ using UnityEngine.Rendering.Universal;
 
 public class AOECircleIndicator : Indicator
 {
-    public override void Init(float timeBeforeImpact, Vector3 size, Transform followDirection = null)
+    public override void Init(float timeBeforeImpact, Vector2 size, Transform followDirection = null)
     {
         base.Init(timeBeforeImpact, size, followDirection);
-
-        _projector.size = size;
     }
 
     private void Update()

@@ -7,11 +7,11 @@ public class AOELineIndicator : Indicator
     private Vector3 _size = Vector3.zero;
 
     private float _groundHeight = 0.0f;
-    public override void Init(float timeBeforeImpact, Vector3 size, Transform followDirection = null)
+    public override void Init(float timeBeforeImpact, Vector2 size, Transform followDirection = null)
     {
         base.Init(timeBeforeImpact, size, followDirection);
 
-        _size = size;
+        _size = new Vector3(size.x, size.y, 20);
         _projector.size = new Vector3(_size.x, 0, _size.z);
 
         RaycastHit hit;
