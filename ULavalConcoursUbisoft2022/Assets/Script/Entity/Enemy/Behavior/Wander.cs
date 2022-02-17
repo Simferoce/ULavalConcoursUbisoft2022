@@ -24,6 +24,7 @@ public class Wander : State
 
     private Vector3 _origin = Vector3.zero;
 
+    public float DistanceDetectPlayer { get => _distanceDetectPlayer; set => _distanceDetectPlayer = value; }
 
     private Vector3 FindWanderPosition()
     {

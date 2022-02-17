@@ -5,13 +5,13 @@ using UnityEngine;
 
 public abstract class Skill : MonoBehaviour
 {
-    public event Action OnSkillFinish;
+    public event Action<Skill> OnSkillFinish;
 
     public abstract bool CanUse();
     public abstract void Use();
 
     public void InvokeOnSkillFinish()
     {
-        OnSkillFinish?.Invoke();
+        OnSkillFinish?.Invoke(this);
     }
 }

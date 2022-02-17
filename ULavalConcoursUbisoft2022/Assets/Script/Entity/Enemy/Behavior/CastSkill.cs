@@ -9,6 +9,8 @@ public class CastSkill : State
 
     [SerializeField] private State _resumeState = null;
 
+    private bool _casting = false;
+
     protected override void Init()
     {
         
@@ -16,13 +18,12 @@ public class CastSkill : State
 
     protected override void OnEnter()
     {
-        Skill skill = _skills.First(x => x.CanUse());
-        skill.OnSkillFinish += OnSkillFinish;
-        skill.Use();
+        TryCastSkill();
     }
 
-    private void OnSkillFinish()
+    private void OnSkillFinish(Skill skill)
     {
+        _casting = false;
         ChangeState(_resumeState);
     }
 
@@ -33,11 +34,23 @@ public class CastSkill : State
 
     protected override void OnUpdate()
     {
-        
+
     }
 
     public override bool CanChangeState()
     {
         return _skills.Any(x => x.CanUse());
+    }
+
+    private void TryCastSkill()
+    {
+        Skill skill = _skills.FirstOrDefault(x => x.CanUse());
+        if(skill != null)
+        {
+            skill.OnSkillFinish += OnSkillFinish;
+
+            _casting = true;
+            skill.Use();
+        }
     }
 }

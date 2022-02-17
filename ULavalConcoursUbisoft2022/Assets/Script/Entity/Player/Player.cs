@@ -29,9 +29,4 @@ public class Player : MonoBehaviour
         Vector3 positionToLookAt = new Vector3(_aim.transform.position.x, this.transform.position.y, _aim.transform.position.z);
         transform.LookAt(positionToLookAt, Vector3.up);
     }
-
-    private void FixedUpdate()
-    {
-
-    }
 }

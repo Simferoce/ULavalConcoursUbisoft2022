@@ -71,7 +71,7 @@ public class Harass : State
             ChangeState(_flee);
         }
 
-        if (_wander.CanChangeState() && Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) > _stopChasingPlayerRange)
+        if (_wander != null &&_wander.CanChangeState() && Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) > _stopChasingPlayerRange)
         {
             ChangeState(_wander);
         }

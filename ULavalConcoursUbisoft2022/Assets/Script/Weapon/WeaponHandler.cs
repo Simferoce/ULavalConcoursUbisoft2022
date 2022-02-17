@@ -7,7 +7,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private Weapon _startingWeapon = null;
 
     private Weapon _weaponData = null;
-    private Attack _attack = null;
+    private AttackTimed _attack = null;
     private float _colliderRange = 0.0f;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class WeaponHandler : MonoBehaviour
     public void SetWeapon(Weapon weapon)
     {
         _weaponData = weapon;
-        _attack = weapon.Collider.GetComponent<Attack>();
+        _attack = weapon.Collider.GetComponent<AttackTimed>();
 
         BoxCollider attackBoxCollider = weapon.Collider.GetComponentInChildren<BoxCollider>();
 
@@ -54,7 +54,7 @@ public class WeaponHandler : MonoBehaviour
     public void Use(Vector3 origin, Vector3 direction, Entity.Team team)
     {
         GameObject attackCollider = Instantiate(_weaponData.Collider, origin, Quaternion.LookRotation(direction, Vector3.up));
-        attackCollider.GetComponent<Attack>().Team = team;
+        attackCollider.GetComponent<AttackTimed>().Team = team;
         _lastTimeUsed = Time.time;
     }
 

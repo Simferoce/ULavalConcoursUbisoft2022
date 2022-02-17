@@ -12,9 +12,15 @@ public class Entity : MonoBehaviour
     }
 
     [SerializeField] private WeaponHandler _weaponHandler = null;
+    [SerializeField] private PushBackHandler _pushBackHandler = null;
     [SerializeField] private Health _health = null;
     [SerializeField] private Team team = Team.Neutral;
     [SerializeField] private Transform root = null;
+
+    [SerializeField] private CharacterController _characterController = null;
+
+    public PushBackHandler PushBackHandler { get => _pushBackHandler; set => _pushBackHandler = value; }
+    public Health Health { get => _health; set => _health = value; }
 
     public void Attack()
     {
@@ -34,7 +40,7 @@ public class Entity : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Attack attack = other.GetComponentInParent<Attack>();
-        if(attack != null && attack.Team != team)
+        if(attack != null && attack.Owner != this.gameObject && attack.Team != team)
         {
             _health.Hit(1);
         }
@@ -52,5 +58,19 @@ public class Entity : MonoBehaviour
     public void LookTowardsTarget(Vector3 target)
     {
         root.LookAt(new Vector3(target.x, transform.position.y, target.z));
+    }
+
+    public void Move(Vector3 translation)
+    {
+        if (_characterController)
+        {
+            _characterController.Move(translation);
+            Physics.SyncTransforms();
+        }
+        else
+        {
+            root.Translate(translation, Space.World);
+            Physics.SyncTransforms();
+        }
     }
 }

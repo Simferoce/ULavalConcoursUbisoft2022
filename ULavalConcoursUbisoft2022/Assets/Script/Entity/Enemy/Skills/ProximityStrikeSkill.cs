@@ -27,6 +27,11 @@ public class ProximityStrikeSkill : Skill
         _lastTimeUsed = -_cooldown - _powerUp.PowerUpTime;
     }
 
+    private void OnDestroy()
+    {
+        _proximityStrike.OnStateDisable -= _proximityStrike_OnStateDisable;
+    }
+
     private void _proximityStrike_OnStateDisable()
     {
         InvokeOnSkillFinish();

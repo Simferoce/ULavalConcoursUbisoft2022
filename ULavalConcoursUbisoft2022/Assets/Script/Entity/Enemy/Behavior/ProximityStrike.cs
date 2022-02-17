@@ -24,7 +24,7 @@ public class ProximityStrike : State
     protected override void OnEnter()
     {
         GameObject attackObject = Instantiate(_attackPrefab, Vector3.ProjectOnPlane(_entity.transform.position, Vector3.up) + new Vector3(0,0.5f,0), Quaternion.identity);
-        Attack attack = attackObject.GetComponent<Attack>();
+        AttackTimed attack = attackObject.GetComponent<AttackTimed>();
         attack.Team = Entity.Team.Foe;
         SphereCollider collider = attackObject.GetComponentInChildren<SphereCollider>();
         collider.radius = _radius;
