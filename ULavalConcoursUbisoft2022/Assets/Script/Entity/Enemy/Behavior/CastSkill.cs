@@ -34,7 +34,10 @@ public class CastSkill : State
 
     protected override void OnUpdate()
     {
-
+        if(!_casting)
+        {
+            TryCastSkill();
+        }
     }
 
     public override bool CanChangeState()

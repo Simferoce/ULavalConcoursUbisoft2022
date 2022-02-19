@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Harass : State
+public class GetCloserToPlayer : State
 {
     [Header("Parameters")]
-    [SerializeField] private float _speed = 0.0f;
-    [SerializeField] private float _stopChasingPlayerRange = 0.0f;
-    [SerializeField] private float _distanceKeptBetweenItselfAndPlayer = 0.0f;
+    [SerializeField] private float _distance = 0.0f;
 
     [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
     [SerializeField] private Entity _entity = null;
 
     [Header("State")]
-    [SerializeField] private State _wander = null;
-    [SerializeField] private State _flee = null;
+    [SerializeField] private State _transition = null;
 
     private Player _player = null;
 
@@ -27,12 +24,12 @@ public class Harass : State
 
     protected override void OnEnter()
     {
-        _navMeshAgent.speed = _speed;
+        _navMeshAgent.isStopped = false;
     }
 
     protected override void OnExit()
     {
-
+        
     }
 
     protected override void OnUpdate()
@@ -42,15 +39,21 @@ public class Harass : State
 
         float distance = Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane);
 
+        if (distance < _distance + 0.1f)
+        {
+            _navMeshAgent.isStopped = true;
+            ChangeState(_transition);
+        }
+
         Vector3 destination = transform.position;
 
         bool seePlayer = _entity.Sees(_player.transform.position);
 
         if (seePlayer)
         {
-            if(distance > _distanceKeptBetweenItselfAndPlayer)
+            if (distance > _distance)
             {
-                destination = (aiPositionOnPlane - playerPositionOnPlane).normalized * _distanceKeptBetweenItselfAndPlayer + playerPositionOnPlane + new Vector3(0, transform.position.y, 0);
+                destination = (aiPositionOnPlane - playerPositionOnPlane).normalized * _distance + playerPositionOnPlane + new Vector3(0, transform.position.y, 0);
             }
         }
         else
@@ -58,22 +61,7 @@ public class Harass : State
             destination = _player.transform.position;
         }
 
-        _navMeshAgent.SetDestination(destination);
-
         _entity.LookTowardsTarget(_player.transform.position);
-        if (seePlayer && _entity.AttackRange() > distance && _entity.CanAttack())
-        {
-            _entity.Attack();
-        }
-
-        if(_flee != null && _flee.CanChangeState())
-        {
-            ChangeState(_flee);
-        }
-
-        if (_wander != null &&_wander.CanChangeState() && Vector3.Distance(playerPositionOnPlane, aiPositionOnPlane) > _stopChasingPlayerRange)
-        {
-            ChangeState(_wander);
-        }
+        _navMeshAgent.SetDestination(destination);
     }
 }

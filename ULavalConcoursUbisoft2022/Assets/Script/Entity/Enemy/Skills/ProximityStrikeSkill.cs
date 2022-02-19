@@ -9,6 +9,7 @@ public class ProximityStrikeSkill : Skill
 
     [Header("Override Parameters")]
     [SerializeField] private float _range = 0.0f;
+    [SerializeField] private Vector3 _offset = Vector3.zero;
 
     [Header("Reference")]
     [SerializeField] private Entity _entity = null;
@@ -20,16 +21,39 @@ public class ProximityStrikeSkill : Skill
 
     private float _lastTimeUsed = 0.0f;
 
+    public PowerUp PowerUp { get => _powerUp; set => _powerUp = value; }
+    public ProximityStrike ProximityStrike { get => _proximityStrike; set => _proximityStrike = value; }
+
+    private AOECircleIndicator _instancedIndicator = null;
+
     private void Awake()
     {
+        _powerUp.OnLock += _powerUp_OnLock;
         _proximityStrike.Radius = _range;
         _proximityStrike.OnStateDisable += _proximityStrike_OnStateDisable;
         _lastTimeUsed = -_cooldown - _powerUp.PowerUpTime;
+        _entity.Health.OnDeath += Health_OnDeath;
+    }
+
+    private void _powerUp_OnLock()
+    {
+        _proximityStrike.Target = _entity.transform.position + _entity.transform.rotation * _offset;
+    }
+
+    private void Health_OnDeath(Health obj)
+    {
+        if(_instancedIndicator!= null)
+        {
+            _instancedIndicator.Destroy();
+        }
+
+        _entity.Health.OnDeath -= Health_OnDeath;
     }
 
     private void OnDestroy()
     {
         _proximityStrike.OnStateDisable -= _proximityStrike_OnStateDisable;
+        _powerUp.OnLock -= _powerUp_OnLock;
     }
 
     private void _proximityStrike_OnStateDisable()
@@ -44,9 +68,14 @@ public class ProximityStrikeSkill : Skill
 
     public override void Use()
     {
-        GameObject gameObject = Instantiate(_indicator, _entity.transform.position, Quaternion.identity);
-        Indicator indicator = gameObject.GetComponentInChildren<Indicator>();
-        indicator.Init(_powerUp.PowerUpTime, new Vector3(_range * 2, _range * 2), _entity.transform);
+        if (_entity.Health.IsDead())
+        {
+            return;
+        }
+
+        GameObject gameObject = Instantiate(_indicator, _entity.transform.position + _entity.transform.rotation * _offset, Quaternion.identity);
+        _instancedIndicator = gameObject.GetComponentInChildren<AOECircleIndicator>();
+        _instancedIndicator.Init(_powerUp.PowerUpTime, new Vector3(_range * 2, _range * 2), _entity.transform);
 
         _lastTimeUsed = Time.time;
         _powerUp.EnableState();

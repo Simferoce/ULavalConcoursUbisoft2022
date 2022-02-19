@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class Health : MonoBehaviour
     [SerializeField] private bool _invicible = false;
 
     public bool Invicible { get => _invicible; set => _invicible = value; }
+
+    public event Action<Health> OnDeath;
 
     public void Awake()
     {
@@ -34,10 +37,18 @@ public class Health : MonoBehaviour
 
             if (HealthPoint <= 0)
             {
-                _animation.Play("tempAnimOnDeath");
-                Destroy(transform.parent.gameObject, 0.1f);
+                Kill();
+                
             }
         }
+    }
+
+    public void Kill()
+    {
+        HealthPoint = 0;
+        OnDeath?.Invoke(this);
+        Destroy(transform.parent.gameObject, 0.1f);
+        _animation.Play("tempAnimOnDeath");
     }
 
     public bool IsDead()

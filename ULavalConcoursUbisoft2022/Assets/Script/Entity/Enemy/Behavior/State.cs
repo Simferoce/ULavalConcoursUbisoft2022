@@ -48,6 +48,11 @@ public abstract class State : MonoBehaviour
         this.enabled = true;
     }
 
+    public void ForceDisableState()
+    {
+        this.enabled = false;
+    }
+
     public virtual bool CanChangeState()
     {
         return true;

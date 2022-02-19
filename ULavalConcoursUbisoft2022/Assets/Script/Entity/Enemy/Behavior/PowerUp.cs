@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,8 @@ public class PowerUp : State
     public float PowerUpTime { get => _powerUpTime; set => _powerUpTime = value; }
     public float LockPercentage { get => _lockPercentage; set => _lockPercentage = value; }
 
+    public event Action OnLock;
+
     protected override void Init()
     {
         _player = FindObjectOfType<Player>();
@@ -41,9 +44,10 @@ public class PowerUp : State
 
     protected override void OnUpdate()
     {
-        if(Time.time -_powerStartTime > _powerUpTime * _lockPercentage)
+        if(!_locked && Time.time -_powerStartTime > _powerUpTime * _lockPercentage)
         {
             _locked = true;
+            OnLock?.Invoke();
         }
 
         if (Time.time - _powerStartTime > _powerUpTime)
@@ -56,7 +60,5 @@ public class PowerUp : State
         {
             _entity.LookTowardsTarget(_player.transform.position);
         }
-
-
     }
 }

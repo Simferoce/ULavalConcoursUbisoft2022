@@ -22,6 +22,18 @@ public class Entity : MonoBehaviour
     public PushBackHandler PushBackHandler { get => _pushBackHandler; set => _pushBackHandler = value; }
     public Health Health { get => _health; set => _health = value; }
 
+    private void Start()
+    {
+        if (_characterController != null)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.parent.position, Vector3.down, out hit, 100, LayerMask.GetMask("Ground")))
+            {
+                transform.parent.position = new Vector3(transform.parent.position.x, hit.point.y + _characterController.height / 2, transform.position.z);
+            }
+        } 
+    }
+
     public void Attack()
     {
         _weaponHandler.Use(this.transform.position, transform.forward, team);

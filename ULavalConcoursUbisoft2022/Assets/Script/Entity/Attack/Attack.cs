@@ -28,12 +28,4 @@ public class Attack : MonoBehaviour
             transform.Translate(Vector3.forward * _speed * Time.deltaTime);
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (_speed != 0 && other.CompareTag("Wall"))
-        {
-            Destroy(this.gameObject);
-        }
-    }
 }

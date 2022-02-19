@@ -21,4 +21,9 @@ public class Indicator : MonoBehaviour
         _followDirection = followDirection;
         _projector.size = new Vector3(size.x, size.y, 20);
     }
+
+    public void Destroy()
+    {
+        Destroy(transform.parent.gameObject);
+    }
 }
