@@ -29,22 +29,20 @@ public class Entity : MonoBehaviour
     private Vector3 _lastPosition = Vector3.zero;
     public Vector3 Translation { get { return _translation; } }
 
-    private void Start()
+    private void Update()
     {
+        _translation = this.transform.position - _lastPosition;
+        _lastPosition = this.transform.position;
+
         if (_characterController != null)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.parent.position, Vector3.down, out hit, 100, LayerMask.GetMask("Ground")))
             {
                 transform.parent.position = new Vector3(transform.parent.position.x, hit.point.y + _characterController.height / 2, transform.position.z);
+                Physics.SyncTransforms();
             }
-        } 
-    }
-
-    private void Update()
-    {
-        _translation = this.transform.position - _lastPosition;
-        _lastPosition = this.transform.position;
+        }
     }
 
     public void Attack()
