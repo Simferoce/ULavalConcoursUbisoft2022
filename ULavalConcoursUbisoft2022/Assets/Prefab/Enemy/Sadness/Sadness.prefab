@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665997102400770360}
   - component: {fileID: 1665997102400770502}
-  - component: {fileID: 1665997102400770361}
+  - component: {fileID: 1572500604177487881}
   - component: {fileID: 1665997102400770503}
   m_Layer: 7
   m_Name: Behavior
@@ -52,8 +52,8 @@ MonoBehaviour:
   _speed: 1
   _navMeshAgent: {fileID: 1665997102756442055}
   _entity: {fileID: 1665997103480595348}
-  _whenPlayerToClose: {fileID: 1665997102400770361}
---- !u!114 &1665997102400770361
+  _whenPlayerToClose: {fileID: 1572500604177487881}
+--- !u!114 &1572500604177487881
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,12 +62,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1665997102400770363}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e20a36df84eaac41a154ff3b388ea48, type: 3}
+  m_Script: {fileID: 11500000, guid: 963371c4507ec184bae934cc291b8619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
   _stopChasingPlayerRange: 9
   _distanceKeptBetweenItselfAndPlayer: 5
+  _randomMove: 1
   _navMeshAgent: {fileID: 1665997102756442055}
   _entity: {fileID: 1665997103480595348}
   _wander: {fileID: 1665997102400770502}
@@ -117,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 1665997102756441917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.391, z: 3.83}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1665997103480595349}
@@ -213,9 +214,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponHandler: {fileID: 1665997103480595347}
+  _pushBackHandler: {fileID: 0}
   _health: {fileID: 1665997103480595337}
   team: 2
   root: {fileID: 1665997102756441913}
+  _colliders: {fileID: 0}
+  _visual: {fileID: 0}
+  _characterController: {fileID: 0}
 --- !u!54 &1665997103480595351
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -247,6 +252,7 @@ MonoBehaviour:
   _maxHealth: 5
   _healthPoint: 0
   _animation: {fileID: 1665997102756442052}
+  _invicible: 0
 --- !u!136 &1665997103480595346
 CapsuleCollider:
   m_ObjectHideFlags: 0

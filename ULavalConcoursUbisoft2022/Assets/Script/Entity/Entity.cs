@@ -16,11 +16,18 @@ public class Entity : MonoBehaviour
     [SerializeField] private Health _health = null;
     [SerializeField] private Team team = Team.Neutral;
     [SerializeField] private Transform root = null;
+    [SerializeField] private GameObject _colliders = null;
+    [SerializeField] private GameObject _visual = null;
 
     [SerializeField] private CharacterController _characterController = null;
 
     public PushBackHandler PushBackHandler { get => _pushBackHandler; set => _pushBackHandler = value; }
     public Health Health { get => _health; set => _health = value; }
+
+    private Vector3 _translation = Vector3.zero;
+
+    private Vector3 _lastPosition = Vector3.zero;
+    public Vector3 Translation { get { return _translation; } }
 
     private void Start()
     {
@@ -32,6 +39,12 @@ public class Entity : MonoBehaviour
                 transform.parent.position = new Vector3(transform.parent.position.x, hit.point.y + _characterController.height / 2, transform.position.z);
             }
         } 
+    }
+
+    private void Update()
+    {
+        _translation = this.transform.position - _lastPosition;
+        _lastPosition = this.transform.position;
     }
 
     public void Attack()
@@ -84,5 +97,23 @@ public class Entity : MonoBehaviour
             root.Translate(translation, Space.World);
             Physics.SyncTransforms();
         }
+    }
+
+    public void Teleport(Vector3 position)
+    {
+        root.transform.position = position;
+        Physics.SyncTransforms();
+    }
+
+    public void Vanish()
+    {
+        _colliders.SetActive(false);
+        _visual.SetActive(false);
+    }
+
+    public void Appear()
+    {
+        _colliders.SetActive(true);
+        _visual.SetActive(true);
     }
 }
