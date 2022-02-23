@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Health : MonoBehaviour
     public bool Invicible { get => _invicible; set => _invicible = value; }
 
     public event Action<Health> OnDeath;
+    public UnityEvent OnEvent;
 
     public void Awake()
     {
