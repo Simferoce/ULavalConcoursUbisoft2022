@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
     public bool Invicible { get => _invicible; set => _invicible = value; }
 
     public event Action<Health> OnDeath;
-    public UnityEvent OnEvent;
+    public event Action<Health, float> OnDamage;
 
     public void Awake()
     {
@@ -30,6 +30,7 @@ public class Health : MonoBehaviour
     {
         if(!Invicible)
         {
+            OnDamage?.Invoke(this, damage);
             HealthPoint -= damage;
             if (_animation)
             {
