@@ -25,7 +25,10 @@ public class AOELineIndicator : Indicator
     {
         if (_initialized)
         {
-            transform.parent.forward = _followDirection.forward;
+            if(_followDirection != null)
+            {
+                transform.parent.forward = _followDirection.forward;
+            }
 
             float fullSize = _size.y;
 

@@ -10,6 +10,8 @@ public class WeaponHandler : MonoBehaviour
     private Attack _attack = null;
     private float _colliderRange = 0.0f;
 
+    private float _lastTimeUsed = 0.0f;
+    private float _lastRandom = 0.0f;
     private void Awake()
     {
         SetWeapon(_startingWeapon);
@@ -19,6 +21,9 @@ public class WeaponHandler : MonoBehaviour
     {
         _weaponData = weapon;
         _attack = weapon.Collider.GetComponent<Attack>();
+
+        _lastRandom = _weaponData.RandomDelay * Random.Range(0.0f, 1.0f);
+        _lastTimeUsed = Time.time - _weaponData.DelayAttack;
 
         BoxCollider attackBoxCollider = weapon.Collider.GetComponentInChildren<BoxCollider>();
 
@@ -50,18 +55,17 @@ public class WeaponHandler : MonoBehaviour
        
     }
 
-    private float _lastTimeUsed = 0.0f;
-
     public void Use(Vector3 origin, Vector3 direction, Entity.Team team)
     {
         GameObject attackCollider = Instantiate(_weaponData.Collider, origin, Quaternion.LookRotation(direction, Vector3.up));
         attackCollider.GetComponent<Attack>().Team = team;
         _lastTimeUsed = Time.time;
+        _lastRandom = _weaponData.RandomDelay * Random.Range(0.0f, 1.0f);
     }
 
     public bool CanUse()
     {
-        return Time.time - _weaponData.DelayAttack > _lastTimeUsed;
+        return Time.time - _weaponData.DelayAttack - _lastRandom > _lastTimeUsed;
     }
 
     public float GetRange()

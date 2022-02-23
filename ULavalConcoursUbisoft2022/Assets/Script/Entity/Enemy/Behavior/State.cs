@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class State : MonoBehaviour
 {
     public event Action OnStateDisable;
+    public event Action OnStateEnable;
 
     protected abstract void Init();
     protected abstract void OnEnter();
@@ -20,6 +21,7 @@ public abstract class State : MonoBehaviour
     private void OnEnable()
     {
         OnEnter();
+        OnStateEnable?.Invoke();
     }
 
     private void Update()
