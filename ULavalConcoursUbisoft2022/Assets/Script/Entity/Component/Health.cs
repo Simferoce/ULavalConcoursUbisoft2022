@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -29,8 +30,9 @@ public class Health : MonoBehaviour
     {
         if(!Invicible)
         {
-            OnDamage?.Invoke(this, damage);
             HealthPoint -= damage;
+            OnDamage?.Invoke(this, damage);
+            
             if (_animation)
             {
                 //Old Animation system only for protype. Do not use that for final. Use the Animator
