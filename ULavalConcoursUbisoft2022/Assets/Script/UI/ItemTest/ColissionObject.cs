@@ -40,6 +40,13 @@ public class ColissionObject : MonoBehaviour
         {
             panels[i].gameObject.SetActive(true);
 
+            if (panels[i].gameObject.transform.childCount == 0)
+            {
+                Debug.Log("no object");
+
+            }
+           
+
         }
         
 
