@@ -28,7 +28,7 @@ public class ColissionObject : MonoBehaviour
         if (collision.collider.name == "Body")
         {
 
-            
+            //L<object va être mis en argument
             NewObject();
 
         }
@@ -42,7 +42,7 @@ public class ColissionObject : MonoBehaviour
 
             if (panels[i].gameObject.transform.childCount == 0)
             {
-                Debug.Log("no object");
+                
 
             }
            
