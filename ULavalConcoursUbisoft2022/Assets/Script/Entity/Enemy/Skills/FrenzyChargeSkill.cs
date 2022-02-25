@@ -11,6 +11,7 @@ public class FrenzyChargeSkill : Skill
 
     [Header("Reference")]
     [SerializeField] private Entity _entity = null;
+    [SerializeField] private BubbleText _bubbleText = null;
 
     [Header("States")]
     [SerializeField] private ChargeSkill _charge = null;
@@ -20,6 +21,8 @@ public class FrenzyChargeSkill : Skill
     private float _originIncapacitedTime = 0.0f;
     private float _originPowerUpTime = 0.0f;
     private int _numberOfChargeDone = 0;
+
+    private int _numberOfTimeSkillUsed = 0;
 
     private void Awake()
     {
@@ -68,6 +71,13 @@ public class FrenzyChargeSkill : Skill
 
     public override void Use()
     {
+        if(_numberOfTimeSkillUsed == 2)
+        {
+            _bubbleText.ShowMessage(1);
+        }
+
+        _numberOfTimeSkillUsed++;
+
         _entity.Health.Invicible = true;
         _originAccelaration = _charge.Charge.Acceleration;
         _originSpeed = _charge.Charge.Speed;
