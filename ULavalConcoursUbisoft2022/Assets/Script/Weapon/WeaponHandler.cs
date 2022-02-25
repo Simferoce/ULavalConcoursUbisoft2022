@@ -15,12 +15,13 @@ public class WeaponHandler : MonoBehaviour
     private float _lastRandom = 0.0f;
     private Inventory inventory;
 
+    //For debug purpose
+    private float _attackSpeed = 0.0f;
+
     private void Awake()
     {
         SetWeapon(_startingWeapon);
         inventory = _inventory;
-        Debug.Log(inventory);
-        Debug.Log(_inventory);
     }
 
     public void SetWeapon(Weapon weapon)
@@ -29,7 +30,7 @@ public class WeaponHandler : MonoBehaviour
         _attack = weapon.Collider.GetComponent<Attack>();
 
         _lastRandom = _weaponData.RandomDelay * Random.Range(0.0f, 1.0f);
-        _lastTimeUsed = Time.time - _weaponData.getAttackDelay(inventory);
+        _lastTimeUsed = Time.time - _weaponData.GetAttackDelay(inventory);
 
         BoxCollider attackBoxCollider = weapon.Collider.GetComponentInChildren<BoxCollider>();
 
@@ -71,7 +72,7 @@ public class WeaponHandler : MonoBehaviour
 
     public bool CanUse()
     {
-        return Time.time - _weaponData.getAttackDelay(inventory) - _lastRandom > _lastTimeUsed;
+        return Time.time - (_attackSpeed = _weaponData.GetAttackDelay(inventory)) - _lastRandom > _lastTimeUsed;
     }
 
     public float GetRange()

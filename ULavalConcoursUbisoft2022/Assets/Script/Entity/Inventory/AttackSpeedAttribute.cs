@@ -1,32 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+[Serializable]
 public class AttackSpeedAttribute 
 {
     [SerializeField] private float _baseAttackSpeed = 1;
 
-    private AttackSpeed[] attackSpeedItems = null;
-    private float effectiveAttackSpeed = 0f;
-
-    public AttackSpeedAttribute(float baseAttackSpeed)
+    public float GetValue(Inventory inventory)
     {
-        _baseAttackSpeed = baseAttackSpeed;
+        return inventory?.Items.Select(x => x.GetComponent<AttackSpeed>()).Where(x => x != null)
+            .Aggregate(_baseAttackSpeed, (x, y) => { return x + y.GetAttackSpeed(_baseAttackSpeed); }) ?? _baseAttackSpeed;
     }
-
-    public float getValue(Inventory inventory)
-    {
-        attackSpeedItems = inventory.GetComponentsInChildren<AttackSpeed>();
-        Debug.Log(attackSpeedItems.Length);
-
-        effectiveAttackSpeed = _baseAttackSpeed;
-        foreach (AttackSpeed item in attackSpeedItems)
-        {
-            effectiveAttackSpeed += _baseAttackSpeed * item.getAttackSpeed();
-        }
-
-        Debug.Log(effectiveAttackSpeed);
-        return effectiveAttackSpeed;
-    }
-
 }

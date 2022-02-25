@@ -8,22 +8,13 @@ public class Weapon : ScriptableObject
     [SerializeField] private GameObject _collider = null;
     public GameObject Collider { get => _collider; }
 
-    [SerializeField] private float _attackSpeed = 0f;
-
     [SerializeField] private float _randomDelay = 0.0f;
     public float RandomDelay { get => _randomDelay; set => _randomDelay = value; }
 
-    private AttackSpeedAttribute attackSpeedAttribute = null;
+    [SerializeField] private AttackSpeedAttribute attackSpeedAttribute = null;
 
-    private void Start()
+    public float GetAttackDelay(Inventory inventory)
     {
-        attackSpeedAttribute = new AttackSpeedAttribute(_attackSpeed);
+        return 1 / attackSpeedAttribute.GetValue(inventory);
     }
-
-    public float getAttackDelay(Inventory inventory)
-    {
-        return 1 / attackSpeedAttribute.getValue(inventory);
-    }
-
-
 }
