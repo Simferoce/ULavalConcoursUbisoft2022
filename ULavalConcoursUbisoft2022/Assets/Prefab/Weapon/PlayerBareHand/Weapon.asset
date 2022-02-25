@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Weapon
   m_EditorClassIdentifier: 
   _collider: {fileID: 1285391838402836910, guid: 5194a9e0d1dc97645bbd8f60d01db0b2, type: 3}
-  _delayAttack: 1
+  _attackSpeed: 1
+  _randomDelay: 1

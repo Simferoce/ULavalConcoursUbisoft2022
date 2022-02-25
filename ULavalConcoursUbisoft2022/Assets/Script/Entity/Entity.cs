@@ -47,7 +47,10 @@ public class Entity : MonoBehaviour
 
     public void Attack()
     {
-        _weaponHandler.Use(this.transform.position, transform.forward, team);
+        if (CanAttack())
+        {
+            _weaponHandler.Use(this.transform.position, transform.forward, team);
+        }
     }
 
     public bool CanAttack()
