@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private string _safeZoneName = "";
     [SerializeField] private GameObject _playerPrefab = null;
 
-
+    private LowerWall[] _walls = null;
     private void Awake()
     {
         SceneManager.LoadScene(_bossWingName, LoadSceneMode.Additive);
@@ -35,6 +35,12 @@ public class LevelManager : MonoBehaviour
 
         PlayerSpawnPoint playerSpawnPoint = GameObject.FindObjectOfType<PlayerSpawnPoint>();
         Instantiate(_playerPrefab, playerSpawnPoint.transform.position, Quaternion.identity);
+
+        _walls = GameObject.FindObjectsOfType<LowerWall>();
+        foreach (LowerWall wall in _walls)
+        {
+            wall.UpdateWall();
+        }
     }
 
     private List<int> GenerateRandomsWithoutRepeat(int numberOfChoosen, int size)
