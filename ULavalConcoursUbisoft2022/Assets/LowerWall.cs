@@ -13,9 +13,6 @@ public class LowerWall : MonoBehaviour
         if (value > 0)
         {
             GetComponent<MeshFilter>().sharedMesh = _smallWall;
-            //GetComponent<MeshCollider>().sharedMesh = _smallWall;
         }
-
-        Debug.Log($"{value} {Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized} {Vector3.ProjectOnPlane(camera.transform.forward, Vector3.up).normalized}");
     }
 }
