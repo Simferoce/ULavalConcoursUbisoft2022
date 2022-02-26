@@ -26,7 +26,7 @@ public class Incapacited : State
     {
         _navMeshAgent.isStopped = true;
 
-        if(Time > 0)
+        if(Time > 0 && _bubbleText != null)
         {
             _bubbleText.ShowMessage(2, Time);
         }
@@ -50,5 +50,6 @@ public class Incapacited : State
 
         _navMeshAgent.isStopped = false;
         ChangeState(_resumeState);
+        
     }
 }

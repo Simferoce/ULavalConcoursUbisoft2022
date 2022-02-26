@@ -32,6 +32,7 @@ public class ChargeSkill : Skill
         _charge.MaxRange = _maxRange;
         _incapacited.OnStateDisable += OnIncapicitedStateDisable;
         _charge.OnStateDisable += _charge_OnStateDisable;
+        _lastUse = Time.time - _cooldown;
     }
 
     private void _charge_OnStateDisable()

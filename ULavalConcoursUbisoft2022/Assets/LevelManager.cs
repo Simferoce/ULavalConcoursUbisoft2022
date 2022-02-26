@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private string _bossWingName = "";
     [SerializeField] private string _safeZoneName = "";
     [SerializeField] private GameObject _playerPrefab = null;
+    [SerializeField] private NavMeshSurface _navMeshSurfaces = null;
 
     private LowerWall[] _walls = null;
     private void Awake()
@@ -18,8 +20,8 @@ public class LevelManager : MonoBehaviour
 
         List<int> randomWings = GenerateRandomsWithoutRepeat(2, _wingsName.Count);
 
-        SceneManager.LoadScene(_wingsName[0], LoadSceneMode.Additive);
-        SceneManager.LoadScene(_wingsName[1], LoadSceneMode.Additive);
+        SceneManager.LoadScene(_wingsName[randomWings[0]], LoadSceneMode.Additive);
+        SceneManager.LoadScene(_wingsName[randomWings[1]], LoadSceneMode.Additive);
     }
 
     private void Start()
@@ -41,6 +43,8 @@ public class LevelManager : MonoBehaviour
         {
             wall.UpdateWall();
         }
+
+        _navMeshSurfaces.BuildNavMesh();
     }
 
     private List<int> GenerateRandomsWithoutRepeat(int numberOfChoosen, int size)
