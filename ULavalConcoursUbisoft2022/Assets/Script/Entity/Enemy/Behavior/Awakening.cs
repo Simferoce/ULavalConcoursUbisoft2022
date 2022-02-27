@@ -19,7 +19,6 @@ public class Awakening : State
 
     [Header("Reference")]
     [SerializeField] private Entity _entity = null;
-    [SerializeField] private Player _player = null;
     [SerializeField] private bool _randomizePosition = false;
 
     [Header("State")]
@@ -28,6 +27,7 @@ public class Awakening : State
     private float _energy = 0.0f;
     private int _numberSpawned = 0;
     private float _enteredTime = 0.0f;
+    private Player _player = null;
 
     public float Energy { get => _energy; set => _energy = value; }
 
@@ -35,7 +35,7 @@ public class Awakening : State
 
     protected override void Init()
     {
-
+        _player = GameObject.FindObjectOfType<Player>();
     }
 
     protected override void OnEnter()

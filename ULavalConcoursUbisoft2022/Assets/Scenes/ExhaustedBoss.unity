@@ -287,51 +287,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198289612}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &241482043
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 241482045}
-  - component: {fileID: 241482044}
-  m_Layer: 0
-  m_Name: BossArena
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &241482044
+--- !u!65 &241482044 stripped
 BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6920339225523416209, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+  m_PrefabInstance: {fileID: 6920339225294591405}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241482043}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 25, y: 1, z: 25}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &241482045
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241482043}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &275006334
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +338,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6454034, y: 1}
+    m_SensorSize: {x: 1.8220974, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1334,6 +1294,8 @@ MonoBehaviour:
   _health: {fileID: 1323868708}
   team: 1
   root: {fileID: 598972124}
+  _colliders: {fileID: 0}
+  _visual: {fileID: 0}
   _characterController: {fileID: 598972126}
 --- !u!136 &1323868710
 CapsuleCollider:
@@ -1605,3 +1567,60 @@ PrefabInstance:
       objectReference: {fileID: 241482044}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+--- !u!1001 &6920339225294591405
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416208, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920339225523416214, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
+      propertyPath: m_Name
+      value: BossArena
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0331a7c751f36b41a0156c902b7e765, type: 3}
