@@ -8,8 +8,6 @@ public class BubbleText : MonoBehaviour
     [SerializeField] private Canvas _canvas = null;
     [SerializeField] private TextMeshProUGUI _text = null;
     [SerializeField] private Vector3 _offSet = Vector3.zero;
-    [SerializeField] private Vector2 ClampX = Vector2.zero;
-    [SerializeField] private Vector2 ClampY = Vector2.zero;
 
     private Camera _camera = null;
     private float _endMessage = 0.0f;
@@ -29,7 +27,7 @@ public class BubbleText : MonoBehaviour
 
     public static Dictionary<int, Message> messages = new Dictionary<int, Message>()
     {
-        {0, new Message() {Id = 0, Source = Source.Unknow, Text = "What ?!? A new assignment !?", Duration = 3000.0f } },
+        {0, new Message() {Id = 0, Source = Source.Unknow, Text = "What ?!? A new assignment !?", Duration = 3.0f } },
         {1, new Message() {Id = 1, Source = Source.Unknow, Text = "Don't you think we did enough !? We are exhauted of all those SPECIALS measures. ", Duration = 3.0f } },
         {2, new Message() {Id = 2, Source = Source.Unknow, Text = "I cannot ... conti...", Duration = 2.0f } },
         {3, new Message() {Id = 3, Source = Source.Unknow, Text = "ARGGGGHHH !!!", Duration = 2.0f } },
