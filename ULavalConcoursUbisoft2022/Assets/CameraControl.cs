@@ -44,6 +44,16 @@ public class CameraControl : MonoBehaviour
         if(!_focus)
         {
             Vector3 viewportPosition = _mainCamera.ScreenToViewportPoint(Input.mousePosition);
+            Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+
+            float enter = 0.0f;
+            if (_plane.Raycast(ray, out enter))
+            {
+                Vector3 hitPoint = ray.GetPoint(enter);
+
+                _aim.position = hitPoint;
+            }
+
             if (Vector2.Distance(new Vector2(viewportPosition.x, viewportPosition.y), new Vector2(0.5f, 0.5f)) > _borderRadius)
             {
                 _virtualCamera.Follow = _cameraTarget;
@@ -51,16 +61,6 @@ public class CameraControl : MonoBehaviour
 
                 _virtualUICamera.Follow = _cameraTarget;
                 _virtualUICamera.LookAt = _cameraTarget;
-
-                Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-
-                float enter = 0.0f;
-                if (_plane.Raycast(ray, out enter))
-                {
-                    Vector3 hitPoint = ray.GetPoint(enter);
-
-                    _aim.position = hitPoint;
-                }
             }
             else
             {

@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
 
     public bool Invicible { get => _invicible; set => _invicible = value; }
 
-    public event Action<Health> OnDeath;
+    public UnityEvent<Health> OnDeath;
     public event Action<Health, float> OnDamage;
 
     public void Awake()

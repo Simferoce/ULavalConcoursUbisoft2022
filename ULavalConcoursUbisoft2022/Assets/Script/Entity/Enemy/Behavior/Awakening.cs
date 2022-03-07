@@ -95,7 +95,7 @@ public class Awakening : State
             GameObject minion = Instantiate(_minionPrefab, spawnPosition, Quaternion.identity);
 
             Health health = minion.GetComponentInChildren<Health>();
-            health.OnDeath += MinionOnDeath;
+            health.OnDeath.AddListener(MinionOnDeath);
             canSpawnIndex.RemoveAt(regionToSpawn);
 
             _minionsStatus.Add(health);
@@ -107,7 +107,7 @@ public class Awakening : State
     private void MinionOnDeath(Health health)
     {
         _minionsStatus.Remove(health);
-        health.OnDeath -= MinionOnDeath;
+        health.OnDeath.RemoveListener(MinionOnDeath);
     }
 
     protected override void OnExit()

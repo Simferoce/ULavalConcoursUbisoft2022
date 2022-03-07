@@ -13,7 +13,7 @@ public class DeathScreen : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<Player>();
         health = player.GetComponentInChildren<Health>();
-        health.OnDeath += Health_OnDeath; 
+        health.OnDeath.AddListener(Health_OnDeath); 
         DeathMessage.SetActive(false);
         
         
@@ -32,6 +32,6 @@ public class DeathScreen : MonoBehaviour
     }
     private void OnDestroy()
     {
-        health.OnDeath -= Health_OnDeath; 
+        health.OnDeath.RemoveListener(Health_OnDeath); 
     }
 }

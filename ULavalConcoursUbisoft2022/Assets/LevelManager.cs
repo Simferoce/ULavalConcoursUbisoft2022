@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Linq;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -29,7 +30,7 @@ public class LevelManager : MonoBehaviour
         List<Vector3> direction = new List<Vector3>() { Vector3.right, Vector3.forward, Vector3.left, Vector3.back };
         List<int> randomOrder = GenerateRandomsWithoutRepeat(4, 4);
         
-        WingRoot[] wingRoots = GameObject.FindObjectsOfType<WingRoot>();
+        WingRoot[] wingRoots = GameObject.FindObjectsOfType<WingRoot>().Where(x => x.SceneName != "hub").ToArray();
         wingRoots[0].transform.rotation = Quaternion.LookRotation(direction[randomOrder[0]], Vector3.up);
         wingRoots[1].transform.rotation = Quaternion.LookRotation(direction[randomOrder[1]], Vector3.up);
         wingRoots[2].transform.rotation = Quaternion.LookRotation(direction[randomOrder[2]], Vector3.up);

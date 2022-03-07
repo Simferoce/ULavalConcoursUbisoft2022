@@ -33,7 +33,6 @@ public class AOELineIndicator : Indicator
             float fullSize = _size.y;
 
             Vector3 positionAtGroundLevel = new Vector3(transform.position.x, _groundHeight + 0.1f, transform.position.z);
-            Debug.DrawLine(positionAtGroundLevel, positionAtGroundLevel + transform.parent.forward * _size.y, Color.blue, 1);
             RaycastHit hit;
             if (Physics.Raycast(positionAtGroundLevel, transform.parent.forward, out hit, _size.y, LayerMask.GetMask("Wall")))
             {
