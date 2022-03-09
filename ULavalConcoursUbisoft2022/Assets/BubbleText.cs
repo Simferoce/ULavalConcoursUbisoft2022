@@ -39,8 +39,6 @@ public class BubbleText : MonoBehaviour
 
         AlignToCameraAngleYZAxis();
         _canvas.transform.localPosition = _canvas.transform.localRotation * _offSet;
-
-        ShowMessage(0);
     }
 
     private void AlignToCameraAngleYZAxis()
@@ -48,7 +46,12 @@ public class BubbleText : MonoBehaviour
         _canvas.transform.rotation = Quaternion.Euler(Vector3.Scale((Quaternion.Inverse(_camera.transform.rotation)).eulerAngles, new Vector3(0, 1, 1)));
     }
 
-    public void ShowMessage(int id, float duration = -1)
+    public void ShowMessage(int id)
+    {
+        ShowMessage(id, -1);
+    }
+
+    public void ShowMessage(int id, float duration)
     {
         Message message;
         if(messages.TryGetValue(id, out message))

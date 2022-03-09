@@ -134,6 +134,9 @@ MonoBehaviour:
   _healthPoint: 0
   _animation: {fileID: 6703604898258875591}
   _invicible: 0
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6703604898203015245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6703604898745892523}
+  - component: {fileID: 4146185797121269101}
   - component: {fileID: 6703604898745892524}
   - component: {fileID: 6703604898745892525}
   - component: {fileID: 6703604898745892527}
@@ -288,6 +292,24 @@ Transform:
   m_Father: {fileID: 6703604899127183380}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4146185797121269101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703604898745892522}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f72a868bced3864fa2fea656b9ca30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextState: {fileID: 6703604898745892524}
+  _duration: 2
+  _entity: {fileID: 6703604898203015243}
+  OnEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6703604898745892524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,4 +559,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08553417a004d0740a75167df7ecb1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntryPoint: {fileID: 6703604898745892524}
+  EntryPoint: {fileID: 4146185797121269101}

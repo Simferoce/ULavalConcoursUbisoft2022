@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StartAnim : State
 {
     [SerializeField] private State _nextState = null;
     [SerializeField] private float _duration = 0.0f;
     [SerializeField] private Entity _entity = null;
-    [SerializeField] private BubbleText _bubbleText = null;
 
+    public UnityEvent OnEnterEvent;
     private CameraControl _cameraControl = null;
     private Player _player = null;
 
@@ -20,7 +21,7 @@ public class StartAnim : State
 
     protected override void OnEnter()
     {
-        _bubbleText.ShowMessage(0);
+        OnEnterEvent?.Invoke();
         StartCoroutine(ChangeStateAfterAMoment());
     }
 

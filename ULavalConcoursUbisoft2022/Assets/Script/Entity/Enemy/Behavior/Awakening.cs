@@ -11,11 +11,7 @@ public class Awakening : State
     [SerializeField] private float _personalSpace = 0.0f;
     [SerializeField] private GameObject _minionPrefab = null;
     [SerializeField] private float _numberOfSpawns = 0;
-    [SerializeField] private float _maxEnergy = 0.0f;
-    [SerializeField] private float _energyPerSecondPerAlive = 0.0f;
     [SerializeField] private Vector2 _delaySpawn = Vector2.zero;
-    [SerializeField] private float _maxTimeAwakening = 0.0f;
-    [SerializeField] private bool _skipPhase = false;
 
     [Header("Reference")]
     [SerializeField] private Entity _entity = null;
@@ -43,12 +39,6 @@ public class Awakening : State
         _entity.Health.Invicible = true;
 
         _numberSpawned = 0;
-
-        if (_skipPhase)
-        {
-            _energy = _maxEnergy;
-            return;
-        }
 
         _enteredTime = Time.time;
         StartCoroutine(SpawnMinions());
@@ -117,9 +107,7 @@ public class Awakening : State
 
     protected override void OnUpdate()
     {
-        _energy += _minionsStatus.Count * _energyPerSecondPerAlive * Time.deltaTime;
-
-        if(_energy >= _maxEnergy || (_minionsStatus.Count == 0 && _numberSpawned == _numberOfSpawns) || Time.time - _enteredTime > _maxTimeAwakening)
+        if((_minionsStatus.Count == 0 && _numberSpawned == _numberOfSpawns))
         {
             foreach(Health health in _minionsStatus.ToList())
             {

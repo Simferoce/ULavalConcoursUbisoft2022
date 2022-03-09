@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &415337187081637734
 Transform:
   m_ObjectHideFlags: 0
@@ -126,6 +126,8 @@ MonoBehaviour:
   _health: {fileID: 415337187541255126}
   team: 2
   root: {fileID: 415337187081637734}
+  _colliders: {fileID: 0}
+  _visual: {fileID: 0}
   _characterController: {fileID: 0}
 --- !u!54 &415337187541255112
 Rigidbody:
@@ -159,6 +161,33 @@ MonoBehaviour:
   _healthPoint: 0
   _animation: {fileID: 415337187081637787}
   _invicible: 0
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!136 &415337187541255117
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -219,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08553417a004d0740a75167df7ecb1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntryPoint: {fileID: 415337188621807974}
+  EntryPoint: {fileID: 2902687811957694640}
 --- !u!1 &415337188621807972
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415337188621807975}
+  - component: {fileID: 2902687811957694640}
   - component: {fileID: 415337188621807974}
   - component: {fileID: 415337188621807961}
   - component: {fileID: 415337188621807960}
@@ -254,6 +284,24 @@ Transform:
   m_Father: {fileID: 415337187575507052}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2902687811957694640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415337188621807972}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f72a868bced3864fa2fea656b9ca30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextState: {fileID: 415337188621807974}
+  _duration: 2
+  _entity: {fileID: 415337187541255115}
+  OnEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &415337188621807974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,17 +315,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnRegion: {fileID: 0}
-  _subRegionSize: {x: 6, y: 6}
-  _personalSpace: 6
+  _subRegionSize: {x: 3, y: 3}
+  _personalSpace: 3
   _minionPrefab: {fileID: 879859618141079407, guid: 13a777af0682a5845ab80db7c90652ac, type: 3}
   _numberOfSpawns: 4
-  _maxEnergy: 100
-  _energyPerSecondPerAlive: 1
   _delaySpawn: {x: 0, y: 1}
-  _maxTimeAwakening: 30
-  _skipPhase: 0
   _entity: {fileID: 415337187541255115}
-  _player: {fileID: 0}
   _randomizePosition: 1
   _transcendentState: {fileID: 415337188621807961}
 --- !u!114 &415337188621807961
@@ -405,8 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dc07bbdb375014ca1eb20f6e81f8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _awakening: {fileID: 415337188621807974}
-  _energyPerShot: 5
+  _numberOfProjectile: 3
   _projectile: {fileID: 8739260302490239990, guid: 090da76c505991c40b2fc1536f751431, type: 3}
   _entity: {fileID: 415337187541255115}
   _delayBetweenEachShot: {x: 1, y: 1}
