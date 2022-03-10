@@ -125,7 +125,7 @@ MonoBehaviour:
   _virtualUICamera: {fileID: 2016799304006799592}
   _aim: {fileID: 5951358263907911019}
   _mainCamera: {fileID: 5951358264519969148}
-  _borderRadius: 0.4
+  _borderRadius: 0.35
 --- !u!1 &5951358263060836382
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5951358263060836382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.78}
+  m_LocalPosition: {x: 0, y: 0, z: 2.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -757,9 +757,11 @@ MonoBehaviour:
   _healthPoint: 0
   _animation: {fileID: 5951358263233617756}
   _invicible: 0
+  _floorHealthLoss: 0
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  onHealthBelowThreasholdEvents: []
 --- !u!54 &5951358264766311330
 Rigidbody:
   m_ObjectHideFlags: 0
