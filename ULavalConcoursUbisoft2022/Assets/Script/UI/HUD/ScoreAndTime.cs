@@ -13,8 +13,8 @@ public class ScoreAndTime : MonoBehaviour
     private float score = 0f;
     private void Start()
     {
-        timeCounter.text = "Time :00:00";
-        ScoreCounter.text = "Score : 0";
+        timeCounter.text = "00:00";
+        ScoreCounter.text = "0";
         InvokeRepeating("Addpoint", 5.0f,5.0f);
     }
     
@@ -31,13 +31,13 @@ public class ScoreAndTime : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(timer / 60.0f);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
-        timeCounter.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+        timeCounter.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     void Addpoint()
     {
         
         score += 5;
-        ScoreCounter.text = string.Format("Score: {0000} ", score);
+        ScoreCounter.text = string.Format("{0000} ", score);
     }
 }

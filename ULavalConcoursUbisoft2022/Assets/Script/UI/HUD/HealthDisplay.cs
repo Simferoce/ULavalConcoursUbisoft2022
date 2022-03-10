@@ -19,13 +19,13 @@ public class HealthDisplay : MonoBehaviour
         player = GameObject.FindObjectOfType<Player>();
         health = player.GetComponentInChildren<Health>();
         health.OnDamage += Health_OnDamage;
-        
+        slider.value = 0;
     }
 
     private void Health_OnDamage(Health arg1, float arg2)
     {
         currentHealth = health.HealthPoint;
-        slider.value = currentHealth;
+        slider.value = maxHealth-currentHealth;
     }
 
     private void OnDestroy()
