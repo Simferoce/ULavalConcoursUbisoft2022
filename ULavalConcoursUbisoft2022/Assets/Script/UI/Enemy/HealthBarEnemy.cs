@@ -5,21 +5,33 @@ using UnityEngine.UI;
 
 public class HealthBarEnemy : MonoBehaviour
 {
-    public Image healthbarSprite;
-    public Camera cam;
+    [SerializeField] private Image _healthbarSprite;
+    [SerializeField] private Health _health = null;
+    private Camera _cam;
+
+
+    private void Awake()
+    {
+        _health.OnDamage += UpdateHealth;
+    }
+
     private void Start()
     {
-        cam = Camera.main;
-
+        _cam = Camera.main;
     }
 
     public void Update()
     {
-        transform.rotation = Quaternion.LookRotation(transform.position - cam.transform.position);
+        transform.rotation = Quaternion.LookRotation(transform.position - _cam.transform.position);
     }
-    public void UpdateHealthBar(float maxHealth, float currentHealth)
-    {
-        healthbarSprite.fillAmount = currentHealth / maxHealth;
 
+    public void UpdateHealth(Health health, float damage)
+    {
+        _healthbarSprite.fillAmount = health.HealthPoint / health.MaxHealth;
+    }
+
+    private void OnDestroy()
+    {
+        _health.OnDamage -= UpdateHealth;
     }
 }
