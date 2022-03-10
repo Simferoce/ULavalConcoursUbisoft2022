@@ -57,8 +57,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7939697166039238758}
   - component: {fileID: 6050447336392210748}
+  - component: {fileID: 298482721}
   - component: {fileID: 7939697166039238752}
   - component: {fileID: 7939697166039238753}
+  - component: {fileID: 298482722}
   m_Layer: 7
   m_Name: Behavior
   m_TagString: Untagged
@@ -93,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f72a868bced3864fa2fea656b9ca30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextState: {fileID: 7939697166039238752}
+  _nextState: {fileID: 298482721}
   _duration: 3
   _entity: {fileID: 7939697166918184582}
   OnEnterEvent:
@@ -111,6 +113,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &298482721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7939697166039238759}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a63897849e14945bf1139c4c7528f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _priorityStates:
+  - Priority: 0
+    State: {fileID: 298482722}
+  - Priority: 1
+    State: {fileID: 7939697166039238752}
 --- !u!114 &7939697166039238752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +159,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skills:
   - {fileID: 7939697167648763002}
-  _resumeState: {fileID: 7939697166039238752}
+  _resumeState: {fileID: 298482721}
+--- !u!114 &298482722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7939697166039238759}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5f63c34b4728047926bcb5b1867c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _setNumbersOfSummonTo: 3
+  _percentageTriggerState: 0.6
+  _summonSkill: {fileID: 7939697166718074616}
+  _bubbleText: {fileID: 8216986254475984236}
+  _health: {fileID: 7939697166918184577}
+  _nextState: {fileID: 7939697166039238752}
 --- !u!1 &7939697166178890893
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +485,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHealthBelowThreasholdEvents: []
 --- !u!136 &7939697166918184579
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -684,6 +722,10 @@ PrefabInstance:
       propertyPath: _entity
       value: 
       objectReference: {fileID: 7939697166918184582}
+    - target: {fileID: 6543582225029129596, guid: 422a6fb4e42175d418a699f5c2fda77e, type: 3}
+      propertyPath: _numberToSummon
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6543582225029129597, guid: 422a6fb4e42175d418a699f5c2fda77e, type: 3}
       propertyPath: m_RootOrder
       value: 2

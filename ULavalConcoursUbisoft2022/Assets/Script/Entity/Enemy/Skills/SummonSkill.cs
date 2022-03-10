@@ -20,6 +20,8 @@ public class SummonSkill : Skill
     [SerializeField] private Entity _entity = null;
     [SerializeField] private List<SpawnGroup> _spawns = new List<SpawnGroup>();
 
+    public int NumberToSummon { get => _numberToSummon; set => _numberToSummon = value; }
+
     public override bool CanUse()
     {
         return true;

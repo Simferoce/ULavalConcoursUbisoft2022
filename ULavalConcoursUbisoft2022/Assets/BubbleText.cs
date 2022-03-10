@@ -14,12 +14,14 @@ public class BubbleText : MonoBehaviour
 
     public enum Source
     {
+        Depression,
+        Exhaustion,
+        Wrath,
         Unknow
     }
 
     public struct Message
     {
-        public int Id;
         public Source Source;
         public string Text;
         public float Duration;
@@ -27,10 +29,21 @@ public class BubbleText : MonoBehaviour
 
     public static Dictionary<int, Message> messages = new Dictionary<int, Message>()
     {
-        {0, new Message() {Id = 0, Source = Source.Unknow, Text = "What ?!? A new assignment !?", Duration = 3.0f } },
-        {1, new Message() {Id = 1, Source = Source.Unknow, Text = "Don't you think we did enough !? We are exhauted of all those SPECIALS measures. ", Duration = 3.0f } },
-        {2, new Message() {Id = 2, Source = Source.Unknow, Text = "I cannot ... conti...", Duration = 2.0f } },
-        {3, new Message() {Id = 3, Source = Source.Unknow, Text = "ARGGGGHHH !!!", Duration = 2.0f } },
+        {0, new Message() {Source = Source.Wrath, Text = "What ?!? A new assignment !?", Duration = 3.0f } },
+        {1, new Message() {Source = Source.Wrath, Text = "Yeah. Give us more work because of the \"exceptional\" circumstances.", Duration = 3.0f } },
+        {2, new Message() {Source = Source.Wrath, Text = "I cannot ... conti...", Duration = 2.0f } },
+        {3, new Message() {Source = Source.Wrath, Text = "ARGGGGHHH !!!", Duration = 2.0f } },
+        {4, new Message() {Source = Source.Exhaustion, Text = "I need zzzzz to work zzzzzz", Duration = 2.0f } },
+        {5, new Message() {Source = Source.Exhaustion, Text = "No ! I was not sleeping.", Duration = 2.0f } },
+        {6, new Message() {Source = Source.Exhaustion, Text = "So much work... I need to stay awake...", Duration = 2.0f } },
+        {7, new Message() {Source = Source.Depression, Text = "There is nothing to do. Everybody is sick, everything is close.", Duration = 4.0f } },
+        {8, new Message() {Source = Source.Depression, Text = "The only thing that have not change is the amount of work.", Duration = 4.0f } },
+        {9, new Message() {Source = Source.Depression, Text = "I am lonely. Only my thoughts are staying with me.", Duration = 4.0f } },
+        {10, new Message() {Source = Source.Depression, Text = "My only friend is the darkness inside me.", Duration = 4.0f } },
+        {11, new Message() {Source = Source.Depression, Text = "There is no purpose.", Duration = 4.0f } },
+        {12, new Message() {Source = Source.Depression, Text = "It is futile to stuggle.", Duration = 4.0f } },
+        {13, new Message() {Source = Source.Depression, Text = "Empty. Drain. Tarnish.", Duration = 4.0f } },
+        {14, new Message() {Source = Source.Depression, Text = "Nothing matters; School, Love, Friends all is ephemeral.", Duration = 4.0f } },
     };
 
     private void Start()

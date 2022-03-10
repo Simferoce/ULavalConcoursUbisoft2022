@@ -5,13 +5,16 @@ using UnityEngine.AI;
 
 public class BackToWork : Skill
 {
+    [Header("Parameters")]
     [SerializeField] private float _duration = 0.0f;
-    [SerializeField] private State _onWorkDone = null;
-    [SerializeField] private State _doWork = null;
-
     [SerializeField] private Vector2 _rangeSlowDown = Vector2.zero;
+
+    [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
     [SerializeField] private ProximityStrikeSkill _proximityStrikeSkill = null;
+    [SerializeField] private BubbleText _bubbleText = null;
+    [SerializeField] private State _onWorkDone = null;
+    [SerializeField] private State _doWork = null;
 
     private bool _working = false;
     private float _onWorkStart = 0.0f;
@@ -50,6 +53,7 @@ public class BackToWork : Skill
            _navMeshAgent.speed = _originalSpeed;
             _proximityStrikeSkill.PowerUp.PowerUpTime = _originalPowerUpTime;
 
+            _bubbleText.ShowMessage(6);
             InvokeOnSkillFinish();
             _working = false;
         }

@@ -22,8 +22,6 @@ public class FrenzyChargeSkill : Skill
     private float _originPowerUpTime = 0.0f;
     private int _numberOfChargeDone = 0;
 
-    private int _numberOfTimeSkillUsed = 0;
-
     private void Awake()
     {
         _charge.Charge.OnStateDisable += Charge_OnStateDisable;
@@ -71,13 +69,6 @@ public class FrenzyChargeSkill : Skill
 
     public override void Use()
     {
-        if(_numberOfTimeSkillUsed == 2)
-        {
-            _bubbleText.ShowMessage(1);
-        }
-
-        _numberOfTimeSkillUsed++;
-
         _entity.Health.Invicible = true;
         _originAccelaration = _charge.Charge.Acceleration;
         _originSpeed = _charge.Charge.Speed;
