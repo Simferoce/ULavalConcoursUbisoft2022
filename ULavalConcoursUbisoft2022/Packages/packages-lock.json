@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.lootlocker.lootlockersdk": {
+      "version": "file:C:/Users/maxim/Desktop/leaderboard/unity-sdk-main",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "2.0.0"
+      }
+    },
     "com.unity.burst": {
       "version": "1.6.3",
       "depth": 1,
