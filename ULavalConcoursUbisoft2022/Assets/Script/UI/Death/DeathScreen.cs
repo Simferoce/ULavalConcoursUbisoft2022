@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeathScreen : MonoBehaviour
 {
     public GameObject Camera;
-    public GameObject DeathMessage;
+    
     private Player player = null;
     private Health health = null;
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class DeathScreen : MonoBehaviour
         player = GameObject.FindObjectOfType<Player>();
         health = player.GetComponentInChildren<Health>();
         health.OnDeath.AddListener(Health_OnDeath); 
-        DeathMessage.SetActive(false);
+        
         
         
     }
@@ -27,7 +27,7 @@ public class DeathScreen : MonoBehaviour
     //get called when the player die
     public void OnDie()
     {
-        DeathMessage.SetActive(true);
+        
         Camera.transform.position = Camera.transform.position + new Vector3(30, 30, 30);
     }
     private void OnDestroy()
