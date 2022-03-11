@@ -17,7 +17,7 @@ public class AOECircleIndicator : Indicator
             float _percentageTimeBeforeImpact = (Time.time - _startTime) / _timeBeforeImpact;
             if (_percentageTimeBeforeImpact > 1)
             {
-                Destroy(this.transform.parent.gameObject);
+                Destroy(_source);
             }
             else
             {
