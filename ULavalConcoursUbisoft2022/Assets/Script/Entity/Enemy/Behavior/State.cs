@@ -5,8 +5,8 @@ using UnityEngine;
 
 public abstract class State : MonoBehaviour
 {
-    public event Action OnStateDisable;
-    public event Action OnStateEnable;
+    public event Action<State> OnStateDisable;
+    public event Action<State> OnStateEnable;
 
     protected abstract void Init();
     protected abstract void OnEnter();
@@ -18,26 +18,29 @@ public abstract class State : MonoBehaviour
         Init();
     }
 
-    private void OnEnable()
-    {
-        OnEnter();
-        OnStateEnable?.Invoke();
-    }
+    private bool _hasEnter = false;
 
     private void Update()
     {
+        if(!_hasEnter)
+        {
+            _hasEnter = true;
+            OnEnter();
+            OnStateEnable?.Invoke(this);
+        }
         OnUpdate();
     }
 
     private void OnDisable()
     {
+        _hasEnter = false;
         OnExit();
     }
 
     protected void ChangeState(State newState)
     {
         this.enabled = false;
-        OnStateDisable?.Invoke();
+        OnStateDisable?.Invoke(this);
 
         if (newState != null)
         {

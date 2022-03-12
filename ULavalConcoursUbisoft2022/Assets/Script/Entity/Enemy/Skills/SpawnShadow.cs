@@ -17,10 +17,13 @@ public class SpawnShadow : Skill
     private void Awake()
     {
         _player = GameObject.FindObjectOfType<Player>();
-        _disableOnStateDisabled.OnStateDisable += _whenInState_OnStateDisable; ;
+        if(_disableOnStateDisabled != null)
+        {
+            _disableOnStateDisabled.OnStateDisable += _whenInState_OnStateDisable;
+        }
     }
 
-    private void _whenInState_OnStateDisable()
+    private void _whenInState_OnStateDisable(State state)
     {
         enabled = false;
     }

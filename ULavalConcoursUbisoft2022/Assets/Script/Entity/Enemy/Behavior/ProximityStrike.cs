@@ -28,6 +28,7 @@ public class ProximityStrike : State
         attack.Team = Entity.Team.Foe;
         SphereCollider collider = attackObject.GetComponentInChildren<SphereCollider>();
         collider.radius = _radius;
+        collider.enabled = true;
 
         ChangeState(_returnState);
     }

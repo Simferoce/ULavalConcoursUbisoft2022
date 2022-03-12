@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private NavMeshSurface _navMeshSurfaces = null;
 
     private LowerWall[] _walls = null;
+
     private void Awake()
     {
         SceneManager.LoadScene(_bossWingName, LoadSceneMode.Additive);
@@ -36,14 +37,13 @@ public class LevelManager : MonoBehaviour
         wingRoots[2].transform.rotation = Quaternion.LookRotation(direction[randomOrder[2]], Vector3.up);
         wingRoots[3].transform.rotation = Quaternion.LookRotation(direction[randomOrder[3]], Vector3.up);
 
-        PlayerSpawnPoint playerSpawnPoint = GameObject.FindObjectOfType<PlayerSpawnPoint>();
-        Instantiate(_playerPrefab, playerSpawnPoint.transform.position, Quaternion.identity);
-
-        _walls = GameObject.FindObjectsOfType<LowerWall>();
-        foreach (LowerWall wall in _walls)
+        foreach(WingRoot wing in GameObject.FindObjectsOfType<WingRoot>())
         {
-            wall.UpdateWall();
+            wing.SingleWingScene = false;
         }
+
+        PlayerSpawnPoint playerSpawnPoint = GameObject.FindObjectsOfType<PlayerSpawnPoint>().FirstOrDefault(x => x.MainSpawnPoint);
+        Instantiate(_playerPrefab, playerSpawnPoint.transform.position, Quaternion.identity);
 
         _navMeshSurfaces.BuildNavMesh();
     }

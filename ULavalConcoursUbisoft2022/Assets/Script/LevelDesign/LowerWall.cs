@@ -9,9 +9,15 @@ public class LowerWall : MonoBehaviour
 
     private Mesh _originalMesh = null;
     private MeshFilter _meshFilter = null;
-    private void Awake()
+    private void Start()
     {
         _meshFilter = GetComponentInChildren<MeshFilter>();
+        StartCoroutine(UpdateWallCoroutine());
+    }
+
+    private IEnumerator UpdateWallCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
         UpdateWall();
     }
 
