@@ -3191,6 +3191,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 622044396953304450, guid: f5f79312797c1794690d60900c17ee1f, type: 3}
   m_PrefabInstance: {fileID: 960924246}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &334004834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.793
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.157
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.02162954
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.60659945
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7946845
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0067655304
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.887
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 182.441
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -74.692
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
+      propertyPath: m_Name
+      value: lowpoly_chair
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbb5e096b2fe725429693c52e25b2653, type: 3}
 --- !u!1001 &336375703
 PrefabInstance:
   m_ObjectHideFlags: 0
