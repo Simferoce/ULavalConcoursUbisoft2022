@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class popupitem : MonoBehaviour
 {
+   
     public GameObject popup;
+
+    
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.name == "Body")
@@ -22,7 +25,6 @@ public class popupitem : MonoBehaviour
         popup.SetActive(true);
         Time.timeScale = 0f;
         
-
     }
     public void OnSelection()
     {
