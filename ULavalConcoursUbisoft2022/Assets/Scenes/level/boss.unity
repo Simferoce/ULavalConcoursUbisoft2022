@@ -12413,9 +12413,9 @@ Transform:
   - {fileID: 863823094}
   - {fileID: 1458389514}
   - {fileID: 329494420}
+  - {fileID: 1617149365}
   - {fileID: 1728131842}
   - {fileID: 2000928986}
-  - {fileID: 1617149365}
   - {fileID: 226013691}
   - {fileID: 1588260264}
   - {fileID: 1015597358}
@@ -19196,7 +19196,7 @@ Transform:
   m_Children:
   - {fileID: 295905639}
   m_Father: {fileID: 1004250474}
-  m_RootOrder: 28
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1001 &1622179708
 PrefabInstance:
@@ -24836,6 +24836,10 @@ PrefabInstance:
     - target: {fileID: 567771077104879479, guid: 3db4e71383ff7f549ab4d04f776b4174, type: 3}
       propertyPath: m_Name
       value: Final Boss - (Depression - Exhaustion)
+      objectReference: {fileID: 0}
+    - target: {fileID: 567771077104879479, guid: 3db4e71383ff7f549ab4d04f776b4174, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 567771077250794189, guid: 3db4e71383ff7f549ab4d04f776b4174, type: 3}
       propertyPath: OnEnterEvent.m_PersistentCalls.m_Calls.Array.size

@@ -14,5 +14,13 @@ public class Weapon : ScriptableObject
     [SerializeField] private float _randomDelay = 0.0f;
     public float RandomDelay { get => _randomDelay; set => _randomDelay = value; }
 
+    public enum WeaponType
+    {
+        Melee,
+        Ranged
+    }
+
+    [SerializeField] private WeaponType _type = WeaponType.Melee;
+    public WeaponType Type { get => _type; set => _type = value; }
 
 }
