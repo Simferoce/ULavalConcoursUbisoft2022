@@ -8,11 +8,13 @@ public class CameraControl : MonoBehaviour
     [SerializeField] private Transform _cameraTarget = null;
     [SerializeField] private Transform _player = null;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera = null;
-    [SerializeField] private CinemachineVirtualCamera _virtualUICamera = null;
     [SerializeField] private Transform _aim = null;
     [SerializeField] private Camera _mainCamera = null;
-    [Tooltip("In screen space coordinate (0...1) (0...1)")]
-    [SerializeField] private float _borderRadius = 0.0f;
+
+    [Tooltip("In viewport distance")][Range(0, 1)]
+    [SerializeField] private float _radiusBeforeMoving = 0.0f;
+    [Tooltip("In viewport distance")][Range(0, 1)]
+    [SerializeField] private float _maxViewDistance = 0.0f;
 
     private Plane _plane = new Plane(Vector3.up, -1);
     private bool _focus = false;
@@ -22,9 +24,6 @@ public class CameraControl : MonoBehaviour
         _virtualCamera.Follow = transform;
         _virtualCamera.LookAt = transform;
 
-        _virtualUICamera.Follow = transform;
-        _virtualUICamera.LookAt = transform;
-
         _focus = true;
     }
 
@@ -32,9 +31,6 @@ public class CameraControl : MonoBehaviour
     {
         _virtualCamera.Follow = _cameraTarget;
         _virtualCamera.LookAt = _cameraTarget;
-
-        _virtualUICamera.Follow = _cameraTarget;
-        _virtualUICamera.LookAt = _cameraTarget;
 
         _focus = false;
     }
@@ -46,31 +42,38 @@ public class CameraControl : MonoBehaviour
             Vector3 viewportPosition = _mainCamera.ScreenToViewportPoint(Input.mousePosition);
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
-            float enter = 0.0f;
-            if (_plane.Raycast(ray, out enter))
+            _aim.position = GetWorldPosition(ray);
+
+
+            float distanceMousePlayer = Vector2.Distance(new Vector2(viewportPosition.x, viewportPosition.y), new Vector2(0.5f, 0.5f));
+            if (distanceMousePlayer > _radiusBeforeMoving)
             {
-                Vector3 hitPoint = ray.GetPoint(enter);
+                Vector3 playerPositionViewport = Vector3.Scale(_mainCamera.WorldToViewportPoint(_player.position), new Vector3(1, 1, 0));
+                Vector3 mouseviewportPosition = _mainCamera.ScreenToViewportPoint(Input.mousePosition);
 
-                _aim.position = hitPoint;
-            }
+                Vector3 direction = mouseviewportPosition - new Vector3(0.5f, 0.5f);
+                Vector3 cameraTargetViewportPosition = playerPositionViewport + direction.normalized * Mathf.Clamp(direction.magnitude - _radiusBeforeMoving, 0, _maxViewDistance);
 
-            if (Vector2.Distance(new Vector2(viewportPosition.x, viewportPosition.y), new Vector2(0.5f, 0.5f)) > _borderRadius)
-            {
-                _virtualCamera.Follow = _cameraTarget;
-                _virtualCamera.LookAt = _cameraTarget;
-
-                _virtualUICamera.Follow = _cameraTarget;
-                _virtualUICamera.LookAt = _cameraTarget;
+                _cameraTarget.position = GetWorldPosition(_mainCamera.ViewportPointToRay(cameraTargetViewportPosition));
             }
             else
             {
-                _virtualCamera.Follow = _player;
-                _virtualCamera.LookAt = _player;
-
-                _virtualUICamera.Follow = _player;
-                _virtualUICamera.LookAt = _player;
+                _cameraTarget.position = _player.transform.position;
             }
         }
+    }
+
+    private Vector3 GetWorldPosition(Ray ray)
+    {
+        float enter = 0.0f;
+        if (_plane.Raycast(ray, out enter))
+        {
+            Vector3 hitPoint = ray.GetPoint(enter);
+
+            return hitPoint;
+        }
+
+        return Vector3.zero;
     }
 
     void OnDrawGizmos()

@@ -7,7 +7,6 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] private Entity _entity = null;
     [SerializeField] private Animator _animator = null;
     [SerializeField] private Transform _aim;
-    [SerializeField] private Vector3 DebugForward = Vector3.zero;
 
     private void Awake()
     {
@@ -30,7 +29,6 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator.SetBool("isMoving", _entity.IsMoving);
 
-        DebugForward = _entity.Root.transform.forward;
         float angle = Vector3.SignedAngle(_entity.Root.transform.forward, _entity.Translation, Vector3.up);
         _animator.SetFloat("runAngle", angle / 180);
         _animator.SetBool("isDeath", _entity.Health.IsDead());
