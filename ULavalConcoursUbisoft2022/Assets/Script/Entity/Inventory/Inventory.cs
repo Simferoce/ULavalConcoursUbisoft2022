@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _items = null;
+    [SerializeField] private List<GameObject> _items = new List<GameObject>();
 
-    public GameObject[] Items { get => _items; set => _items = value; }
+    public List<GameObject> Items { get => _items; set => _items = value; }
 }
