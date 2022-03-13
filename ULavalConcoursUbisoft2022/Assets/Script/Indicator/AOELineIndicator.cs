@@ -42,9 +42,9 @@ public class AOELineIndicator : Indicator
 
             float _percentageTimeBeforeImpact = (Time.time - _startTime) / _timeBeforeImpact;
             _projector.pivot = new Vector3(0, fullSize / 2, 0);
-            _projector.size = new Vector3(2, fullSize, 10);
+            _projector.size = new Vector3(_size.x, fullSize, 10);
             _borderProjector.pivot = new Vector3(0, fullSize / 2, 0);
-            _borderProjector.size = new Vector3(2, fullSize, 10);
+            _borderProjector.size = new Vector3(_size.x, fullSize, 10);
 
             if (_percentageTimeBeforeImpact > 1)
             {

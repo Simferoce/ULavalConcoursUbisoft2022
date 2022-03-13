@@ -7,6 +7,8 @@ public class GetCloserToPlayer : State
 {
     [Header("Parameters")]
     [SerializeField] private float _distance = 0.0f;
+    [Tooltip("Speed < 0 == do not override speed")]
+    [SerializeField] private float _speed = 0.0f;
 
     [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
@@ -25,6 +27,10 @@ public class GetCloserToPlayer : State
     protected override void OnEnter()
     {
         _navMeshAgent.isStopped = false;
+        if(_speed > 0)
+        {
+            _navMeshAgent.speed = _speed;
+        }
     }
 
     protected override void OnExit()

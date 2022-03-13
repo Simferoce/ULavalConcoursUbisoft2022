@@ -42,12 +42,14 @@ public class BackToWork : Skill
         _working = true;
 
         _doWork.EnableState();
+        enabled = true;
     }
 
     private void _proximityStrikeSkill_OnSkillFinish(Skill obj)
     {
         if (Time.time - _onWorkStart > _duration)
         {
+            enabled = false;
             _proximityStrikeSkill.OnSkillFinish -= _proximityStrikeSkill_OnSkillFinish;
 
            _navMeshAgent.speed = _originalSpeed;

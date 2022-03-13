@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 415337187081637730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14, y: 2.53, z: -18.31}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 415337187541255114}
@@ -47,7 +47,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 10
+  m_Speed: 6
   m_Acceleration: 10000
   avoidancePriority: 50
   m_AngularSpeed: 9999
@@ -130,6 +130,7 @@ MonoBehaviour:
   _colliders: {fileID: 0}
   _visual: {fileID: 0}
   _characterController: {fileID: 0}
+  _translation: {x: 0, y: 0, z: 0}
 --- !u!54 &415337187541255112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -526,6 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _distance: 2
+  _speed: -1
   _navMeshAgent: {fileID: 415337187081637784}
   _entity: {fileID: 415337187541255115}
   _transition: {fileID: 3397423350397383006}
@@ -923,7 +925,7 @@ PrefabInstance:
       objectReference: {fileID: 415337187541255115}
     - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
       propertyPath: _powerUpTime
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
       propertyPath: _navMeshAgent

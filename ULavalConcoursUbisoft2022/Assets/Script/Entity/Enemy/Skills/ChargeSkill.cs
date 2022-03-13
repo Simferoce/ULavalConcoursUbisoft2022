@@ -8,6 +8,7 @@ public class ChargeSkill : Skill
     [SerializeField] private float _cooldown = 0.0f;
     [SerializeField] private GameObject _indicator = null;
     [SerializeField] private GameObject _attack;
+    [SerializeField] private float _size = 2.0f;
 
     [Header("Override Parameters")]
     [SerializeField] private float _maxRange = 0.0f;
@@ -66,14 +67,15 @@ public class ChargeSkill : Skill
         {
             _indicatorInstance = Instantiate(_indicator, this.transform.position, Quaternion.identity);
             Indicator indicator = _indicatorInstance.GetComponentInChildren<Indicator>();
-            indicator.Init(_powerup.PowerUpTime, new Vector3(2, _maxRange), _entity.transform);
+            indicator.Init(_powerup.PowerUpTime, new Vector3(_size, _maxRange), _entity.transform);
 
             _attackInstance = Instantiate(_attack).GetComponentInChildren<AttackStopOnTrigger>();
             _attackInstance.Team = Entity.Team.Neutral;
             _attackInstance.Following = _entity.transform;
             _attackInstance.Owner = _entity.gameObject;
-            _attackInstance.GetComponentInChildren<BoxCollider>().enabled = true;
-
+            BoxCollider collider = _attackInstance.GetComponentInChildren<BoxCollider>();
+            collider.enabled = true;
+            collider.size = new Vector3(_size, 1, 1);
             _lastUse = Time.time;
             _powerup.EnableState();
         }
