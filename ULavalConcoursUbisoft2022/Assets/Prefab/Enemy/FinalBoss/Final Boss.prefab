@@ -244,6 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f72a868bced3864fa2fea656b9ca30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateDisableHook:
+    m_PersistentCalls:
+      m_Calls: []
   _nextState: {fileID: 4474971313146365058}
   _duration: 2
   _entity: {fileID: 4474971314343617135}
@@ -274,6 +277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2e1fa1a08e4c64fbd8463101aec518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateDisableHook:
+    m_PersistentCalls:
+      m_Calls: []
   _stateToForkAtHealths:
   - HasBeenUsed: 0
     State: {fileID: 5648393473418383447}
@@ -298,6 +304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e9d964e6a32fe49a2e8d38f44f7ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateDisableHook:
+    m_PersistentCalls:
+      m_Calls: []
   _attacks:
   - Percentage: 0.8
     State: {fileID: 4474971313146365057}
@@ -315,6 +324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a3ff62b2cdf8b438e149dff1df6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateDisableHook:
+    m_PersistentCalls:
+      m_Calls: []
   _skills:
   - {fileID: 3566405856792034484}
   _resumeState: {fileID: 4474971313146365058}
@@ -330,6 +342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b413cba25f41745b96f3dc721a9dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateDisableHook:
+    m_PersistentCalls:
+      m_Calls: []
   _distance: 2
   _speed: 3.5
   _navMeshAgent: {fileID: 4474971312661450476}
@@ -347,6 +362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a3ff62b2cdf8b438e149dff1df6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateDisableHook:
+    m_PersistentCalls:
+      m_Calls: []
   _skills:
   - {fileID: 8320050386206911377}
   _resumeState: {fileID: 4474971313146365058}
@@ -607,6 +625,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a3ff62b2cdf8b438e149dff1df6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateDisableHook:
+    m_PersistentCalls:
+      m_Calls: []
   _skills:
   - {fileID: 5648393475168040142}
   _resumeState: {fileID: 4474971313146365058}
@@ -654,12 +675,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dc07bbdb375014ca1eb20f6e81f8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnSkillFinishHook:
+    m_PersistentCalls:
+      m_Calls: []
   _numberOfProjectile: 3
   _delayBetweenEachShot: {x: 1, y: 1}
   _heightSpawn: 2
   _projectile: {fileID: 8739260302490239990, guid: 090da76c505991c40b2fc1536f751431, type: 3}
   _entity: {fileID: 4474971314343617135}
-  _bubbleText: {fileID: 6124877849166164723}
 --- !u!1 &5648393474043669366
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +728,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a3ff62b2cdf8b438e149dff1df6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateDisableHook:
+    m_PersistentCalls:
+      m_Calls: []
   _skills:
   - {fileID: 5648393473806727063}
   _resumeState: {fileID: 4474971313146365058}
@@ -752,6 +778,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6122d1cdda2804f8844e95684e4643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnSkillFinishHook:
+    m_PersistentCalls:
+      m_Calls: []
   _numberToSummon: 2
   _summonPrefab: {fileID: 3946490674626982099, guid: f8336450beff6794eac23afa98920f52, type: 3}
   _entity: {fileID: 4474971314343617135}
@@ -803,6 +832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6122d1cdda2804f8844e95684e4643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnSkillFinishHook:
+    m_PersistentCalls:
+      m_Calls: []
   _numberToSummon: 2
   _summonPrefab: {fileID: 3946490674626982099, guid: f8336450beff6794eac23afa98920f52, type: 3}
   _entity: {fileID: 4474971314343617135}
@@ -855,6 +887,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a3ff62b2cdf8b438e149dff1df6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStateDisableHook:
+    m_PersistentCalls:
+      m_Calls: []
   _skills:
   - {fileID: 5648393475281149844}
   _resumeState: {fileID: 4474971313146365058}

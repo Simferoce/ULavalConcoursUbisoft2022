@@ -2129,6 +2129,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4474971312661450466, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
   m_PrefabInstance: {fileID: 187654532}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &187654534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4474971312661450465, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
+  m_PrefabInstance: {fileID: 187654532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &193529080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7058,11 +7063,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f497031c65ae58a458d7b4b29af19a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnSkillFinishHook:
+    m_PersistentCalls:
+      m_Calls: []
   _shadowPrefab: {fileID: 1477296321606084223, guid: 1dd866008135d764fba207f882e457fa, type: 3}
   _delay: 1
   _shadowDistance: 2
   _disableOnStateDisabled: {fileID: 0}
   _speedUpPerUse: 1
+--- !u!1 &571070220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4474971312661450465, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
+  m_PrefabInstance: {fileID: 571070216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &579457521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23479,12 +23492,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectBoss:
   - WingTypes: 0300000004000000
-    SelectedBoss: {fileID: 0}
+    SelectedBoss: {fileID: 571070220}
   - WingTypes: 0300000005000000
     SelectedBoss: {fileID: 8104602752041518153}
   - WingTypes: 0400000005000000
-    SelectedBoss: {fileID: 0}
-  _default: {fileID: 0}
+    SelectedBoss: {fileID: 187654534}
+  _default: {fileID: 8104602752041518153}
 --- !u!1001 &2084090911
 PrefabInstance:
   m_ObjectHideFlags: 0

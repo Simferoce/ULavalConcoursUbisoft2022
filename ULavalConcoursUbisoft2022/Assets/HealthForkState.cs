@@ -29,18 +29,11 @@ public class HealthForkState : State
         {
             transition.HasBeenUsed = true;
             ChangeState(transition.State);
-            transition.State.OnStateDisable += State_OnStateDisable;
         }
         else
         {
             ChangeState(_default);
         }
-    }
-
-    private void State_OnStateDisable(State state)
-    {
-        state.OnStateDisable -= State_OnStateDisable;
-        ChangeState(_default);
     }
 
     protected override void OnExit()
