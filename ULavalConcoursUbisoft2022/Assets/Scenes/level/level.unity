@@ -2228,6 +2228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 473455359}
   - component: {fileID: 473455358}
+  - component: {fileID: 473455360}
   m_Layer: 0
   m_Name: Chanson Donjon
   m_TagString: Untagged
@@ -2346,6 +2347,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &473455360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473455357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel:
+  - Name: ChangetoFinalBoss
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 473455358}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &474796410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09ea897b519255d468c3d69e23d3dc8d, type: 3}
@@ -11590,7 +11620,6 @@ MonoBehaviour:
   _sceneName: hub
   _wing: 0
   _playerPrefab: {fileID: 5951358263678322487, guid: 3795f738d888ef14e815452d3eb956dc, type: 3}
-  _channel: []
   OpenZoneEvent:
     m_PersistentCalls:
       m_Calls: []
