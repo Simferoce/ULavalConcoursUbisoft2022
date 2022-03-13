@@ -32,7 +32,7 @@ public class ProximityStrikeSkill : Skill
         _proximityStrike.Radius = _range;
         _proximityStrike.OnStateDisable += _proximityStrike_OnStateDisable;
         _lastTimeUsed = -_cooldown - _powerUp.PowerUpTime;
-        _entity.Health.OnDeath += Health_OnDeath;
+        _entity.Health.OnDeath.AddListener(Health_OnDeath);
     }
 
     private void _powerUp_OnLock()
@@ -47,7 +47,7 @@ public class ProximityStrikeSkill : Skill
             _instancedIndicator.Destroy();
         }
 
-        _entity.Health.OnDeath -= Health_OnDeath;
+        _entity.Health.OnDeath.RemoveListener(Health_OnDeath);
     }
 
     private void OnDestroy()
@@ -56,7 +56,7 @@ public class ProximityStrikeSkill : Skill
         _powerUp.OnLock -= _powerUp_OnLock;
     }
 
-    private void _proximityStrike_OnStateDisable()
+    private void _proximityStrike_OnStateDisable(State state)
     {
         InvokeOnSkillFinish();
     }

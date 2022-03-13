@@ -26,16 +26,18 @@ public class Entity : MonoBehaviour
     public PushBackHandler PushBackHandler { get => _pushBackHandler; set => _pushBackHandler = value; }
     public Health Health { get => _health; set => _health = value; }
 
-    private Vector3 _translation = Vector3.zero;
+    [SerializeField] private Vector3 _translation = Vector3.zero;
 
-    private Vector3 _lastPosition = Vector3.zero;
-    public Vector3 Translation { get { return _translation; } }
+    public Vector3 Translation { set { _translation = value; } get { return _translation; } }
+
+    public bool IsMoving { get { return Vector3.Distance(Translation, Vector3.zero) > 0.01f; } }
+
+    public Transform Root { get => root; set => root = value; }
+    public WeaponHandler WeaponHandler { get => _weaponHandler; set => _weaponHandler = value; }
+    public event System.Action<Weapon.WeaponType> OnAttack;
 
     private void Update()
     {
-        _translation = this.transform.position - _lastPosition;
-        _lastPosition = this.transform.position;
-
         if (_characterController != null)
         {
             RaycastHit hit;
@@ -52,6 +54,7 @@ public class Entity : MonoBehaviour
         if (CanAttack())
         {
             _weaponHandler.Use(this.transform.position, transform.forward, team, _inventory);
+            OnAttack?.Invoke(_weaponHandler.WeaponData.Type);
         }
     }
 

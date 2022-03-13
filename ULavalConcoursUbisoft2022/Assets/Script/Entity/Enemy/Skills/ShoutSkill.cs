@@ -11,7 +11,7 @@ public class ShoutSkill : Skill
 
     [Header("Reference")]
     [SerializeField] private Entity _entity = null;
-
+    [SerializeField] private BubbleText _bubbleText = null;
 
     private float _lastTimeUsed = 0.0f;
     private Entity[] _entities = null;
@@ -33,6 +33,7 @@ public class ShoutSkill : Skill
 
     public override void Use()
     {
+        _bubbleText.ShowMessage(3);
         _entities = GameObject.FindObjectsOfType<Entity>();
 
         Vector3 positionOnPlane = Vector3.ProjectOnPlane(_entity.transform.position, Vector3.up);

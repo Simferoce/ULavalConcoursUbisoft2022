@@ -10,6 +10,7 @@ public class Incapacited : State
 
     [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
+    [SerializeField] private BubbleText _bubbleText = null;
 
     [Header("State")]
     [SerializeField] private State _resumeState = null;
@@ -24,6 +25,12 @@ public class Incapacited : State
     protected override void OnEnter()
     {
         _navMeshAgent.isStopped = true;
+
+        if(Time > 0 && _bubbleText != null)
+        {
+            _bubbleText.ShowMessage(2, Time);
+        }
+        
         StartCoroutine(WaitIncapicated());
     }
 
@@ -43,5 +50,6 @@ public class Incapacited : State
 
         _navMeshAgent.isStopped = false;
         ChangeState(_resumeState);
+        
     }
 }

@@ -18,6 +18,8 @@ public class WeaponHandler : MonoBehaviour
     //For debug purpose
     private float _attackSpeed = 0.0f;
 
+    public Weapon WeaponData { get => _weaponData; set => _weaponData = value; }
+
     private void Awake()
     {
         SetWeapon(_startingWeapon);

@@ -9,7 +9,7 @@ public class ClassSelection : MonoBehaviour
 
     public void ChoixClasse()
     {
-        SceneManager.LoadScene("PauseMenu");
+        SceneManager.LoadScene("level");
         MenuPause.GameIsPaused = false;
         
     }

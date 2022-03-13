@@ -6,6 +6,8 @@ using UnityEngine.Rendering.Universal;
 public class Indicator : MonoBehaviour
 {
     [SerializeField] protected DecalProjector _projector = null;
+    [SerializeField] protected DecalProjector _borderProjector = null;
+    [SerializeField] protected GameObject _source = null;
 
     protected float _timeBeforeImpact = 0.0f;
     protected bool _initialized = false;
@@ -20,6 +22,7 @@ public class Indicator : MonoBehaviour
         _projector.transform.localScale = Vector3.zero;
         _followDirection = followDirection;
         _projector.size = new Vector3(size.x, size.y, 20);
+        _borderProjector.size = new Vector3(size.x, size.y, 20);
     }
 
     public void Destroy()

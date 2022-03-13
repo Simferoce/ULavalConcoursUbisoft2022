@@ -27,15 +27,14 @@ public class AOELineIndicator : Indicator
         {
             if(_followDirection != null)
             {
-                transform.parent.forward = _followDirection.forward;
+                _source.transform.forward = _followDirection.forward;
             }
 
             float fullSize = _size.y;
 
             Vector3 positionAtGroundLevel = new Vector3(transform.position.x, _groundHeight + 0.1f, transform.position.z);
-            Debug.DrawLine(positionAtGroundLevel, positionAtGroundLevel + transform.parent.forward * _size.y, Color.blue, 1);
             RaycastHit hit;
-            if (Physics.Raycast(positionAtGroundLevel, transform.parent.forward, out hit, _size.y, LayerMask.GetMask("Wall")))
+            if (Physics.Raycast(positionAtGroundLevel, _source.transform.forward, out hit, _size.y, LayerMask.GetMask("Wall")))
             {
                 fullSize = Vector3.Distance(Vector3.ProjectOnPlane(transform.position, Vector3.up), Vector3.ProjectOnPlane(hit.point, Vector3.up));
             }
@@ -43,12 +42,13 @@ public class AOELineIndicator : Indicator
 
             float _percentageTimeBeforeImpact = (Time.time - _startTime) / _timeBeforeImpact;
             _projector.pivot = new Vector3(0, fullSize / 2, 0);
-            _projector.size = new Vector3(2, fullSize, 10);
+            _projector.size = new Vector3(_size.x, fullSize, 10);
+            _borderProjector.pivot = new Vector3(0, fullSize / 2, 0);
+            _borderProjector.size = new Vector3(_size.x, fullSize, 10);
 
-            
             if (_percentageTimeBeforeImpact > 1)
             {
-                Destroy(this.transform.parent.gameObject);
+                Destroy(_source);
             }
             else
             {

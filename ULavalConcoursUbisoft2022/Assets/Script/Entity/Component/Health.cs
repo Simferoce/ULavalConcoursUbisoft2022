@@ -6,20 +6,35 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
+    [ContextMenu("Kill")]
+    void KillEntity()
+    {
+        Kill();
+    }
+
     [SerializeField] private float _maxHealth = 0.0f;
-    public float MaxHealth { get { return _maxHealth; } }
-
     [SerializeField] private float _healthPoint = 0.0f;
-    public float HealthPoint { get { return _healthPoint; } set { _healthPoint = value; } }
-
     [SerializeField] private Animation _animation = null;
-
     [SerializeField] private bool _invicible = false;
+    [SerializeField] private float _floorHealthLoss = 0.0f;
+
+    [Header("Events")]
+    [SerializeField] public UnityEvent<Health> OnDeath;
+    [SerializeField] private OnHealthBelowThreasholdEvent[] onHealthBelowThreasholdEvents = null;
+    public event Action<Health, float> OnDamage;
 
     public bool Invicible { get => _invicible; set => _invicible = value; }
+    public float MaxHealth { get { return _maxHealth; } }
+    public float HealthPoint { get { return _healthPoint; } set { _healthPoint = value; } }
+    public float Percentage { get { return HealthPoint / MaxHealth; } }
 
-    public event Action<Health> OnDeath;
-    public event Action<Health, float> OnDamage;
+    [System.Serializable]
+    public struct OnHealthBelowThreasholdEvent
+    {
+        public bool HasBeenInvoke;
+        public float PercentageThreashold;
+        public UnityEvent OnHealthBelowThreashold;
+    }
 
     public void Awake()
     {
@@ -30,9 +45,20 @@ public class Health : MonoBehaviour
     {
         if(!Invicible)
         {
-            HealthPoint -= damage;
-            OnDamage?.Invoke(this, damage);
+            float damageTaken = _floorHealthLoss > 0.0f ? Mathf.Min(damage, HealthPoint - (HealthPoint % _floorHealthLoss)) : damage;
+
+            HealthPoint -= damageTaken;
+            OnDamage?.Invoke(this, damageTaken);
             
+            for(int i =0; i < onHealthBelowThreasholdEvents.Length; ++i)
+            {
+                if(!onHealthBelowThreasholdEvents[i].HasBeenInvoke && HealthPoint / MaxHealth < onHealthBelowThreasholdEvents[i].PercentageThreashold)
+                {
+                    onHealthBelowThreasholdEvents[i].OnHealthBelowThreashold?.Invoke();
+                    onHealthBelowThreasholdEvents[i].HasBeenInvoke = true;
+                }
+            }
+
             if (_animation)
             {
                 //Old Animation system only for protype. Do not use that for final. Use the Animator

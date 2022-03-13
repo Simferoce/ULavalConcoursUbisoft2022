@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class BackToWork : Skill
 {
+    [Header("Parameters")]
     [SerializeField] private float _duration = 0.0f;
-    [SerializeField] private State _onWorkDone = null;
-    [SerializeField] private State _doWork = null;
-
     [SerializeField] private Vector2 _rangeSlowDown = Vector2.zero;
+
+    [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
     [SerializeField] private ProximityStrikeSkill _proximityStrikeSkill = null;
+    [SerializeField] private State _onWorkDone = null;
+    [SerializeField] private State _doWork = null;
 
     private bool _working = false;
     private float _onWorkStart = 0.0f;
@@ -39,12 +42,14 @@ public class BackToWork : Skill
         _working = true;
 
         _doWork.EnableState();
+        enabled = true;
     }
 
     private void _proximityStrikeSkill_OnSkillFinish(Skill obj)
     {
         if (Time.time - _onWorkStart > _duration)
         {
+            enabled = false;
             _proximityStrikeSkill.OnSkillFinish -= _proximityStrikeSkill_OnSkillFinish;
 
            _navMeshAgent.speed = _originalSpeed;

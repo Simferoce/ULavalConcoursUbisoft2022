@@ -11,15 +11,10 @@ public class Awakening : State
     [SerializeField] private float _personalSpace = 0.0f;
     [SerializeField] private GameObject _minionPrefab = null;
     [SerializeField] private float _numberOfSpawns = 0;
-    [SerializeField] private float _maxEnergy = 0.0f;
-    [SerializeField] private float _energyPerSecondPerAlive = 0.0f;
     [SerializeField] private Vector2 _delaySpawn = Vector2.zero;
-    [SerializeField] private float _maxTimeAwakening = 0.0f;
-    [SerializeField] private bool _skipPhase = false;
 
     [Header("Reference")]
     [SerializeField] private Entity _entity = null;
-    [SerializeField] private Player _player = null;
     [SerializeField] private bool _randomizePosition = false;
 
     [Header("State")]
@@ -28,6 +23,7 @@ public class Awakening : State
     private float _energy = 0.0f;
     private int _numberSpawned = 0;
     private float _enteredTime = 0.0f;
+    private Player _player = null;
 
     public float Energy { get => _energy; set => _energy = value; }
 
@@ -35,7 +31,7 @@ public class Awakening : State
 
     protected override void Init()
     {
-
+        _player = GameObject.FindObjectOfType<Player>();
     }
 
     protected override void OnEnter()
@@ -43,12 +39,6 @@ public class Awakening : State
         _entity.Health.Invicible = true;
 
         _numberSpawned = 0;
-
-        if (_skipPhase)
-        {
-            _energy = _maxEnergy;
-            return;
-        }
 
         _enteredTime = Time.time;
         StartCoroutine(SpawnMinions());
@@ -95,7 +85,7 @@ public class Awakening : State
             GameObject minion = Instantiate(_minionPrefab, spawnPosition, Quaternion.identity);
 
             Health health = minion.GetComponentInChildren<Health>();
-            health.OnDeath += MinionOnDeath;
+            health.OnDeath.AddListener(MinionOnDeath);
             canSpawnIndex.RemoveAt(regionToSpawn);
 
             _minionsStatus.Add(health);
@@ -107,7 +97,7 @@ public class Awakening : State
     private void MinionOnDeath(Health health)
     {
         _minionsStatus.Remove(health);
-        health.OnDeath -= MinionOnDeath;
+        health.OnDeath.RemoveListener(MinionOnDeath);
     }
 
     protected override void OnExit()
@@ -117,9 +107,7 @@ public class Awakening : State
 
     protected override void OnUpdate()
     {
-        _energy += _minionsStatus.Count * _energyPerSecondPerAlive * Time.deltaTime;
-
-        if(_energy >= _maxEnergy || (_minionsStatus.Count == 0 && _numberSpawned == _numberOfSpawns) || Time.time - _enteredTime > _maxTimeAwakening)
+        if((_minionsStatus.Count == 0 && _numberSpawned == _numberOfSpawns))
         {
             foreach(Health health in _minionsStatus.ToList())
             {
