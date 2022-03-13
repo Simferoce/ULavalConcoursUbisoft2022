@@ -10545,6 +10545,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _small: {fileID: -4772767351828484088, guid: 4a2c10f50680484449b5d5dd1fa02b0d, type: 3}
   _large: {fileID: -6503583376133195841, guid: 229ce307557f8bc40be76770975acf27, type: 3}
+--- !u!114 &959804006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4026878202384665593, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+  m_PrefabInstance: {fileID: 1498589576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5411b3bba11d3654faae7909beac0bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &969053459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16637,6 +16648,70 @@ PrefabInstance:
       propertyPath: _spawnRegion
       value: 
       objectReference: {fileID: 522197597}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 959804006}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Component, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 959804006}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BubbleText, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 893be637cd524b24593de1db3cc36381, type: 3}
 --- !u!1 &1498589577 stripped

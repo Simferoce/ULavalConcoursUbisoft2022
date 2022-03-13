@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class BackToWork : Skill
 {
@@ -12,7 +13,6 @@ public class BackToWork : Skill
     [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
     [SerializeField] private ProximityStrikeSkill _proximityStrikeSkill = null;
-    [SerializeField] private BubbleText _bubbleText = null;
     [SerializeField] private State _onWorkDone = null;
     [SerializeField] private State _doWork = null;
 
@@ -55,7 +55,6 @@ public class BackToWork : Skill
            _navMeshAgent.speed = _originalSpeed;
             _proximityStrikeSkill.PowerUp.PowerUpTime = _originalPowerUpTime;
 
-            _bubbleText.ShowMessage(6);
             InvokeOnSkillFinish();
             _working = false;
         }

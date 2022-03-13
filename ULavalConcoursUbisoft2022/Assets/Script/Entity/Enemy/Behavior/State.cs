@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class State : MonoBehaviour
 {
+    [SerializeField] private UnityEvent OnStateDisableHook;
+
     public event Action<State> OnStateDisable;
     public event Action<State> OnStateEnable;
 
@@ -41,6 +44,7 @@ public abstract class State : MonoBehaviour
     {
         this.enabled = false;
         OnStateDisable?.Invoke(this);
+        OnStateDisableHook?.Invoke();
 
         if (newState != null)
         {

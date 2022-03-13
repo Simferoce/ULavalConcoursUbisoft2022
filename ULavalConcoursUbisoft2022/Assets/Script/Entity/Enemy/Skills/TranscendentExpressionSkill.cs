@@ -12,7 +12,6 @@ public class TranscendentExpressionSkill : Skill
     [Header("Reference")]
     [SerializeField] private GameObject _projectile = null;
     [SerializeField] private Entity _entity = null;
-    [SerializeField] private BubbleText _bubbleText = null;
 
     public override bool CanUse()
     {
@@ -21,8 +20,6 @@ public class TranscendentExpressionSkill : Skill
 
     public override void Use()
     {
-        _bubbleText.ShowMessage(5);
-
         StartCoroutine(DepleteEnergy());
     }
 
