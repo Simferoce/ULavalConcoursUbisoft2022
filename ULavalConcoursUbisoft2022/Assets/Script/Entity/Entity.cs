@@ -18,6 +18,8 @@ public class Entity : MonoBehaviour
     [SerializeField] private Transform root = null;
     [SerializeField] private GameObject _colliders = null;
     [SerializeField] private GameObject _visual = null;
+    [SerializeField] private Inventory _inventory = null;
+    [SerializeField] private DamageReductionAttribute _damageReductionAttribute = null;
 
     [SerializeField] private CharacterController _characterController = null;
 
@@ -49,8 +51,11 @@ public class Entity : MonoBehaviour
 
     public void Attack()
     {
-        _weaponHandler.Use(this.transform.position, transform.forward, team);
-        OnAttack?.Invoke(_weaponHandler.WeaponData.Type);
+        if (CanAttack())
+        {
+            _weaponHandler.Use(this.transform.position, transform.forward, team, _inventory);
+            OnAttack?.Invoke(_weaponHandler.WeaponData.Type);
+        }
     }
 
     public bool CanAttack()
@@ -66,9 +71,10 @@ public class Entity : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Attack attack = other.GetComponentInParent<Attack>();
+
         if(attack != null && attack.Owner != this.gameObject && attack.Team != team)
         {
-            _health.Hit(1);
+            _health.Hit(attack.GetAttackDamage() * (2 - _damageReductionAttribute.GetValue(_inventory)));
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponHandler : MonoBehaviour
 {
     [SerializeField] private Weapon _startingWeapon = null;
+    [SerializeField] private Inventory _inventory = null;
 
     private Weapon _weaponData = null;
     private Attack _attack = null;
@@ -12,12 +13,17 @@ public class WeaponHandler : MonoBehaviour
 
     private float _lastTimeUsed = 0.0f;
     private float _lastRandom = 0.0f;
+    private Inventory inventory;
+
+    //For debug purpose
+    private float _attackSpeed = 0.0f;
 
     public Weapon WeaponData { get => _weaponData; set => _weaponData = value; }
 
     private void Awake()
     {
         SetWeapon(_startingWeapon);
+        inventory = _inventory;
     }
 
     public void SetWeapon(Weapon weapon)
@@ -26,7 +32,7 @@ public class WeaponHandler : MonoBehaviour
         _attack = weapon.Collider.GetComponent<Attack>();
 
         _lastRandom = _weaponData.RandomDelay * Random.Range(0.0f, 1.0f);
-        _lastTimeUsed = Time.time - _weaponData.DelayAttack;
+        _lastTimeUsed = Time.time - _weaponData.GetAttackDelay(inventory);
 
         BoxCollider attackBoxCollider = weapon.Collider.GetComponentInChildren<BoxCollider>();
 
@@ -58,17 +64,18 @@ public class WeaponHandler : MonoBehaviour
        
     }
 
-    public void Use(Vector3 origin, Vector3 direction, Entity.Team team)
+    public void Use(Vector3 origin, Vector3 direction, Entity.Team team, Inventory inventory)
     {
         GameObject attackCollider = Instantiate(_weaponData.Collider, origin, Quaternion.LookRotation(direction, Vector3.up));
         attackCollider.GetComponent<Attack>().Team = team;
+        attackCollider.GetComponent<Attack>().Inventory = inventory;
         _lastTimeUsed = Time.time;
         _lastRandom = _weaponData.RandomDelay * Random.Range(0.0f, 1.0f);
     }
 
     public bool CanUse()
     {
-        return Time.time - _weaponData.DelayAttack - _lastRandom > _lastTimeUsed;
+        return Time.time - (_attackSpeed = _weaponData.GetAttackDelay(inventory)) - _lastRandom > _lastTimeUsed;
     }
 
     public float GetRange()

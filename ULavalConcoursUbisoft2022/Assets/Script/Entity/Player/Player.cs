@@ -5,9 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private CharacterController _characterController = null;
-    [SerializeField] private float _speed = 0.0f;
+    [SerializeField] private MovespeedAttribute _movespeedAttribute = null;
     [SerializeField] private Transform _aim = null;
+    [SerializeField] private float _speed = 0.0f;
+    
     [SerializeField] private Entity _entity = null;
+    [SerializeField] private Inventory _inventory = null;
 
     private Vector3 direction = Vector3.zero;
     private bool _lock = false;

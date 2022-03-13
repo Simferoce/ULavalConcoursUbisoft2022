@@ -11,10 +11,16 @@ public class Attack : MonoBehaviour
     [SerializeField] private Entity.Team _team;
     public Entity.Team Team { get => _team; set => _team = value; }
 
+    [SerializeField] private Inventory _inventory;
+    public Inventory Inventory { get => _inventory; set => _inventory = value; }
+
+    [SerializeField] private AttackDamageAttribute attackDamageAttribute = null;
+
     [SerializeField] private float _speed = 0.0f;
     public float Speed { get => _speed; }
     public Transform Following { get => _following; set => _following = value; }
     public GameObject Owner { get => _owner; set => _owner = value; }
+
 
     private void Update()
     {
@@ -27,5 +33,10 @@ public class Attack : MonoBehaviour
         {
             transform.Translate(Vector3.forward * _speed * Time.deltaTime);
         }
+    }
+
+    public float GetAttackDamage()
+    {
+        return attackDamageAttribute.GetValue(Inventory);
     }
 }
