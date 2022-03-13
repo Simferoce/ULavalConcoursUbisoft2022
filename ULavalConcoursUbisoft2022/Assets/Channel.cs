@@ -17,13 +17,13 @@ public class Channel : MonoBehaviour
 
     public void Signal(string channel)
     {
-        foreach (WingRoot root in GameObject.FindObjectsOfType<WingRoot>())
+        foreach (Channel root in GameObject.FindObjectsOfType<Channel>())
         {
-            Invoke(channel);
+            root.Invoke(channel);
         }
     }
 
-    private void Invoke(string channel)
+    public void Invoke(string channel)
     {
         _channel.FirstOrDefault(x => x.Name == channel)?.Event?.Invoke();
     }
