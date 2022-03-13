@@ -3008,7 +3008,7 @@ PrefabInstance:
     - target: {fileID: 7939697166918184577, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1035562188}
+      objectReference: {fileID: 1035562189}
     - target: {fileID: 7939697166918184577, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -3047,7 +3047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7939697166918184577, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: WingRoot, Assembly-CSharp
+      value: Channel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7939697166918184577, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -10011,6 +10011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1035562187}
   - component: {fileID: 1035562188}
+  - component: {fileID: 1035562189}
   m_Layer: 0
   m_Name: wingA
   m_TagString: Untagged
@@ -10055,7 +10056,6 @@ MonoBehaviour:
   _sceneName: wingA
   _wing: 3
   _playerPrefab: {fileID: 5951358263678322487, guid: 3795f738d888ef14e815452d3eb956dc, type: 3}
-  _channel: []
   OpenZoneEvent:
     m_PersistentCalls:
       m_Calls:
@@ -10087,6 +10087,19 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   SingleWingScene: 1
+--- !u!114 &1035562189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035562186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: []
 --- !u!1001 &1038922890
 PrefabInstance:
   m_ObjectHideFlags: 0

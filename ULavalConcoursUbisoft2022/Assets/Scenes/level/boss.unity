@@ -757,6 +757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33643358}
   - component: {fileID: 33643359}
+  - component: {fileID: 33643360}
   m_Layer: 0
   m_Name: wingBoss
   m_TagString: Untagged
@@ -805,6 +806,30 @@ MonoBehaviour:
   - Name: UnlockEndZone
     Event:
       m_PersistentCalls:
+        m_Calls: []
+  OpenZoneEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CloseZoneEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  SingleWingScene: 1
+--- !u!114 &33643360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33643357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel:
+  - Name: UnlockEndZone
+    Event:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1968607562}
           m_TargetAssemblyTypeName: TriggerBarrier, Assembly-CSharp
@@ -818,13 +843,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  OpenZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  CloseZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  SingleWingScene: 1
 --- !u!1001 &37732224
 PrefabInstance:
   m_ObjectHideFlags: 0

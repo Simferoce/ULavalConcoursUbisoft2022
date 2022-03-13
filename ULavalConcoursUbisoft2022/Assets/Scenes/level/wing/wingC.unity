@@ -16532,6 +16532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583117398}
   - component: {fileID: 1583117399}
+  - component: {fileID: 1583117400}
   m_Layer: 0
   m_Name: wingC
   m_TagString: Untagged
@@ -16576,7 +16577,6 @@ MonoBehaviour:
   _sceneName: wingC
   _wing: 4
   _playerPrefab: {fileID: 5951358263678322487, guid: 3795f738d888ef14e815452d3eb956dc, type: 3}
-  _channel: []
   OpenZoneEvent:
     m_PersistentCalls:
       m_Calls:
@@ -16608,6 +16608,19 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   SingleWingScene: 1
+--- !u!114 &1583117400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583117397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: []
 --- !u!1001 &1584125014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18025,7 +18038,7 @@ PrefabInstance:
     - target: {fileID: 6703604898203015244, guid: f567b79ee0948234599dffd994fa01b6, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1583117399}
+      objectReference: {fileID: 1583117400}
     - target: {fileID: 6703604898203015244, guid: f567b79ee0948234599dffd994fa01b6, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -18064,7 +18077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6703604898203015244, guid: f567b79ee0948234599dffd994fa01b6, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: WingRoot, Assembly-CSharp
+      value: Channel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6703604898203015244, guid: f567b79ee0948234599dffd994fa01b6, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument

@@ -30,7 +30,6 @@ public class WingRoot : MonoBehaviour
     [SerializeField] private Wing _wing = Wing.Hub;
     [SerializeField] private GameObject _playerPrefab = null;
 
-    [SerializeField] private List<Channel> _channel = new List<Channel>();
     [SerializeField] private UnityEvent OpenZoneEvent = null;
     [SerializeField] private UnityEvent CloseZoneEvent = null;
 
@@ -73,18 +72,5 @@ public class WingRoot : MonoBehaviour
     public void CloseZone(string zoneName)
     {
         GameObject.FindObjectsOfType<WingRoot>().FirstOrDefault(x => x.SceneName == zoneName)?.CloseZone();
-    }
-
-    public void Invoke(string channel)                      
-    {
-        _channel.FirstOrDefault(x => x.Name == channel)?.Event?.Invoke();
-    }
-
-    public void Signal(string channel)
-    {
-        foreach (WingRoot root in GameObject.FindObjectsOfType<WingRoot>())
-        {
-            root.Invoke(channel);
-        }
     }
 }

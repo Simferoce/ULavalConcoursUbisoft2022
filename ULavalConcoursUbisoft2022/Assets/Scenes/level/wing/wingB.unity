@@ -5065,6 +5065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430588914}
   - component: {fileID: 430588915}
+  - component: {fileID: 430588916}
   m_Layer: 0
   m_Name: wingB
   m_TagString: Untagged
@@ -5109,7 +5110,6 @@ MonoBehaviour:
   _sceneName: wingB
   _wing: 5
   _playerPrefab: {fileID: 5951358263678322487, guid: 3795f738d888ef14e815452d3eb956dc, type: 3}
-  _channel: []
   OpenZoneEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5141,6 +5141,19 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   SingleWingScene: 1
+--- !u!114 &430588916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430588913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: []
 --- !u!1001 &431600697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16643,7 +16656,11 @@ PrefabInstance:
     - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 430588915}
+      objectReference: {fileID: 430588916}
+    - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: Channel, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 415337188621807974, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: _spawnRegion
       value: 
