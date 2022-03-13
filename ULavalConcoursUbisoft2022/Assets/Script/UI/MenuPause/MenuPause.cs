@@ -24,11 +24,13 @@ public class MenuPause : MonoBehaviour
         {
             if (GameIsPaused)
             {
+                GameObject.FindObjectOfType<Player>().UnlockControl();
                 Resume();
 
             }
             else
             {
+                GameObject.FindObjectOfType<Player>().LockControl();
                 Pause();
 
             }

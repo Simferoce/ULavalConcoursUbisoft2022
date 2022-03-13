@@ -23239,7 +23239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073570122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.25011, y: 0.0024023056, z: 4.250017}
+  m_LocalPosition: {x: 27.73, y: 0.0024023056, z: 4.250017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23293,7 +23293,7 @@ MonoBehaviour:
     SelectedBoss: {fileID: 8104602752041518153}
   - WingTypes: 0400000005000000
     SelectedBoss: {fileID: 803193835}
-  _default: {fileID: 8104602752041518153}
+  _default: {fileID: 555742613}
 --- !u!1001 &2084090911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24708,6 +24708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Final Boss - (Wrath - Depression)
       objectReference: {fileID: 0}
+    - target: {fileID: 236536702561920741, guid: c31ec794eba582a469757e0b117f466e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 236536702561920742, guid: c31ec794eba582a469757e0b117f466e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -24885,6 +24889,10 @@ PrefabInstance:
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1843127908}
+    - target: {fileID: 567771077823217739, guid: 3db4e71383ff7f549ab4d04f776b4174, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3db4e71383ff7f549ab4d04f776b4174, type: 3}
 --- !u!1001 &5648393474885110440

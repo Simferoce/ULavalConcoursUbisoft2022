@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     {
         if (!_lock)
         {
-            direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
             if (Input.GetButtonDown("Fire1"))
             {
