@@ -62,10 +62,11 @@ public class WeaponHandler : MonoBehaviour
        
     }
 
-    public void Use(Vector3 origin, Vector3 direction, Entity.Team team)
+    public void Use(Vector3 origin, Vector3 direction, Entity.Team team, Inventory inventory)
     {
         GameObject attackCollider = Instantiate(_weaponData.Collider, origin, Quaternion.LookRotation(direction, Vector3.up));
         attackCollider.GetComponent<Attack>().Team = team;
+        attackCollider.GetComponent<Attack>().Inventory = inventory;
         _lastTimeUsed = Time.time;
         _lastRandom = _weaponData.RandomDelay * Random.Range(0.0f, 1.0f);
     }

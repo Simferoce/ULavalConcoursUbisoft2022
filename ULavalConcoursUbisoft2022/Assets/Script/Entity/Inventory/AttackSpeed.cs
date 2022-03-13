@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class AttackSpeed : MonoBehaviour
 {
     [Tooltip("Percentage of base attack speed")]
