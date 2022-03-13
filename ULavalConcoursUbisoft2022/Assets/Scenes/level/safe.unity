@@ -1866,6 +1866,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneName: safe
+  _wing: 2
+  _channel: []
   OpenZoneEvent:
     m_PersistentCalls:
       m_Calls:
@@ -14616,6 +14618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8c6c588ba314e47ad075a6056869fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainSpawnPoint: 1
 --- !u!1 &2045124566
 GameObject:
   m_ObjectHideFlags: 0

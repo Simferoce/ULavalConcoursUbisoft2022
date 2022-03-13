@@ -59,7 +59,7 @@ public class OneTimeStrikeSkill : Skill
         _powerUp.OnLock -= _powerUp_OnLock;
     }
 
-    private void _proximityStrike_OnStateDisable()
+    private void _proximityStrike_OnStateDisable(State state)
     {
         InvokeOnSkillFinish();
     }

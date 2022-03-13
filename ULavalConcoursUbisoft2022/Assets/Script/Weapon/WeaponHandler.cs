@@ -12,6 +12,9 @@ public class WeaponHandler : MonoBehaviour
 
     private float _lastTimeUsed = 0.0f;
     private float _lastRandom = 0.0f;
+
+    public Weapon WeaponData { get => _weaponData; set => _weaponData = value; }
+
     private void Awake()
     {
         SetWeapon(_startingWeapon);

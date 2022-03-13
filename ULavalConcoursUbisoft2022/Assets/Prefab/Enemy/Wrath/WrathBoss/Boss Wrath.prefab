@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6329775987650228832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4336292297769357613}
+  - component: {fileID: 1859047585033672975}
+  m_Layer: 7
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4336292297769357613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329775987650228832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7939697166918184637}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1859047585033672975
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329775987650228832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7939697165715881694
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,14 +248,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7939697166178890893}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7939697166592311819}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
 --- !u!33 &7939697166178890894
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -218,7 +263,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7939697166178890893}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5106349681476793039, guid: c5574e6bd9fc04b4589d47c0c8b50e31, type: 3}
 --- !u!23 &7939697166178890895
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -239,7 +284,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -3846018093981099296, guid: c5574e6bd9fc04b4589d47c0c8b50e31, type: 3}
+  - {fileID: -6478536213147159724, guid: c5574e6bd9fc04b4589d47c0c8b50e31, type: 3}
+  - {fileID: -6083782345664591421, guid: c5574e6bd9fc04b4589d47c0c8b50e31, type: 3}
+  - {fileID: -6922793697723135513, guid: c5574e6bd9fc04b4589d47c0c8b50e31, type: 3}
+  - {fileID: 6098301809156579643, guid: c5574e6bd9fc04b4589d47c0c8b50e31, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -341,7 +390,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7939697166592311816}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -382,7 +431,6 @@ GameObject:
   - component: {fileID: 7939697166918184582}
   - component: {fileID: 7939697166918184578}
   - component: {fileID: 7939697166918184577}
-  - component: {fileID: 7939697166918184579}
   - component: {fileID: 7939697166918184576}
   m_Layer: 7
   m_Name: Body
@@ -402,7 +450,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4336292297769357613}
   m_Father: {fileID: 7939697166592311819}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -458,6 +507,7 @@ MonoBehaviour:
   _healthPoint: 0
   _animation: {fileID: 7939697166592311818}
   _invicible: 0
+  _floorHealthLoss: 0
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -486,20 +536,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   onHealthBelowThreasholdEvents: []
---- !u!136 &7939697166918184579
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7939697166918184583}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7939697166918184576
 MonoBehaviour:
   m_ObjectHideFlags: 0

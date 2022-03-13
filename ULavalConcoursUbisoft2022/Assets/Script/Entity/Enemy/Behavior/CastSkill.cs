@@ -18,7 +18,7 @@ public class CastSkill : State
 
     protected override void OnEnter()
     {
-        TryCastSkill();
+
     }
 
     private void OnSkillFinish(Skill skill)
@@ -50,9 +50,9 @@ public class CastSkill : State
         Skill skill = _skills.FirstOrDefault(x => x.CanUse());
         if(skill != null)
         {
+            _casting = true;
             skill.OnSkillFinish += OnSkillFinish;
 
-            _casting = true;
             skill.Use();
         }
     }

@@ -28,7 +28,7 @@ public class FrenzyChargeSkill : Skill
         _charge.OnSkillFinish += _charge_OnSkillFinish;
     }
 
-    private void Charge_OnStateDisable()
+    private void Charge_OnStateDisable(State state)
     {
        if (_numberOfChargeDone + 1 == _numberOfCharge)
         {

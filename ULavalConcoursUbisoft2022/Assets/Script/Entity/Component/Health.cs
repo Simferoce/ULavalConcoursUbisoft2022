@@ -6,6 +6,12 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
+    [ContextMenu("Kill")]
+    void KillEntity()
+    {
+        Kill();
+    }
+
     [SerializeField] private float _maxHealth = 0.0f;
     [SerializeField] private float _healthPoint = 0.0f;
     [SerializeField] private Animation _animation = null;
