@@ -30,7 +30,7 @@ public class DeathScreen : MonoBehaviour
     public void OnDie()
     {
         Debug.Log("dead");
-        leaderboardController.SetActive(false);
+        leaderboardController.SetActive(true);
     }
     private void OnDestroy()
     {
