@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     [SerializeField] private Transform _cameraTarget = null;
-    [SerializeField] private Transform _player = null;
+    [SerializeField] private Player _player = null;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera = null;
     [SerializeField] private Transform _aim = null;
     [SerializeField] private Camera _mainCamera = null;
@@ -37,18 +37,17 @@ public class CameraControl : MonoBehaviour
 
     private void Update()
     {
-        if(!_focus)
+        if(!_focus && !_player.Lock)
         {
             Vector3 viewportPosition = _mainCamera.ScreenToViewportPoint(Input.mousePosition);
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
             _aim.position = GetWorldPosition(ray);
 
-
             float distanceMousePlayer = Vector2.Distance(new Vector2(viewportPosition.x, viewportPosition.y), new Vector2(0.5f, 0.5f));
             if (distanceMousePlayer > _radiusBeforeMoving)
             {
-                Vector3 playerPositionViewport = Vector3.Scale(_mainCamera.WorldToViewportPoint(_player.position), new Vector3(1, 1, 0));
+                Vector3 playerPositionViewport = Vector3.Scale(_mainCamera.WorldToViewportPoint(_player.transform.position), new Vector3(1, 1, 0));
                 Vector3 mouseviewportPosition = _mainCamera.ScreenToViewportPoint(Input.mousePosition);
 
                 Vector3 direction = mouseviewportPosition - new Vector3(0.5f, 0.5f);

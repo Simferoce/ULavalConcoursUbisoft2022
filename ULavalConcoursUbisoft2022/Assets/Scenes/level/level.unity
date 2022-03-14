@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7068,6 +7068,18 @@ MonoBehaviour:
           m_StringArgument: wingC
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2138436692}
+        m_TargetAssemblyTypeName: Channel, Assembly-CSharp
+        m_MethodName: Signal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: AwardItem
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1371361219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09ea897b519255d468c3d69e23d3dc8d, type: 3}
@@ -11581,6 +11593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2138436690}
   - component: {fileID: 2138436691}
+  - component: {fileID: 2138436692}
   m_Layer: 0
   m_Name: hub
   m_TagString: Untagged
@@ -11627,6 +11640,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   SingleWingScene: 1
+--- !u!114 &2138436692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138436689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: []
 --- !u!1 &2139059368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09ea897b519255d468c3d69e23d3dc8d, type: 3}

@@ -34,6 +34,8 @@ public class Entity : MonoBehaviour
 
     public Transform Root { get => root; set => root = value; }
     public WeaponHandler WeaponHandler { get => _weaponHandler; set => _weaponHandler = value; }
+    public Inventory Inventory { get => _inventory; set => _inventory = value; }
+
     public event System.Action<Weapon.WeaponType> OnAttack;
 
     private void Update()

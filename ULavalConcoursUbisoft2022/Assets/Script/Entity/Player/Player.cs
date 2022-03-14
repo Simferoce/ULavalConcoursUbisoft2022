@@ -10,10 +10,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speed = 0.0f;
     
     [SerializeField] private Entity _entity = null;
-    [SerializeField] private Inventory _inventory = null;
 
     private Vector3 direction = Vector3.zero;
     private bool _lock = false;
+
+    public Entity Entity { get => _entity; set => _entity = value; }
+    public bool Lock { get => _lock; set => _lock = value; }
+
     private void Awake()
     {
         
@@ -30,7 +33,7 @@ public class Player : MonoBehaviour
                 _entity.Attack();
             }
 
-            _characterController.Move(direction * _movespeedAttribute.GetValue(_inventory) * Time.deltaTime);
+            _characterController.Move(direction * _movespeedAttribute.GetValue(_entity.Inventory) * Time.deltaTime);
             _entity.Translation = direction;
             Vector3 positionToLookAt = new Vector3(_aim.transform.position.x, this.transform.position.y, _aim.transform.position.z);
             transform.LookAt(positionToLookAt, Vector3.up);

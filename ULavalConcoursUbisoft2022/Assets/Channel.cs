@@ -17,7 +17,7 @@ public class Channel : MonoBehaviour
 
     public void Signal(string channel)
     {
-        foreach (Channel root in GameObject.FindObjectsOfType<Channel>())
+        foreach (Channel root in GameObject.FindObjectsOfType<Channel>(true))
         {
             root.Invoke(channel);
         }
