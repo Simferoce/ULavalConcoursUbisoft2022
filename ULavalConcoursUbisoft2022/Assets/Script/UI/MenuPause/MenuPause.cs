@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuPause : MonoBehaviour
 {
-    
+
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
@@ -24,27 +24,28 @@ public class MenuPause : MonoBehaviour
         {
             if (GameIsPaused)
             {
-                GameObject.FindObjectOfType<Player>().UnlockControl();
                 Resume();
 
             }
             else
             {
-                GameObject.FindObjectOfType<Player>().LockControl();
+
                 Pause();
 
             }
 
         }
     }
-     public void Resume()
+    public void Resume()
     {
+        GameObject.FindObjectOfType<Player>().UnlockControl();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
-     public void Pause()
+    public void Pause()
     {
+        GameObject.FindObjectOfType<Player>().LockControl();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
