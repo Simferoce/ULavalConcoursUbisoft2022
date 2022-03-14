@@ -30,9 +30,9 @@ public class FrenzyChargeSkill : Skill
 
     private void Charge_OnStateDisable(State state)
     {
-       if (_numberOfChargeDone + 1 == _numberOfCharge)
+        if (_numberOfChargeDone + 1 == _numberOfCharge)
         {
-            _entity.Health.Invicible = false;
+
         }
     }
 
@@ -46,7 +46,7 @@ public class FrenzyChargeSkill : Skill
     {
         _numberOfChargeDone++;
 
-        if(_numberOfChargeDone < _numberOfCharge)
+        if (_numberOfChargeDone < _numberOfCharge)
         {
             Charge();
         }
@@ -69,7 +69,6 @@ public class FrenzyChargeSkill : Skill
 
     public override void Use()
     {
-        _entity.Health.Invicible = true;
         _originAccelaration = _charge.Charge.Acceleration;
         _originSpeed = _charge.Charge.Speed;
         _originIncapacitedTime = _charge.Incapacited.Time;

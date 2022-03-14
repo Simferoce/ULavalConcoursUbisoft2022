@@ -9,6 +9,7 @@ public class PowerUp : State
     [Header("Parameters")]
     [SerializeField] private float _powerUpTime = 0.0f;
     [SerializeField] private float _lockPercentage = 0.0f;
+    [SerializeField] private bool _lookAtPlayer = true;
 
     [Header("Reference")]
     [SerializeField] private Entity _entity = null;
@@ -56,7 +57,7 @@ public class PowerUp : State
             return;
         }
 
-        if (!_locked)
+        if (!_locked && _lookAtPlayer)
         {
             _entity.LookTowardsTarget(_player.transform.position);
         }

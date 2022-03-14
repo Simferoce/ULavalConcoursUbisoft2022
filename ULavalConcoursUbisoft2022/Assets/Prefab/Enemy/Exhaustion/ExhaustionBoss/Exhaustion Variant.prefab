@@ -19,9 +19,13 @@ PrefabInstance:
       propertyPath: _health
       value: 
       objectReference: {fileID: 879859617627655131}
+    - target: {fileID: 7846694619988252154, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: _resumeState
+      value: 
+      objectReference: {fileID: 879859618691398036}
     - target: {fileID: 8004721723810652292, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: _MaxRangeWander
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8004721723810652292, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: _distanceDetectPlayer
@@ -75,6 +79,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exhaustion Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8004721724910958962, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: EntryPoint
+      value: 
+      objectReference: {fileID: 879859618691398036}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
 --- !u!114 &879859617627655131 stripped
@@ -86,5 +94,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaf7b7289cb75b945b175151b520c3a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &879859618691398036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8004721723810652292, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+  m_PrefabInstance: {fileID: 7143720930715998480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef36e4ec1e9e76c4da00d960706c12b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
