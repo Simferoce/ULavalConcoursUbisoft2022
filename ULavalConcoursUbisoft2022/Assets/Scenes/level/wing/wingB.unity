@@ -14994,7 +14994,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -7663994385375252320, guid: 6de2ebdd0a0a13b4faf791030c4170aa, type: 3}
+  m_Mesh: {fileID: -1129480711592521662, guid: 0231f6458280eca44b0199332c0af97e, type: 3}
 --- !u!4 &1322411607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6de2ebdd0a0a13b4faf791030c4170aa, type: 3}
@@ -16697,13 +16697,21 @@ PrefabInstance:
       propertyPath: _spawnRegion
       value: 
       objectReference: {fileID: 522197597}
+    - target: {fileID: 415337188621807974, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: _delaySpawn.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: _duration
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -16715,11 +16723,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SendMessage
+      value: ShowMessage
       objectReference: {fileID: 0}
     - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.Component, UnityEngine
+      value: BubbleText, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -16728,6 +16740,10 @@ PrefabInstance:
     - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: _numberOfProjectile
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.size
@@ -19507,7 +19523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -19515,7 +19531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -19524,7 +19540,7 @@ PrefabInstance:
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 430588916}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -19539,7 +19555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: Signal
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -19547,7 +19563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Channel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -19560,6 +19576,10 @@ PrefabInstance:
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: AwardItem
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

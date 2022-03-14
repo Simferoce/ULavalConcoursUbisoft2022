@@ -18,7 +18,7 @@ public class Rebound : MonoBehaviour
                 if(!hit.Equals(default(RaycastHit)))
                 {
                     Vector3 newForward = Vector3.Reflect(transform.forward, hit.normal);
-                    this.transform.rotation = Quaternion.LookRotation(newForward, Vector3.up);
+                    this.transform.rotation = Quaternion.Euler(Vector3.Scale(Quaternion.LookRotation(newForward, Vector3.up).eulerAngles, new Vector3(0,1,0)));
                 }
                
             }

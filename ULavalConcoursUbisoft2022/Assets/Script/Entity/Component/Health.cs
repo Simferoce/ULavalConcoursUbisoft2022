@@ -59,16 +59,16 @@ public class Health : MonoBehaviour
                 }
             }
 
+            if (HealthPoint <= 0)
+            {
+                Kill();
+
+            }
+
             if (_animation)
             {
                 //Old Animation system only for protype. Do not use that for final. Use the Animator
                 _animation.Play();
-            }
-
-            if (HealthPoint <= 0)
-            {
-                Kill();
-                
             }
         }
     }

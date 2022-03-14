@@ -41,7 +41,10 @@ public class ChargeSkill : Skill
     private void OnDeath(Health health)
     {
         _entity.Health.OnDeath.RemoveListener(OnDeath);
-        _attackInstance.Destroy();
+        if(_attackInstance != null)
+        {
+            _attackInstance.Destroy();
+        }
         Destroy(_indicatorInstance);
     }
 

@@ -116,12 +116,14 @@ public class Entity : MonoBehaviour
 
     public void Vanish()
     {
+        GetComponentInChildren<HealthBarEnemy>(true)?.gameObject?.SetActive(false);
         _colliders.SetActive(false);
         _visual.SetActive(false);
     }
 
     public void Appear()
     {
+        GetComponentInChildren<HealthBarEnemy>(true)?.gameObject?.SetActive(true);
         _colliders.SetActive(true);
         _visual.SetActive(true);
     }

@@ -18,11 +18,14 @@ public class HealthBarEnemy : MonoBehaviour
     private void Start()
     {
         _cam = Camera.main;
+        transform.rotation = Quaternion.Euler(Vector3.Scale((Quaternion.Inverse(_cam.transform.rotation)).eulerAngles, new Vector3(0, 1, 1)));
     }
 
     public void Update()
     {
-        transform.rotation = Quaternion.LookRotation(transform.position - _cam.transform.position);
+        transform.rotation = Quaternion.Euler(Vector3.Scale((_cam.transform.rotation).eulerAngles, new Vector3(1, 0, 0)));
+
+        //transform.rotation = Quaternion.Euler(Vector3.Scale(Quaternion.LookRotation(transform.position - _cam.transform.position).eulerAngles, new Vector3(1, 1, 0)));
     }
 
     public void UpdateHealth(Health health, float damage)

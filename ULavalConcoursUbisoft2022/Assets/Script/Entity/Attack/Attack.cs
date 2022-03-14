@@ -31,7 +31,8 @@ public class Attack : MonoBehaviour
         }
         else
         {
-            transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+            Vector3 forwardOnPlane = Vector3.ProjectOnPlane(transform.forward, Vector3.up);
+            transform.position += forwardOnPlane * _speed * Time.deltaTime;
         }
     }
 
