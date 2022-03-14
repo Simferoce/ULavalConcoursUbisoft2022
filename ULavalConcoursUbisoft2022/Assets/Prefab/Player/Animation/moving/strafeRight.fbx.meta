@@ -42,7 +42,9 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'female_Rig:Wrist_L'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'female_Rig:Hip_L'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'female_Rig:HipPart2_L'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\nEvent
+      Pas1 has a time (1.300362) outside the clip's valid range (0.000000..1.300000).
+      It will never be fired"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -79,7 +81,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.59373254
+        functionName: PersoMov
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: d59582b6e7d4d034a8fde3b3cefd28c9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 1.0002785
+        functionName: PersoMov
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: d59582b6e7d4d034a8fde3b3cefd28c9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
