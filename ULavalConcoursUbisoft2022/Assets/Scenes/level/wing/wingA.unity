@@ -3123,7 +3123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7939697166918184577, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: Invoke
+      value: Signal
       objectReference: {fileID: 0}
     - target: {fileID: 7939697166918184577, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -10271,6 +10271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _channel: []
+  _channelWithObjectParameters: []
 --- !u!1001 &1038922890
 PrefabInstance:
   m_ObjectHideFlags: 0
