@@ -69,6 +69,7 @@ public class FrenzyChargeSkill : Skill
 
     public override void Use()
     {
+        base.Use();
         _originAccelaration = _charge.Charge.Acceleration;
         _originSpeed = _charge.Charge.Speed;
         _originIncapacitedTime = _charge.Incapacited.Time;

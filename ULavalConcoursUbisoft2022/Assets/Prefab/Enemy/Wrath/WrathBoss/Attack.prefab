@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5662824610131309744}
   - component: {fileID: 8573301266550765397}
   - component: {fileID: -5227725093359767562}
-  - component: {fileID: -3670279956196935423}
   m_Layer: 7
   m_Name: Attack
   m_TagString: Untagged
@@ -167,14 +166,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &-3670279956196935423
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8573301266550765419}
-  m_Enabled: 1
 --- !u!1 &8573301266684349337
 GameObject:
   m_ObjectHideFlags: 0

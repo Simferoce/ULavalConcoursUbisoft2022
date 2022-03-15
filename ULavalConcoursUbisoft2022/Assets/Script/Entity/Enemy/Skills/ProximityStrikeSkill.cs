@@ -68,6 +68,7 @@ public class ProximityStrikeSkill : Skill
 
     public override void Use()
     {
+        base.Use();
         if (_entity.Health.IsDead())
         {
             return;

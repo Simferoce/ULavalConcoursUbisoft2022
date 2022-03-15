@@ -33,6 +33,7 @@ public class ShoutSkill : Skill
 
     public override void Use()
     {
+        base.Use();
         _bubbleText.ShowMessage(3);
         _entities = GameObject.FindObjectsOfType<Entity>();
 

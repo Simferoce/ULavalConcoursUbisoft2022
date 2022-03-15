@@ -29,6 +29,7 @@ public class SummonSkill : Skill
 
     public override void Use()
     {
+        base.Use();
         Vector3 entityPosition = Vector3.ProjectOnPlane(_entity.transform.position, Vector3.up);
         SpawnGroup farthest = _spawns.Aggregate((x, y) => 
             Vector3.Distance(entityPosition, Vector3.ProjectOnPlane(x.points.Aggregate(Vector3.zero, (a, b) => a + b.position) / x.points.Count, Vector3.up)) > 

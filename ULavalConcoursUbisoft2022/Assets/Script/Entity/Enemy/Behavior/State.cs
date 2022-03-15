@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public abstract class State : MonoBehaviour
 {
+    [SerializeField] private UnityEvent OnStateEnableHook;
     [SerializeField] private UnityEvent OnStateDisableHook;
 
     public event Action<State> OnStateDisable;
@@ -30,6 +31,7 @@ public abstract class State : MonoBehaviour
             _hasEnter = true;
             OnEnter();
             OnStateEnable?.Invoke(this);
+            OnStateEnableHook?.Invoke();
         }
         OnUpdate();
     }

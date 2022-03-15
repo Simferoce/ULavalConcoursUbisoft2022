@@ -36,6 +36,7 @@ public class BackToWork : Skill
 
     public override void Use()
     {
+        base.Use();
         _proximityStrikeSkill.OnSkillFinish += _proximityStrikeSkill_OnSkillFinish;
 
         _onWorkStart = Time.time;

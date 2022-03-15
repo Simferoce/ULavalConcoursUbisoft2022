@@ -35,6 +35,7 @@ public class SpawnShadow : Skill
 
     public override void Use()
     {
+        base.Use();
         if (_firstUse)
         {
             _firstUse = false;

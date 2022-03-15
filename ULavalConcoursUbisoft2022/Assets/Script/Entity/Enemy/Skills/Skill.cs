@@ -7,10 +7,16 @@ using UnityEngine.Events;
 public abstract class Skill : MonoBehaviour
 {
     public event Action<Skill> OnSkillFinish;
+
+    public UnityEvent OnSkillStartHook;
     public UnityEvent OnSkillFinishHook;
 
     public abstract bool CanUse();
-    public abstract void Use();
+
+    public virtual void Use()
+    {
+        OnSkillStartHook?.Invoke();
+    }
 
     public void InvokeOnSkillFinish()
     {

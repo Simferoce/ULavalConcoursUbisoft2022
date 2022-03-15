@@ -20,6 +20,7 @@ public class TranscendentExpressionSkill : Skill
 
     public override void Use()
     {
+        base.Use();
         StartCoroutine(DepleteEnergy());
     }
 
