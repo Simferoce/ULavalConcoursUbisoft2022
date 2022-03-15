@@ -7,7 +7,7 @@ public class OnAwake : MonoBehaviour
 {
     [SerializeField] private UnityEvent _onAwake = null;
 
-    private void Awake()
+    private void Start()
     {
         _onAwake?.Invoke();
     }

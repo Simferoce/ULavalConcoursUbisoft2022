@@ -76,7 +76,7 @@ public class Entity : MonoBehaviour
 
         if(attack != null && attack.Owner != this.gameObject && attack.Team != team)
         {
-            _health.Hit(attack.GetAttackDamage() * (2 - _damageReductionAttribute.GetValue(_inventory)));
+            _health.Hit(attack.GetAttackDamage() * (2 - _damageReductionAttribute.GetValue(_inventory)), attack.Team);
         }
     }
 
@@ -110,6 +110,13 @@ public class Entity : MonoBehaviour
 
     public void Teleport(Vector3 position)
     {
+        root.transform.position = position;
+        Physics.SyncTransforms();
+    }
+
+    public void Teleport(Vector3 position, Vector3 forward)
+    {
+        root.rotation = Quaternion.Euler(forward);
         root.transform.position = position;
         Physics.SyncTransforms();
     }

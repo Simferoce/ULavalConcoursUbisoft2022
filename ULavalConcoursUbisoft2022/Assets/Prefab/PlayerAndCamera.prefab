@@ -4145,7 +4145,6 @@ MonoBehaviour:
   _movespeedAttribute:
     _baseMovespeed: 5
   _aim: {fileID: 5951358263907911019}
-  _speed: 5
   _entity: {fileID: 5951358264766311332}
 --- !u!111 &5951358263233617756
 Animation:
@@ -4531,8 +4530,8 @@ GameObject:
   - component: {fileID: 5951358264766311326}
   - component: {fileID: 5951358264766311332}
   - component: {fileID: 5951358264766311333}
+  - component: {fileID: 1737787253638266746}
   - component: {fileID: 5951358264766311330}
-  - component: {fileID: 5951358264766311331}
   - component: {fileID: 5951358264766311328}
   - component: {fileID: 5951358264766311329}
   m_Layer: 7
@@ -4602,6 +4601,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onHealthBelowThreasholdEvents: []
+--- !u!65 &1737787253638266746
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951358264766311327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.41789556, y: 1.4527276, z: 1}
+  m_Center: {x: -0.0011135936, y: -0.22636417, z: 0}
 --- !u!54 &5951358264766311330
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4618,19 +4630,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &5951358264766311331
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5951358264766311327}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5951358264766311328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5924,6 +5923,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+  _channelWithObjectParameters: []
 --- !u!114 &3394314043041962108
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     [SerializeField] private CharacterController _characterController = null;
     [SerializeField] private MovespeedAttribute _movespeedAttribute = null;
     [SerializeField] private Transform _aim = null;
-    [SerializeField] private float _speed = 0.0f;
     
     [SerializeField] private Entity _entity = null;
 
@@ -37,6 +36,10 @@ public class Player : MonoBehaviour
             _entity.Translation = direction;
             Vector3 positionToLookAt = new Vector3(_aim.transform.position.x, this.transform.position.y, _aim.transform.position.z);
             transform.LookAt(positionToLookAt, Vector3.up);
+        }
+        else
+        {
+            _entity.Translation = Vector3.zero;
         }
     }
 

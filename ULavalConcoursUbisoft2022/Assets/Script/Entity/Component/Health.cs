@@ -36,12 +36,19 @@ public class Health : MonoBehaviour
         public UnityEvent OnHealthBelowThreashold;
     }
 
+    public class HealthDamageTakenDTO
+    {
+        public Health Health { get; set; }
+        public float Damage { get; set; }
+        public Entity.Team SourceTeam { get; set; }
+    }
+
     public void Awake()
     {
         HealthPoint = MaxHealth;
     }
 
-    public void Hit(float damage)
+    public void Hit(float damage, Entity.Team sourceTeam)
     {
         if(!Invicible)
         {
@@ -49,6 +56,7 @@ public class Health : MonoBehaviour
 
             HealthPoint -= damageTaken;
             OnDamage?.Invoke(this, damageTaken);
+            Channel.Signal("DamageTaken", new HealthDamageTakenDTO() {Health = this, Damage = damageTaken, SourceTeam = sourceTeam });
             
             for(int i =0; i < onHealthBelowThreasholdEvents.Length; ++i)
             {

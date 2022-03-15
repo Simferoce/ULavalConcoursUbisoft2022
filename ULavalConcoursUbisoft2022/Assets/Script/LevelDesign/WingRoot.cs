@@ -45,8 +45,6 @@ public class WingRoot : MonoBehaviour
             navMeshSurfaces.BuildNavMesh();
         }
 
-        OpenZone();
-
         if (SingleWingScene)
         {
             PlayerSpawnPoint playerSpawnPoint = GameObject.FindObjectOfType<PlayerSpawnPoint>();
