@@ -27,7 +27,7 @@ public class LowerWall : MonoBehaviour
         if(camera != null)
         {
             float value = Vector3.Dot(Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized, Vector3.ProjectOnPlane(camera.transform.forward, Vector3.up).normalized);
-            if (value > 0.5f)
+            if (value > 0.75f)
             {
                 _meshFilter.sharedMesh = _small;
             }
