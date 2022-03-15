@@ -44,5 +44,6 @@ public class DeathScreen : MonoBehaviour
 
         leaderboardController.SetActive(true);
         Time.timeScale = 0f;
+        Debug.Log("dead");
     }
 }
