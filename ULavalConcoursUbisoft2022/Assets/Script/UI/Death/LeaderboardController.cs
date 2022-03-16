@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using LootLocker.Requests;
 using UnityEngine.UI;
+
 public class LeaderboardController : MonoBehaviour
 {
-    public InputField MemberID, PlayerScore;
+    public InputField MemberID;
+    public Text PlayerScore;
     public int ID;
     public GameObject LeaderboardUI;
     int MaxScores = 7;
     public Text[] Entries;
+    
     private void Start()
     {
 
@@ -40,7 +43,7 @@ public class LeaderboardController : MonoBehaviour
 
                 for(int i = 0; i< scores.Length; i++)
                 {
-                    Entries[i].text = (scores[i].rank + ".   " + scores[i].score);
+                    Entries[i].text = (scores[i].rank + ".   " + scores[i].member_id+ "    " + scores[i].score);
 
                 }
                 if(scores.Length< MaxScores)
@@ -63,7 +66,7 @@ public class LeaderboardController : MonoBehaviour
 public void SubmitScore()
     {
         LeaderboardUI.SetActive(true);
-        LootLockerSDKManager.SubmitScore(MemberID.text, int.Parse(PlayerScore.text), ID, (response)=>
+        LootLockerSDKManager.SubmitScore(MemberID.text,  int.Parse(PlayerScore.text), ID, (response) =>
         {
             if (response.success)
             {
