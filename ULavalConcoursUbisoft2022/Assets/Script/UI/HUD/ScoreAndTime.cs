@@ -15,7 +15,7 @@ public class ScoreAndTime : MonoBehaviour
     {
         timeCounter.text = "00:00";
         ScoreCounter.text = "0";
-        InvokeRepeating("Addpoint", 5.0f,5.0f);
+        
     }
     
     void Update()
@@ -34,9 +34,9 @@ public class ScoreAndTime : MonoBehaviour
         timeCounter.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    void Addpoint()
+    public void AddpointMinions()
     {
-        
+        Debug.Log("reee");
         score += 5;
         ScoreCounter.text = string.Format("{0000} ", score);
     }
