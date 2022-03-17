@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    [SerializeField] private bool _destroyOnHit = true;
     [SerializeField] private GameObject _owner = null;
 
     [SerializeField] private Transform _following = null;
@@ -20,7 +21,7 @@ public class Attack : MonoBehaviour
     public float Speed { get => _speed; }
     public Transform Following { get => _following; set => _following = value; }
     public GameObject Owner { get => _owner; set => _owner = value; }
-
+    public bool DestroyOnHit { get => _destroyOnHit; set => _destroyOnHit = value; }
 
     private void Update()
     {

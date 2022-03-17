@@ -7,7 +7,6 @@ public class LowerWall : MonoBehaviour
     [SerializeField] private Mesh _small = null;
     [SerializeField] private Mesh _large = null;
 
-    private Mesh _originalMesh = null;
     private MeshFilter _meshFilter = null;
     private void Start()
     {

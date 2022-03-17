@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    [SerializeField] private Entity _entity = null;
     [SerializeField] private Animator _animator = null;
-    [SerializeField] private Transform _aim;
+    private Entity _entity = null;
 
     private void Awake()
     {
+        _entity = transform.parent.GetComponentInChildren<Entity>();
         _entity.OnAttack += _entity_OnAttack;
     }
 
@@ -32,6 +32,9 @@ public class PlayerAnimation : MonoBehaviour
         float angle = Vector3.SignedAngle(_entity.Root.transform.forward, _entity.Translation, Vector3.up);
         _animator.SetFloat("runAngle", angle / 180);
         _animator.SetBool("isDeath", _entity.Health.IsDead());
+
+
+        _animator.SetFloat("attackSpeedMulti", (1 / _entity.WeaponHandler.WeaponData.GetAttackDelay(_entity.Inventory)));
     }
 
 }

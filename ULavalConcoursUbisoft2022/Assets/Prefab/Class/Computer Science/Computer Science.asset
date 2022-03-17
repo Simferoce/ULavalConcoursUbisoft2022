@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356fb0af6d9958a4a94662f59c52d9da, type: 3}
+  m_Name: Computer Science
+  m_EditorClassIdentifier: 
+  _name: Computer Science
+  _description: 
+  _statisticDetail: 
+  _icon: {fileID: 21300000, guid: 5d226aa50ea6b6644a9a489485c02601, type: 3}
+  _weapon: {fileID: 11400000, guid: 81d6dd75f18c0f9409f1fac443296ab8, type: 2}
+  _modelPrefab: {fileID: 7518334651119861156, guid: f94843643c3db774da59621fdef1524b, type: 3}

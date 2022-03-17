@@ -51,11 +51,11 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public void Attack(bool waitAnimation = false)
     {
         if (CanAttack())
         {
-            _weaponHandler.Use(this.transform.position, transform.forward, team, _inventory);
+            _weaponHandler.Use(this.transform, team, _inventory, waitAnimation);
             OnAttack?.Invoke(_weaponHandler.WeaponData.Type);
         }
     }
@@ -76,7 +76,11 @@ public class Entity : MonoBehaviour
 
         if(attack != null && attack.Owner != this.gameObject && attack.Team != team)
         {
-            _health.Hit(attack.GetAttackDamage() * (2 - _damageReductionAttribute.GetValue(_inventory)), attack.Team);
+            _health.Hit(attack.GetAttackDamage() * (1 - Mathf.Clamp01(_damageReductionAttribute.GetValue(_inventory))), attack.Team);
+            if(attack.DestroyOnHit)
+            {
+                Destroy(attack.gameObject);
+            }
         }
     }
 

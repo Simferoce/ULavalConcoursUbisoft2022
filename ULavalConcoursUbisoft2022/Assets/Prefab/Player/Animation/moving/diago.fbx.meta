@@ -81,16 +81,16 @@ ModelImporter:
       curves: []
       events:
       - time: 0.08582089
-        functionName: PersoMov
-        data: 
-        objectReferenceParameter: {fileID: 8300000, guid: d59582b6e7d4d034a8fde3b3cefd28c9, type: 3}
+        functionName: Execute
+        data: PlayRunSound
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.54986066
-        functionName: PersoMov
-        data: 
-        objectReferenceParameter: {fileID: 8300000, guid: d59582b6e7d4d034a8fde3b3cefd28c9, type: 3}
+        functionName: Execute
+        data: PlayRunSound
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

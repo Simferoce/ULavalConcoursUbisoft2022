@@ -5,22 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private Player player = null;
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = FindObjectOfType<Player>();
-    }
+    private static GameManager _instance = null;
 
-    // Update is called once per frame
-    void Update()
+    public static GameManager Instance
     {
-        if (player == null) {
-            Invoke("EndGame", 0.1f);
+        get
+        {
+            if(_instance == null)
+            {
+                GameManager _gameManager = GameObject.FindObjectOfType<GameManager>();
+                if(_gameManager != null)
+                {
+                    _instance = _gameManager;
+                }
+                else
+                {
+                    GameObject gameManagerPrefab = Resources.Load<GameObject>("GameManager");
+                    _instance = Instantiate(gameManagerPrefab).GetComponent<GameManager>();
+                }
+
+                DontDestroyOnLoad(_instance.gameObject);
+            }
+
+            return _instance;
         }
     }
 
-    void EndGame() {
-        SceneManager.LoadScene("menu");
-    }
+    [SerializeField] private ClassData _class = null;
+    public ClassData Class { get => _class; set => _class = value; }
 }

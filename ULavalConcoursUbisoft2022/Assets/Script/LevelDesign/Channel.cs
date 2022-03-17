@@ -17,7 +17,6 @@ public class Channel : MonoBehaviour
 
     public static void Signal(string channel)
     {
-        Debug.Log($"Channel: {channel}");
         foreach (Channel root in GameObject.FindObjectsOfType<Channel>(true))
         {
             root.Invoke(channel);
@@ -31,7 +30,6 @@ public class Channel : MonoBehaviour
         
         if (channelObject!= null)
         {
-            Debug.Log($"Receiver: {this.gameObject.name}Channel: {channel}");
             channelObject?.Event?.Invoke();
         }
     }
