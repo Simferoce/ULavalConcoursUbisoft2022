@@ -52,7 +52,7 @@ public class Health : MonoBehaviour
     {
         if(!Invicible)
         {
-            float damageTaken = _floorHealthLoss > 0.0f ? Mathf.Min(damage, (HealthPoint % _floorHealthLoss)) : damage;
+            float damageTaken = _floorHealthLoss > 0.0f ? HealthPoint % _floorHealthLoss == 0 ? Mathf.Min(damage, _floorHealthLoss) :  Mathf.Min(damage, (HealthPoint % _floorHealthLoss)) : damage;
 
             HealthPoint -= damageTaken;
             OnDamage?.Invoke(this, damageTaken);

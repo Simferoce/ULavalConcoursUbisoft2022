@@ -50,7 +50,10 @@ public class ChargeSkill : Skill
 
     private void _charge_OnStateDisable(State state)
     {
-        _attackInstance.Destroy();
+        if (_attackInstance != null)
+        {
+            _attackInstance.Destroy();
+        }
     }
 
     private void OnDestroy()
