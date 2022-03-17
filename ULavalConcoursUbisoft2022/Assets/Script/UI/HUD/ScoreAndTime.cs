@@ -36,8 +36,56 @@ public class ScoreAndTime : MonoBehaviour
 
     public void AddpointMinions()
     {
-        Debug.Log("reee");
+        
         score += 5;
         ScoreCounter.text = string.Format("{0000} ", score);
     }
+    public void AddpointFinalBoss()
+    {
+
+        score += 1000;
+        ScoreCounter.text = string.Format("{0000} ", score);
+    }
+    public void WrathKill()
+    {
+
+        score += 100;
+        ScoreCounter.text = string.Format("{0000} ", score);
+    }
+
+    public void BossWrathKill()
+    {
+
+        score += 500;
+        ScoreCounter.text = string.Format("{0000} ", score);
+    }
+
+    public void KillExhaustion()
+    {
+
+        score += 100;
+        ScoreCounter.text = string.Format("{0000} ", score);
+    }
+
+    public void KillExhaustionBoss()
+    {
+
+        score += 500;
+        ScoreCounter.text = string.Format("{0000} ", score);
+    }
+
+    public void SadnessKill()
+    {
+
+        score += 50;
+        ScoreCounter.text = string.Format("{0000} ", score);
+    }
+
+    public void SadnessKillBoss()
+    {
+
+        score += 500;
+        ScoreCounter.text = string.Format("{0000} ", score);
+    }
 }
+

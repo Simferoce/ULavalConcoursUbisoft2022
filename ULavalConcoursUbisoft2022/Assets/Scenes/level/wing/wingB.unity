@@ -16637,10 +16637,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
@@ -16664,11 +16668,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 430588916}
     - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1498589579}
+    - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: Signal
+      objectReference: {fileID: 0}
+    - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
       value: Signal
       objectReference: {fileID: 0}
     - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
@@ -16680,11 +16696,23 @@ PrefabInstance:
       value: Channel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: Channel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_StringArgument
       value: AwardItem
       objectReference: {fileID: 0}
     - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
+      value: KillExhaustionBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 415337187541255126, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 415337188621807974, guid: 893be637cd524b24593de1db3cc36381, type: 3}
@@ -16783,6 +16811,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 415337187081637734, guid: 893be637cd524b24593de1db3cc36381, type: 3}
   m_PrefabInstance: {fileID: 1498589576}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1498589579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498589577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: []
+  _channelWithObjectParameters: []
 --- !u!1001 &1505819301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19562,7 +19604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -19570,6 +19612,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
@@ -19581,11 +19627,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 430588916}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1762070149}
+    - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
@@ -19597,11 +19651,19 @@ PrefabInstance:
       value: Signal
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Signal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Animator, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Channel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: Channel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
@@ -19621,11 +19683,19 @@ PrefabInstance:
       value: AwardItem
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: KillExhaustion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -19640,6 +19710,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8004721724293324411, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
   m_PrefabInstance: {fileID: 1762070146}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1762070149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762070147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: []
+  _channelWithObjectParameters: []
 --- !u!1001 &1763375219
 PrefabInstance:
   m_ObjectHideFlags: 0
