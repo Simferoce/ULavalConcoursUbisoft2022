@@ -19,6 +19,23 @@ public class CameraControl : MonoBehaviour
     private Plane _plane = new Plane(Vector3.up, -1);
     private bool _focus = false;
 
+    private void Awake()
+    {
+        _virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_XDamping = 0;
+        _virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_YDamping = 0;
+        _virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_ZDamping = 0;
+        StartCoroutine(SetDampng());
+    }
+
+    private IEnumerator SetDampng()
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        _virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_XDamping = 1;
+        _virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_YDamping = 1;
+        _virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_ZDamping = 1;
+    }
+
     public void Focus(Transform transform)
     {
         _virtualCamera.Follow = transform;

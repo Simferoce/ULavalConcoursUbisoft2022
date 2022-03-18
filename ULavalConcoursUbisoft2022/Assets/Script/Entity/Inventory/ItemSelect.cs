@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ItemSelect : MonoBehaviour
@@ -18,9 +19,11 @@ public class ItemSelect : MonoBehaviour
     [SerializeField] private List<ItemData> _items = new List<ItemData>();
     [SerializeField] private List<PopupSelectionBox> _itemBoxes = new List<PopupSelectionBox>();
     [SerializeField] private float _delayBeforeChoosing = 0.0f;
+    [SerializeField] private UnityEvent _onItemSelected = null;
 
     private float _timeSinceOpen = 0.0f;
-    private void OnEnable()
+
+    public void GenerateItems()
     {
         _timeSinceOpen = Time.time;
 
@@ -76,7 +79,7 @@ public class ItemSelect : MonoBehaviour
         GameObject itemInstance = Instantiate(_itemBoxes[index].ItemData.Prefab, inventory.transform);
         inventory.Items.Add(itemInstance);
 
-        this.gameObject.SetActive(false);
+        _onItemSelected?.Invoke();
         player.UnlockControl();
     }
 }

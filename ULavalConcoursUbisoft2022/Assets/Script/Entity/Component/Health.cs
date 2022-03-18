@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     [SerializeField] private Animation _animation = null;
     [SerializeField] private bool _invicible = false;
     [SerializeField] private float _floorHealthLoss = 0.0f;
+    [SerializeField] private bool _destroyOnDeath = true;
 
     [Header("Events")]
     [SerializeField] public UnityEvent<Health> OnDeath;
@@ -85,7 +86,11 @@ public class Health : MonoBehaviour
     {
         HealthPoint = 0;
         OnDeath?.Invoke(this);
-        Destroy(transform.parent.gameObject, 0.1f);
+        if(_destroyOnDeath)
+        {
+            Destroy(transform.parent.gameObject, 0.1f);
+        }
+
         _animation.Play("tempAnimOnDeath");
     }
 

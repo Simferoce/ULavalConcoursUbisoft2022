@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
 
     private LowerWall[] _walls = null;
 
+    public bool IsGameInProgress = true;
+
     private void Awake()
     {
         SceneManager.LoadScene(_bossWingName, LoadSceneMode.Additive);

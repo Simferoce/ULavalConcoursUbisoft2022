@@ -33,4 +33,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private ClassData _class = null;
     public ClassData Class { get => _class; set => _class = value; }
+
+    [SerializeField] private bool _isStoryMode = true;
+    public bool IsStoryMode { get => _isStoryMode; set => _isStoryMode = value; }
+
+    public void RevivePlayer()
+    {
+        Health playerHealth = GameObject.FindObjectOfType<Player>().GetComponentInChildren<Health>();
+        playerHealth.HealthPoint = playerHealth.MaxHealth;
+    }
 }

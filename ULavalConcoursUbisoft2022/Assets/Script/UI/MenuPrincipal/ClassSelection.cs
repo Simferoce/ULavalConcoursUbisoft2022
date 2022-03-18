@@ -8,6 +8,7 @@ using System.Linq;
 public class ClassSelection : MonoBehaviour
 {
     [SerializeField] private ToggleGroup _group = null;
+    [SerializeField] private Toggle _isStoryMode = null;
 
     public void ChoixClasse()
     {
@@ -21,6 +22,7 @@ public class ClassSelection : MonoBehaviour
         if(toggle != null)
         {
             GameManager.Instance.Class = toggle.GetComponent<ClassToggleUI>().Class;
+            GameManager.Instance.IsStoryMode = _isStoryMode;
             SceneManager.LoadScene("level");
             MenuPause.GameIsPaused = false;
         }

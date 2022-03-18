@@ -1,49 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class DeathScreen : MonoBehaviour
 {
-    public GameObject Camera;
-    
     private Player player = null;
     private Health health = null;
-    public GameObject leaderboardController;
-    public GameObject DeathScreentable;
-    // Start is called before the first frame update
+
+    [SerializeField] private UnityEvent _onOpenEndMenu = null;
+
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
+
         health = player.GetComponentInChildren<Health>();
-        health.OnDeath.AddListener(Health_OnDeath);
-        leaderboardController.SetActive(false);
-        DeathScreentable.SetActive(false);
-
-
+        if (!GameManager.Instance.IsStoryMode)
+        {
+            health.OnDeath.AddListener(Health_OnDeath);
+        }
     }
 
     private void Health_OnDeath(Health obj)
     {
-        OnDie();
+        OpenEndMenu();
     }
 
-    //get called when the player die
-    public void OnDie()
-    {
-        Debug.Log("dead");       
-        DeathScreentable.SetActive(true);
-        Time.timeScale = 0f;
-    }
     private void OnDestroy()
     {
-        health.OnDeath.RemoveListener(Health_OnDeath); 
+        if (!GameManager.Instance.IsStoryMode)
+        {
+            health.OnDeath.RemoveListener(Health_OnDeath);
+        }
+    }
+
+    public void GiveUp()
+    {
+        OpenEndMenu();
     }
 
     public void OnDeathBoss()
     {
+        OpenEndMenu();
+    }
 
-        leaderboardController.SetActive(true);
-        Time.timeScale = 0f;
-        Debug.Log("dead");
+    private void OpenEndMenu()
+    {
+        _onOpenEndMenu?.Invoke();
+        GameObject.FindObjectOfType<LevelManager>().IsGameInProgress = false;
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("menu+");
+        Time.timeScale = 1;
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("level");
+        Time.timeScale = 1;
     }
 }

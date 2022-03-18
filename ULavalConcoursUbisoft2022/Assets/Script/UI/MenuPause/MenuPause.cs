@@ -1,54 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class MenuPause : MonoBehaviour
 {
 
     public static bool GameIsPaused = false;
 
-    public GameObject pauseMenuUI;
-    public GameObject canvas;
-    // Update is called once per frame
+    [SerializeField] private UnityEvent _onPause;
+    [SerializeField] private UnityEvent _onResume;
 
+
+    private bool _menuOpened = false;
+    private LevelManager _levelManager = null;
 
     private void Start()
     {
-        pauseMenuUI.SetActive(false);
         GameIsPaused = false;
         Time.timeScale = 1f;
+        _levelManager = GameObject.FindObjectOfType<LevelManager>();
     }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && _levelManager.IsGameInProgress)
         {
-            if (GameIsPaused)
+            if (_menuOpened)
             {
-                Resume();
-
+                TriggerResume();
             }
             else
             {
-
+                _onPause?.Invoke();
                 Pause();
-
             }
-
         }
     }
+
+    public void TriggerResume()
+    {
+        _onResume?.Invoke();
+        _menuOpened = false;
+    }
+
     public void Resume()
     {
         GameObject.FindObjectOfType<Player>().UnlockControl();
-        pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
+
     public void Pause()
     {
         GameObject.FindObjectOfType<Player>().LockControl();
-        pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-
+        _menuOpened = true;
     }
 }
