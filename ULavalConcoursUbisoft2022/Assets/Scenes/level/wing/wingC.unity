@@ -19575,6 +19575,10 @@ PrefabInstance:
       propertyPath: _middleRoom
       value: 
       objectReference: {fileID: 809999172}
+    - target: {fileID: 6703604898940076610, guid: f567b79ee0948234599dffd994fa01b6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0937af34efd841348b7c452bcde6b1b6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f567b79ee0948234599dffd994fa01b6, type: 3}
 --- !u!1 &1776662338 stripped
