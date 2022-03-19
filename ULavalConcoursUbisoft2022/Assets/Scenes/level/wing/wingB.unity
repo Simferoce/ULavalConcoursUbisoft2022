@@ -19568,6 +19568,10 @@ PrefabInstance:
       propertyPath: _delaySpawn.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2987156633257054505, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 060acd6e76a0ca540ae2296e33931a24, type: 2}
     - target: {fileID: 3397423348777083060, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: _duration
       value: 20
