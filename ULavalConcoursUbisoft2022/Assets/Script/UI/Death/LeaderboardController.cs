@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using LootLocker.Requests;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class LeaderboardController : MonoBehaviour
 {
-    public InputField MemberID;
+    public TMP_InputField MemberID;
     public Text PlayerScore;
     public int ID;
     public GameObject LeaderboardUI;
-    int MaxScores = 7;
-    public Text[] Entries;
-    
+    int MaxScores = 12;
+    public TextMeshProUGUI[] Entries;
+    public TextMeshProUGUI[] EntriesName;
+    public TextMeshProUGUI[] EntriesScore;
+    public TextMeshProUGUI[] Rating;
+    public int ratingint;
     private void Start()
     {
 
@@ -30,10 +35,20 @@ public class LeaderboardController : MonoBehaviour
             }
         });
 
+
+        if (LeaderboardUI.activeInHierarchy)
+        {
+            ShowScores();
+
+        }
+
     }
 
 
-    public void ShowScores()
+
+    
+
+    public void  ShowScores()
     {
         LootLockerSDKManager.GetScoreList(ID, MaxScores, (response) =>
         {
@@ -43,14 +58,45 @@ public class LeaderboardController : MonoBehaviour
 
                 for(int i = 0; i< scores.Length; i++)
                 {
-                    Entries[i].text = (scores[i].rank + ".   " + scores[i].member_id+ "    " + scores[i].score);
+                    Entries[i].text = scores[i].rank + "";
+                    EntriesName[i].text = scores[i].member_id ;
+                    EntriesScore[i].text = scores[i].score+"";
+                    ratingint = int.Parse(EntriesScore[i].text);
+                    if (ratingint > 2500)
+                    {
+                        
+                        Rating[i].text = "A";
+                    }
+                    else if  (ratingint > 1500)
+                    {
+                        
+                        Rating[i].text = "B";
+                    }
+                    else if (ratingint > 1000)
+                    {
+
+                        Rating[i].text = "C";
+                    }
+                    else if (ratingint > 500)
+                    {
+
+                        Rating[i].text = "D";
+                    }
+                    else 
+                    {
+
+                        Rating[i].text = "F";
+                    }
 
                 }
                 if(scores.Length< MaxScores)
                 {
                     for(int i = scores.Length; i< MaxScores; i++)
                     {
-                        Entries[i].text = (i + 1).ToString() + ".   none";
+                        Entries[i].text = "";
+                        EntriesName[i].text = "";
+                        EntriesScore[i].text = "";
+                        Rating[i].text = "";
                     }
                 }
                 
@@ -79,6 +125,8 @@ public void SubmitScore()
             }
         });
     }
+
+  
 
   
 }
