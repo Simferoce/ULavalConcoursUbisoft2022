@@ -36,6 +36,12 @@ public class InGameMainMenu : MonoBehaviour
     }
 
     [SerializeField] private List<Menu> _menus = new List<Menu>();
+    [SerializeField] private Camera _menuCamera = null;
+
+    private void Awake()
+    {
+        _menuCamera.enabled = true;
+    }
 
     public void DisableAll()
     {
@@ -62,6 +68,7 @@ public class InGameMainMenu : MonoBehaviour
         {
             Time.timeScale = 1f;
             MenuPause.GameIsPaused = false;
+            _menuCamera.enabled = true;
         }
         _pause++;
     }
@@ -73,6 +80,7 @@ public class InGameMainMenu : MonoBehaviour
         {
             Time.timeScale = 0f;
             MenuPause.GameIsPaused = true;
+            _menuCamera.enabled = false;
         }
     }
 }
