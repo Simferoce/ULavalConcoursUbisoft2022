@@ -48,15 +48,11 @@ public class MenuPause : MonoBehaviour
     public void Resume()
     {
         GameObject.FindObjectOfType<Player>().UnlockControl();
-        Time.timeScale = 1f;
-        GameIsPaused = false;
     }
 
     public void Pause()
     {
         GameObject.FindObjectOfType<Player>().LockControl();
-        Time.timeScale = 0f;
-        GameIsPaused = true;
         _menuOpened = true;
     }
 }

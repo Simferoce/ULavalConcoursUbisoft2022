@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InGameMainMenu : MonoBehaviour
 {
@@ -11,27 +12,26 @@ public class InGameMainMenu : MonoBehaviour
         [System.Serializable]
         public enum MenuType
         {
-            SubmitScore = 0,
-            Pause = 1,
-            Awards = 2,
-            EndGame = 3,
-            Option = 4
+            Pause = 0,
+            Awards = 1,
+            EndGame = 2,
         }
 
         public MenuType Type;
-        public GameObject Left;
-        public GameObject Right;
+        public Animator Animator;
+        public UnityEvent _onEnable;
+        public UnityEvent _onDisable;
 
         public void Disable()
         {
-            Left.SetActive(false);
-            Right.SetActive(false);
+            Animator.SetTrigger("Close");
+            _onDisable?.Invoke();
         }
 
         public void Enable()
         {
-            Left.SetActive(true);
-            Right.SetActive(true);
+            Animator.SetTrigger("Open");
+            _onEnable?.Invoke();
         }
     }
 
@@ -53,5 +53,26 @@ public class InGameMainMenu : MonoBehaviour
     public void Disable(int type)
     {
         _menus.FirstOrDefault(x => x.Type == (Menu.MenuType)type).Disable();
+    }
+
+    private int _pause = 0;
+    public void StackPause()
+    {
+        if(_pause == 0)
+        {
+            Time.timeScale = 1f;
+            MenuPause.GameIsPaused = false;
+        }
+        _pause++;
+    }
+
+    public void UnstackPause()
+    {
+        _pause--;
+        if (_pause == 0)
+        {
+            Time.timeScale = 0f;
+            MenuPause.GameIsPaused = true;
+        }
     }
 }
