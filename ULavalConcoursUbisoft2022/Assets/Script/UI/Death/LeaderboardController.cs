@@ -20,8 +20,8 @@ public class LeaderboardController : MonoBehaviour
     public int ratingint;
     private void Start()
     {
-
         
+
         LootLockerSDKManager.StartSession("Player", (response) =>
         {
             if (response.success)
@@ -50,6 +50,7 @@ public class LeaderboardController : MonoBehaviour
 
     public void  ShowScores()
     {
+        
         LootLockerSDKManager.GetScoreList(ID, MaxScores, (response) =>
         {
             if (response.success)
@@ -107,7 +108,7 @@ public class LeaderboardController : MonoBehaviour
             }
 
         });
-
+        
     }
 public void SubmitScore()
     {

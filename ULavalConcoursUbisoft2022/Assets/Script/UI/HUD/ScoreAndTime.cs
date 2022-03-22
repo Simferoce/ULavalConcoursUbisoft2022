@@ -3,19 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using TMPro;
 public class ScoreAndTime : MonoBehaviour
 {
     public Text timeCounter;
     public Text ScoreCounter;
+    public Text PlayerScore;
     private float timer = 0.0f;
-    
+    public TMP_Text PlayerScoreDisplay;
+    public TMP_Text PlayerMark;
     private float score = 0f;
+    public int ratingint;
+    public GameObject LeaderboardUI;
+
     private void Start()
     {
         timeCounter.text = "00:00";
         ScoreCounter.text = "0";
-        
+
+
+        if (LeaderboardUI.activeInHierarchy)
+        {
+            ShowMark();
+
+        }
     }
     
     void Update()
@@ -87,5 +98,42 @@ public class ScoreAndTime : MonoBehaviour
         score += 500;
         ScoreCounter.text = string.Format("{0000} ", score);
     }
+
+    public void ShowScore()
+    {
+        PlayerScoreDisplay.text = PlayerScore.text + " pts";
+
+    }
+    public void ShowMark()
+    {
+        ratingint = int.Parse(PlayerScore.text);
+        if (ratingint > 2500)
+        {
+
+            PlayerMark.text = "A";
+        }
+        else if (ratingint > 1500)
+        {
+
+            PlayerMark.text = "B";
+        }
+        else if (ratingint > 1000)
+        {
+
+            PlayerMark.text = "C";
+        }
+        else if (ratingint > 500)
+        {
+
+            PlayerMark.text = "D";
+        }
+        else
+        {
+
+            PlayerMark.text = "F";
+        }
+    }
+
+
 }
 
