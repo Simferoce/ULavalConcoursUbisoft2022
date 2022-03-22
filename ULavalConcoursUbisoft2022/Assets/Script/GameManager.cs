@@ -16,13 +16,11 @@ public class GameManager : MonoBehaviour
                 GameManager _gameManager = GameObject.FindObjectOfType<GameManager>();
                 if(_gameManager != null)
                 {
-                    _instance = _gameManager;
+                    Destroy(_gameManager.gameObject);
                 }
-                else
-                {
-                    GameObject gameManagerPrefab = Resources.Load<GameObject>("GameManager");
-                    _instance = Instantiate(gameManagerPrefab).GetComponent<GameManager>();
-                }
+
+                GameObject gameManagerPrefab = Resources.Load<GameObject>("GameManager");
+                _instance = Instantiate(gameManagerPrefab).GetComponent<GameManager>();
 
                 DontDestroyOnLoad(_instance.gameObject);
             }
