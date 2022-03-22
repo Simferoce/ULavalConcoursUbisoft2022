@@ -73,4 +73,10 @@ public class MainMenu : MonoBehaviour
         _selectionCamera.Priority = 0;
         _menuCamera.Priority = 1;
     }
+
+    public void Quitter()
+    {
+
+        Application.Quit();
+    }
 }
