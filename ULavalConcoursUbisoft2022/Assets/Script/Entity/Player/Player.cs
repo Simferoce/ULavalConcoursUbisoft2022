@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
     {
         Instantiate(GameManager.Instance.Class.ModelPrefab, _entity.Root);
 
+        if (GameManager.Instance.Class.StartingItem) {
+            GameObject itemInstance = Instantiate(GameManager.Instance.Class.StartingItem.Prefab, Entity.Inventory.transform);
+            Entity.Inventory.Items.Add(itemInstance);
+        }
+        
         _entity.WeaponHandler.SetWeapon(GameManager.Instance.Class.Weapon);
     }
 

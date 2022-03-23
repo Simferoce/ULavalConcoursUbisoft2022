@@ -11,6 +11,7 @@ public class ClassData : ScriptableObject
     [SerializeField] private Sprite _icon = null;
     [SerializeField] private Weapon _weapon = null;
     [SerializeField] private GameObject _modelPrefab = null;
+    [SerializeField] private ItemData _startingItem = null;
 
     public string Name { get => _name; set => _name = value; }
     public string Description { get => _description; set => _description = value; }
@@ -18,4 +19,5 @@ public class ClassData : ScriptableObject
     public GameObject ModelPrefab { get => _modelPrefab; set => _modelPrefab = value; }
     public Sprite Icon { get => _icon; set => _icon = value; }
     public Weapon Weapon { get => _weapon; set => _weapon = value; }
+    public ItemData StartingItem { get => _startingItem; set => _startingItem = value;}
 }
