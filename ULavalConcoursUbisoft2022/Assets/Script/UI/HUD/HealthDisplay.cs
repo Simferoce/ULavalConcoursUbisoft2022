@@ -12,32 +12,20 @@ public class HealthDisplay : MonoBehaviour
     public Slider slider;
     public float currentHealth;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
         health = player.GetComponentInChildren<Health>();
         currentHealth = health.MaxHealth;
-        health.OnDamage += Health_OnDamage;
         slider.value = 0.0f;
         maxHealth = health.MaxHealth;
         slider.maxValue = maxHealth;
        
     }
-   
 
-    private void Health_OnDamage(Health arg1, float arg2)
+    public void Update()
     {
         currentHealth = health.HealthPoint;
-        slider.value = maxHealth-currentHealth;
-        
+        slider.value = maxHealth - currentHealth;
     }
-
-    private void OnDestroy()
-    {
-        health.OnDamage -= Health_OnDamage;
-    }
-
-
 }

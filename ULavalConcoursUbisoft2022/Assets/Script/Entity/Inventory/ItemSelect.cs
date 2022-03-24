@@ -18,7 +18,6 @@ public class ItemSelect : MonoBehaviour
 
     [SerializeField] private List<ItemData> _items = new List<ItemData>();
     [SerializeField] private List<PopupSelectionBox> _itemBoxes = new List<PopupSelectionBox>();
-    [SerializeField] private float _delayBeforeChoosing = 0.0f;
     [SerializeField] private UnityEvent _onItemSelected = null;
 
     private float _timeSinceOpen = 0.0f;
@@ -68,11 +67,6 @@ public class ItemSelect : MonoBehaviour
 
     public void OnClick(int index)
     {
-        if(Time.time - _timeSinceOpen < _delayBeforeChoosing)
-        {
-            return;
-        }
-
         Player player = GameObject.FindObjectOfType<Player>();
         Inventory inventory = player.Entity.Inventory;
 

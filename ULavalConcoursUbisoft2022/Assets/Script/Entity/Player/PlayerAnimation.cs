@@ -13,6 +13,7 @@ public class PlayerAnimation : MonoBehaviour
         _entity = transform.parent.GetComponentInChildren<Entity>();
         _player = GetComponentInParent<Player>();
         _entity.OnAttack += _entity_OnAttack;
+        _player.InitRevive.AddListener(OnReviveInit);
     }
 
     private void _entity_OnAttack(Weapon.WeaponType obj)
@@ -25,6 +26,16 @@ public class PlayerAnimation : MonoBehaviour
         {
             _animator.SetTrigger("isAttackingMelee");
         }
+    }
+
+    private void OnDestroy()
+    {
+        _player.InitRevive.RemoveListener(OnReviveInit);
+    }
+
+    private void OnReviveInit()
+    {
+        _animator.SetTrigger("Revive");
     }
 
     private void Update()

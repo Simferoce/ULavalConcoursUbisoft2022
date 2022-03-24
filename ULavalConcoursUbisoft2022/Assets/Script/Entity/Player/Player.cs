@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     
     [SerializeField] private Entity _entity = null;
 
+    public UnityEvent InitRevive;
     public UnityEvent _onRevive;
     public UnityEvent _onPlayerDefeated;
 
@@ -42,7 +43,8 @@ public class Player : MonoBehaviour
         health.Invicible = true;
         if(GameManager.Instance.IsStoryMode)
         {
-            //Revived();
+            LockControl();
+            StartCoroutine(ReviveInit());
         }
         else
         {
@@ -50,10 +52,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Revived()
+    private IEnumerator ReviveInit()
     {
-        _onRevive?.Invoke();
+        yield return new WaitForSeconds(3f);
         _entity.Health.HealthPoint = _entity.Health.MaxHealth;
+        InitRevive?.Invoke();
+        yield return new WaitForSeconds(3f);
+        _onRevive?.Invoke();
+        UnlockControl();
+        yield return new WaitForSeconds(1f);
         _entity.Health.Invicible = false;
     }
 

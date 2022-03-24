@@ -17,6 +17,7 @@ public class BubbleText : MonoBehaviour
         Depression,
         Exhaustion,
         Wrath,
+        Player,
         Unknow
     }
 
@@ -44,6 +45,7 @@ public class BubbleText : MonoBehaviour
         {12, new Message() {Source = Source.Depression, Text = "It is futile to stuggle.", Duration = 4.0f } },
         {13, new Message() {Source = Source.Depression, Text = "Empty. Drain. Tarnish.", Duration = 4.0f } },
         {14, new Message() {Source = Source.Depression, Text = "Nothing matters; School, Love, Friends all is ephemeral.", Duration = 4.0f } },
+        {15, new Message() {Source = Source.Player, Text = "Death is only an illusion", Duration = 3.0f } },
     };
 
     private void Start()
