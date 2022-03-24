@@ -64,22 +64,23 @@ public class InGameMainMenu : MonoBehaviour
     private int _pause = 0;
     public void StackPause()
     {
-        if(_pause == 0)
-        {
-            Time.timeScale = 1f;
-            MenuPause.GameIsPaused = false;
-            _menuCamera.enabled = true;
-        }
         _pause++;
+        if (_pause > 0)
+        {
+            Time.timeScale = 0f;
+            MenuPause.GameIsPaused = true;
+            _menuCamera.enabled = true;
+
+        }
     }
 
     public void UnstackPause()
     {
         _pause--;
-        if (_pause == 0)
+        if (_pause <= 0)
         {
-            Time.timeScale = 0f;
-            MenuPause.GameIsPaused = true;
+            Time.timeScale = 1f;
+            MenuPause.GameIsPaused = false;
             _menuCamera.enabled = false;
         }
     }

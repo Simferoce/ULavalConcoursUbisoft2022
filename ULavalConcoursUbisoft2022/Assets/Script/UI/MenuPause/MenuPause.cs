@@ -29,30 +29,15 @@ public class MenuPause : MonoBehaviour
         {
             if (_menuOpened)
             {
-                TriggerResume();
+                _onResume?.Invoke();
+                _menuOpened = false;
             }
             else
             {
                 _onPause?.Invoke();
-                Pause();
+                _menuOpened = true;
             }
         }
     }
 
-    public void TriggerResume()
-    {
-        _onResume?.Invoke();
-        _menuOpened = false;
-    }
-
-    public void Resume()
-    {
-        GameObject.FindObjectOfType<Player>().UnlockControl();
-    }
-
-    public void Pause()
-    {
-        GameObject.FindObjectOfType<Player>().LockControl();
-        _menuOpened = true;
-    }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -10,11 +11,15 @@ public class Player : MonoBehaviour
     
     [SerializeField] private Entity _entity = null;
 
+    public UnityEvent _onRevive;
+    public UnityEvent _onPlayerDefeated;
+
     private Vector3 direction = Vector3.zero;
-    private bool _lock = false;
 
     public Entity Entity { get => _entity; set => _entity = value; }
-    public bool Lock { get => _lock; set => _lock = value; }
+    public bool Lock { get { return _lockControlSemaphore > 0; } }
+
+    private int _lockControlSemaphore = 0;
 
     private void Awake()
     {
@@ -26,11 +31,25 @@ public class Player : MonoBehaviour
         }
         
         _entity.WeaponHandler.SetWeapon(GameManager.Instance.Class.Weapon);
+        _entity.Health.OnDeath.AddListener(OnDead);
+    }
+
+    public void OnDead(Health health)
+    {
+        if(GameManager.Instance.IsStoryMode)
+        {
+            _onRevive?.Invoke();
+            _entity.Health.HealthPoint = _entity.Health.MaxHealth;
+        }
+        else
+        {
+            _onPlayerDefeated?.Invoke();
+        }
     }
 
     private void Update()
     {
-        if (!_lock)
+        if (!Lock)
         {
             direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
@@ -50,13 +69,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void OnDestroy()
+    {
+        _entity.Health.OnDeath.RemoveListener(OnDead);
+    }
+
     public void LockControl()
     {
-        _lock = true;
+        _lockControlSemaphore++;
     }
 
     public void UnlockControl()
     {
-        _lock = false;
+        _lockControlSemaphore--;
     }
 }

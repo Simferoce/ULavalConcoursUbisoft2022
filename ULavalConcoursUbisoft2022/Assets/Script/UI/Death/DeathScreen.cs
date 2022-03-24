@@ -7,32 +7,17 @@ using UnityEngine.SceneManagement;
 public class DeathScreen : MonoBehaviour
 {
     private Player player = null;
-    private Health health = null;
 
     [SerializeField] private UnityEvent _onOpenEndMenu = null;
 
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
-
-        health = player.GetComponentInChildren<Health>();
-        if (!GameManager.Instance.IsStoryMode)
-        {
-            health.OnDeath.AddListener(Health_OnDeath);
-        }
     }
 
-    private void Health_OnDeath(Health obj)
+    public void OnPlayerDefeated()
     {
         OpenEndMenu();
-    }
-
-    private void OnDestroy()
-    {
-        if (!GameManager.Instance.IsStoryMode)
-        {
-            health.OnDeath.RemoveListener(Health_OnDeath);
-        }
     }
 
     public void GiveUp()

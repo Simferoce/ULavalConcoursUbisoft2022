@@ -22,7 +22,7 @@ public class ClassSelection : MonoBehaviour
         if(toggle != null)
         {
             GameManager.Instance.Class = toggle.GetComponent<ClassToggleUI>().Class;
-            GameManager.Instance.IsStoryMode = _isStoryMode;
+            GameManager.Instance.IsStoryMode = _isStoryMode.isOn;
             SceneManager.LoadScene("level");
             MenuPause.GameIsPaused = false;
         }

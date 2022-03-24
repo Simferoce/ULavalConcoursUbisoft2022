@@ -5,10 +5,16 @@ using UnityEngine.Events;
 
 public class CloseMenu : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _events = null;
+    [SerializeField] private UnityEvent _openEvents = null;
+    [SerializeField] private UnityEvent _closeEvents = null;
 
     public void CloseMenuAction()
     {
-        _events?.Invoke();
+        _closeEvents?.Invoke();
+    }
+
+    public void OpenMenuAction()
+    {
+        _openEvents?.Invoke();
     }
 }
