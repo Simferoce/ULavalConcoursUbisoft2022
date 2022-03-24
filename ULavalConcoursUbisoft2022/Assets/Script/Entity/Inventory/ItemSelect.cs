@@ -19,13 +19,17 @@ public class ItemSelect : MonoBehaviour
     [SerializeField] private List<ItemData> _items = new List<ItemData>();
     [SerializeField] private List<PopupSelectionBox> _itemBoxes = new List<PopupSelectionBox>();
     [SerializeField] private UnityEvent _onItemSelected = null;
+    [SerializeField] private TextMeshProUGUI _addHp = null;
+    [SerializeField] private float _healthAmount = 0.0f;
 
+    private string _stressText = "<color=\"purple\">-{0}<color=\"white\"> Stress";
     private float _timeSinceOpen = 0.0f;
+
 
     public void GenerateItems()
     {
         _timeSinceOpen = Time.time;
-
+        _addHp.text = string.Format(_stressText, _healthAmount);
         Player player = GameObject.FindObjectOfType<Player>();
         player.LockControl();
 
@@ -73,7 +77,20 @@ public class ItemSelect : MonoBehaviour
         GameObject itemInstance = Instantiate(_itemBoxes[index].ItemData.Prefab, inventory.transform);
         inventory.Items.Add(itemInstance);
 
+        Close();
+    }
+
+    private void Close()
+    {
+        Player player = GameObject.FindObjectOfType<Player>();
         _onItemSelected?.Invoke();
         player.UnlockControl();
+    }
+
+    public void OnAddHp()
+    {
+        Player player = GameObject.FindObjectOfType<Player>();
+        player.Entity.Health.HealthPoint = Mathf.Clamp(player.Entity.Health.HealthPoint + _healthAmount, 0, player.Entity.Health.MaxHealth);
+        Close();
     }
 }
