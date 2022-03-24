@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             }
 
             _characterController.Move(direction.normalized * _movespeedAttribute.GetValue(_entity.Inventory) * Time.deltaTime);
-            _entity.Translation = direction.normalized;
+            _entity.Translation = transform.InverseTransformDirection(direction.normalized);
             Vector3 positionToLookAt = new Vector3(_aim.transform.position.x, this.transform.position.y, _aim.transform.position.z);
             transform.LookAt(positionToLookAt, Vector3.up);
         }

@@ -35,6 +35,8 @@ public class PlayerAnimation : MonoBehaviour
 
 
         _animator.SetFloat("attackSpeedMulti", (1 / _entity.WeaponHandler.WeaponData.GetAttackDelay(_entity.Inventory)));
+        _animator.SetFloat("Horizontal", _entity.Translation.x);
+        _animator.SetFloat("Vertical", _entity.Translation.z);
     }
 
 }
