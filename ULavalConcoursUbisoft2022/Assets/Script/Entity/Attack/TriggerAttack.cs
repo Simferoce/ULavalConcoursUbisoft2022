@@ -11,7 +11,6 @@ public class TriggerAttack : MonoBehaviour
 
     public void EndAttack()
     {
-        Debug.Log("EndAttack");
         transform.parent.GetComponentInChildren<WeaponHandler>().EndAttack();
     }
 }
