@@ -8,4 +8,10 @@ public class TriggerAttack : MonoBehaviour
     {
         transform.parent.GetComponentInChildren<WeaponHandler>().TriggerAttackFromAnimation();
     }
+
+    public void EndAttack()
+    {
+        Debug.Log("EndAttack");
+        transform.parent.GetComponentInChildren<WeaponHandler>().EndAttack();
+    }
 }

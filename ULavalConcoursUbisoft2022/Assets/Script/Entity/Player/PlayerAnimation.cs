@@ -6,10 +6,12 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator = null;
     private Entity _entity = null;
+    private Player _player = null;
 
     private void Awake()
     {
         _entity = transform.parent.GetComponentInChildren<Entity>();
+        _player = GetComponentInParent<Player>();
         _entity.OnAttack += _entity_OnAttack;
     }
 
@@ -37,6 +39,21 @@ public class PlayerAnimation : MonoBehaviour
         _animator.SetFloat("attackSpeedMulti", (1 / _entity.WeaponHandler.WeaponData.GetAttackDelay(_entity.Inventory)));
         _animator.SetFloat("Horizontal", _entity.Translation.x);
         _animator.SetFloat("Vertical", _entity.Translation.z);
-    }
+        _animator.SetBool("isDeath", _entity.Health.IsDead());
 
+        var forwardA = _player.transform.rotation * Vector3.forward;
+        var forwardB = _player.LastRot * Vector3.forward;
+
+
+        // get a numeric angle for each vector, on the X-Z plane (relative to world forward)
+        var angleA = Mathf.Atan2(forwardA.x, forwardA.z) * Mathf.Rad2Deg;
+        var angleB = Mathf.Atan2(forwardB.x, forwardB.z) * Mathf.Rad2Deg;
+
+
+        // get the signed difference in these angles
+        var angleDiff = Mathf.DeltaAngle(angleA, angleB);
+
+        _animator.SetBool("RightTurn", angleDiff > 0.01f);
+        _animator.SetBool("LeftTurn", angleDiff < -0.01f);
+    }
 }

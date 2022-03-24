@@ -376,11 +376,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf7b7289cb75b945b175151b520c3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 50
+  _maxHealth: 1
   _healthPoint: 0
   _animation: {fileID: 7218801385976619078}
   _invicible: 0
   _floorHealthLoss: 0
+  _destroyOnDeath: 1
   OnDeath:
     m_PersistentCalls:
       m_Calls: []

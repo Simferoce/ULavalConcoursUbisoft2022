@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
 
     private int _lockControlSemaphore = 0;
 
+    private Quaternion lastRot;
+    public Quaternion LastRot { get => lastRot; set => lastRot = value; }
+
     private void Awake()
     {
         Instantiate(GameManager.Instance.Class.ModelPrefab, _entity.Root);
@@ -36,15 +39,22 @@ public class Player : MonoBehaviour
 
     public void OnDead(Health health)
     {
+        health.Invicible = true;
         if(GameManager.Instance.IsStoryMode)
         {
-            _onRevive?.Invoke();
-            _entity.Health.HealthPoint = _entity.Health.MaxHealth;
+            //Revived();
         }
         else
         {
             _onPlayerDefeated?.Invoke();
         }
+    }
+
+    private void Revived()
+    {
+        _onRevive?.Invoke();
+        _entity.Health.HealthPoint = _entity.Health.MaxHealth;
+        _entity.Health.Invicible = false;
     }
 
     private void Update()
@@ -60,6 +70,7 @@ public class Player : MonoBehaviour
 
             _characterController.Move(direction.normalized * _movespeedAttribute.GetValue(_entity.Inventory) * Time.deltaTime);
             _entity.Translation = transform.InverseTransformDirection(direction.normalized);
+            lastRot = transform.rotation;
             Vector3 positionToLookAt = new Vector3(_aim.transform.position.x, this.transform.position.y, _aim.transform.position.z);
             transform.LookAt(positionToLookAt, Vector3.up);
         }

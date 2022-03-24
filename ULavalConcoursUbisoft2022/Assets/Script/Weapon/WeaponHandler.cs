@@ -16,6 +16,9 @@ public class WeaponHandler : MonoBehaviour
 
     public Weapon WeaponData { get => _weaponData; set => _weaponData = value; }
 
+    private bool _isAttacking = false;
+    public bool IsAttacking { get => _isAttacking; set => _isAttacking = value; }
+
     private void Awake()
     {
         if(_startingWeapon != null)
@@ -68,6 +71,8 @@ public class WeaponHandler : MonoBehaviour
 
     public void Use(Transform source, Entity.Team team, Inventory inventory, bool waitAnimation = false)
     {
+        _isAttacking = true;
+
         _triggerAttack = () =>
         {
             GameObject attackCollider = Instantiate(_weaponData.Collider, source.position, Quaternion.LookRotation(source.forward, Vector3.up));
@@ -90,5 +95,10 @@ public class WeaponHandler : MonoBehaviour
     public float GetRange()
     {
         return _colliderRange;
+    }
+
+    public void EndAttack()
+    {
+        _isAttacking = false;
     }
 }
