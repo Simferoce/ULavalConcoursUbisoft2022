@@ -10,4 +10,9 @@ public class StateMachineX : MonoBehaviour
     {
         EntryPoint.enabled = true;
     }
+
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
+    }
 }

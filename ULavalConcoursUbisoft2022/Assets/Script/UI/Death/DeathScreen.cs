@@ -9,6 +9,7 @@ public class DeathScreen : MonoBehaviour
     private Player player = null;
 
     [SerializeField] private UnityEvent _onOpenEndMenu = null;
+    [SerializeField] private float _delayBeforeEndMenu = 0.0f;
 
     void Start()
     {
@@ -27,13 +28,23 @@ public class DeathScreen : MonoBehaviour
 
     public void OnDeathBoss()
     {
+        StartCoroutine(OpenMenuAfterDelay());
+    }
+
+    private IEnumerator OpenMenuAfterDelay()
+    {
+        yield return new WaitForSeconds(_delayBeforeEndMenu);
         OpenEndMenu();
     }
 
     private void OpenEndMenu()
     {
         _onOpenEndMenu?.Invoke();
-        GameObject.FindObjectOfType<LevelManager>().IsGameInProgress = false;
+        LevelManager levelManager = GameObject.FindObjectOfType<LevelManager>();
+        if(levelManager != null)
+        {
+            levelManager.IsGameInProgress = false;
+        }
     }
 
     public void ReturnToMenu()

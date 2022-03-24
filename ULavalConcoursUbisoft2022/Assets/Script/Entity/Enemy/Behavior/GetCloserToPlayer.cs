@@ -70,4 +70,9 @@ public class GetCloserToPlayer : State
         _entity.LookTowardsTarget(_player.transform.position);
         _navMeshAgent.SetDestination(destination);
     }
+
+    private void OnDestroy()
+    {
+        _navMeshAgent.isStopped = true;
+    }
 }
