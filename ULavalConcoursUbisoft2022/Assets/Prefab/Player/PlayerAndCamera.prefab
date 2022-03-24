@@ -817,7 +817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +9999
+  m_text: A+
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ca865c6e2228284fad0dadf9a795808, type: 2}
   m_sharedMaterial: {fileID: -5153150929352281648, guid: 3ca865c6e2228284fad0dadf9a795808, type: 2}
@@ -844,14 +844,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 0.01
+  m_fontSizeBase: 0.01
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8793,9 +8793,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 237415030212218883}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Close
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8383988570528359062}
         m_TargetAssemblyTypeName: MenuPause, Assembly-CSharp
-        m_MethodName: TriggerResume
+        m_MethodName: SetCloseMenuValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14327,98 +14339,26 @@ MonoBehaviour:
     Animator: {fileID: 237415030212218883}
     _onEnable:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5651831269863529657}
-          m_TargetAssemblyTypeName: InGameMainMenu, Assembly-CSharp
-          m_MethodName: StackPause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     _onDisable:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5651831269863529657}
-          m_TargetAssemblyTypeName: InGameMainMenu, Assembly-CSharp
-          m_MethodName: UnstackPause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - Type: 1
     Animator: {fileID: 6908164517586598889}
     _onEnable:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5651831269863529657}
-          m_TargetAssemblyTypeName: InGameMainMenu, Assembly-CSharp
-          m_MethodName: StackPause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     _onDisable:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5651831269863529657}
-          m_TargetAssemblyTypeName: InGameMainMenu, Assembly-CSharp
-          m_MethodName: UnstackPause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - Type: 2
     Animator: {fileID: 7624326536850634078}
     _onEnable:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5651831269863529657}
-          m_TargetAssemblyTypeName: InGameMainMenu, Assembly-CSharp
-          m_MethodName: StackPause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     _onDisable:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5651831269863529657}
-          m_TargetAssemblyTypeName: InGameMainMenu, Assembly-CSharp
-          m_MethodName: UnstackPause
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   _menuCamera: {fileID: 5293552038438277422}
 --- !u!1 &6886992507534053295
 GameObject:

@@ -12,7 +12,6 @@ public class MenuPause : MonoBehaviour
     [SerializeField] private UnityEvent _onPause;
     [SerializeField] private UnityEvent _onResume;
 
-
     private bool _menuOpened = false;
     private LevelManager _levelManager = null;
 
@@ -38,6 +37,11 @@ public class MenuPause : MonoBehaviour
                 _menuOpened = true;
             }
         }
+    }
+
+    public void SetCloseMenuValue()
+    {
+        _menuOpened = false;
     }
 
 }
