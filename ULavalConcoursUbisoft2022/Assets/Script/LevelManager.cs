@@ -30,16 +30,21 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        List<Vector3> direction = new List<Vector3>() { Vector3.right, Vector3.forward, Vector3.left, Vector3.back };
-        List<int> randomOrder = GenerateRandomsWithoutRepeat(4, 4);
-        
-        WingRoot[] wingRoots = GameObject.FindObjectsOfType<WingRoot>().Where(x => x.SceneName != "hub").ToArray();
-        wingRoots[0].transform.rotation = Quaternion.LookRotation(direction[randomOrder[0]], Vector3.up);
-        wingRoots[1].transform.rotation = Quaternion.LookRotation(direction[randomOrder[1]], Vector3.up);
-        wingRoots[2].transform.rotation = Quaternion.LookRotation(direction[randomOrder[2]], Vector3.up);
-        wingRoots[3].transform.rotation = Quaternion.LookRotation(direction[randomOrder[3]], Vector3.up);
+        List<WingRoot.Wing> wingsRandomType = new List<WingRoot.Wing>() { WingRoot.Wing.Depression, WingRoot.Wing.Exhaustion, WingRoot.Wing.Wrath };
 
-        foreach(WingRoot wing in GameObject.FindObjectsOfType<WingRoot>())
+        List<Vector3> direction = new List<Vector3>() { Vector3.forward, Vector3.back };
+        List<int> randomOrder = GenerateRandomsWithoutRepeat(2, 2);
+        
+        WingRoot[] wingRoots = GameObject.FindObjectsOfType<WingRoot>();
+        WingRoot[] randomWing = wingRoots.Where(x => wingsRandomType.Contains(x.WingType)).ToArray();
+
+        randomWing[0].transform.rotation = Quaternion.LookRotation(direction[randomOrder[0]], Vector3.up);
+        randomWing[1].transform.rotation = Quaternion.LookRotation(direction[randomOrder[1]], Vector3.up);
+
+        wingRoots.First(x => x.WingType == WingRoot.Wing.Boss).transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
+        wingRoots.First(x => x.WingType == WingRoot.Wing.Safe).transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up);
+
+        foreach (WingRoot wing in GameObject.FindObjectsOfType<WingRoot>())
         {
             wing.SingleWingScene = false;
         }
