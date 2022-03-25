@@ -55,7 +55,7 @@ public class BubbleText : MonoBehaviour
         {17, new Message() {Id = 17, Source = Source.Player, Text = "That was scary. I need to get out.", Duration = 3.0f } },
         {18, new Message() {Id = 18, Source = Source.Player, Text = "Oh no...", Duration = 3.0f } },
         {19, new Message() {Id = 19, Source = Source.Player, Text = "They are everywhere !!!", Duration = 3.0f } },
-        {20, new Message() {Id = 20, Source = Source.Player, Text = "It is block by mysterious energy. I should look around for a way to disable it.", Duration = 3.0f } },
+        {20, new Message() {Id = 20, Source = Source.Player, Text = "It is block by mysterious energy. I should look around for a way to disable it.", Duration = 5.0f } },
         {21, new Message() {Id = 21, Source = Source.Player, Text = "That is not a friendly compagnion. Let's teach him 1 or 2 lessons. (Left Click to attack)", Duration = 3.0f, ConditionBase = true } },
     };
 

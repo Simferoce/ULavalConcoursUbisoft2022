@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
         {
             direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButton("Fire1"))
             {
                 _onAttack?.Invoke();
                 _entity.Attack(true);

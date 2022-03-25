@@ -4242,6 +4242,50 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1936800736297604752, guid: 1d3cafc7a3145c54699f8b434411a953, type: 3}
+--- !u!1 &616086647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616086649}
+  - component: {fileID: 616086648}
+  m_Layer: 0
+  m_Name: PlayerBubbleMessage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &616086648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616086647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb121464f7b330a4b9f397f6451ef923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &616086649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616086647}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &639849478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09ea897b519255d468c3d69e23d3dc8d, type: 3}
@@ -9479,6 +9523,18 @@ MonoBehaviour:
           m_StringArgument: AwardItem
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2138436692}
+        m_TargetAssemblyTypeName: Channel, Assembly-CSharp
+        m_MethodName: Signal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ActivateDoorMessage
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1371361219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09ea897b519255d468c3d69e23d3dc8d, type: 3}
@@ -9527,7 +9583,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18, y: 5, z: 18}
+  m_Size: {x: 17.5, y: 5, z: 17.5}
   m_Center: {x: 0, y: 2, z: 0}
 --- !u!4 &1376998778
 Transform:
@@ -9619,6 +9675,19 @@ MonoBehaviour:
           m_StringArgument: wingC
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 616086648}
+        m_TargetAssemblyTypeName: PlayerBubbleMessage, Assembly-CSharp
+        m_MethodName: ShowMessage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 19
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _destroyOnTrigger: 1
 --- !u!1 &1393346100 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09ea897b519255d468c3d69e23d3dc8d, type: 3}
