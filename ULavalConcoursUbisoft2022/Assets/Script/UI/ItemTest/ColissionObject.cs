@@ -18,21 +18,9 @@ public class ColissionObject : MonoBehaviour
  
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.name == "Body")
-        {
-
-            //L<object va être mis en argument
-            NewObject();
-
-        }
-    }
+ 
     public void NewObject()
     {
         NumberItem += 1;

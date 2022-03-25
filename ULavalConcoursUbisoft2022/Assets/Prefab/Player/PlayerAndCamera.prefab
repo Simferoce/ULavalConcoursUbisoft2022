@@ -10614,6 +10614,7 @@ GameObject:
   - component: {fileID: 573101511573351463}
   - component: {fileID: 1968635357249820323}
   - component: {fileID: 7744981576409207593}
+  - component: {fileID: 4046880425422174654}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -10909,6 +10910,30 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   _channelWithObjectParameters: []
+--- !u!114 &4046880425422174654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4981053630941738945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8088fdfdd0aeed840907f729392b41ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 4457149163345691391}
+  - {fileID: 3255223219678876}
+  - {fileID: 75840445925656761}
+  - {fileID: 571754716839703610}
+  - {fileID: 8746422608252912288}
+  - {fileID: 9043087576596315986}
+  - {fileID: 3451966116109443274}
+  - {fileID: 4675602976771574167}
+  NumberItem: 0
+  currentPannel: 8
+  test: 0
 --- !u!1 &5010957742038472748
 GameObject:
   m_ObjectHideFlags: 0
@@ -13842,7 +13867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9095562086077683737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14752,7 +14777,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.3392406, y: 1}
   m_Transitions:
     m_BlendHint: 3
     m_InheritPosition: 1
@@ -17181,6 +17206,18 @@ MonoBehaviour:
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: Close
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4046880425422174654}
+        m_TargetAssemblyTypeName: ColissionObject, Assembly-CSharp
+        m_MethodName: NewObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   _addHp: {fileID: 800635134784492088}
