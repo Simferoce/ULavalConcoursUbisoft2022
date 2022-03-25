@@ -25,6 +25,7 @@ public class HealthDisplay : MonoBehaviour
 
     public void Update()
     {
+        
         currentHealth = health.HealthPoint;
         slider.value = maxHealth - currentHealth;
     }

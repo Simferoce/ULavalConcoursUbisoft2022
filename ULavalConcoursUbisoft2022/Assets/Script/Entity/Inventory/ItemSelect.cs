@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class ItemSelect : MonoBehaviour
 {
+    public Sprite hud_display;
+
     [System.Serializable]
     public class PopupSelectionBox
     {
@@ -14,6 +16,7 @@ public class ItemSelect : MonoBehaviour
         public TextMeshProUGUI Name = null;
         public TextMeshProUGUI Description = null;
         public ItemData ItemData = null;
+        
     }
 
     [SerializeField] private List<ItemData> _items = new List<ItemData>();
@@ -76,7 +79,7 @@ public class ItemSelect : MonoBehaviour
 
         GameObject itemInstance = Instantiate(_itemBoxes[index].ItemData.Prefab, inventory.transform);
         inventory.Items.Add(itemInstance);
-
+        hud_display = _itemBoxes[index].ItemData.Image;//not working//
         Close();
     }
 
