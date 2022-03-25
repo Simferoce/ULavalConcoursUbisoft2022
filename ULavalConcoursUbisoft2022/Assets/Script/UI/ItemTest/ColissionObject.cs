@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class ColissionObject : MonoBehaviour
 {
     public GameObject[] panels;
@@ -11,6 +11,9 @@ public class ColissionObject : MonoBehaviour
     public int NumberItem;
     public int currentPannel;
     public Image test;
+    public GameObject[] itemdef;
+    public TMP_Text itemdefinition;
+    
     private Player player = null;
 
     // Start is called before the first frame update
@@ -31,9 +34,19 @@ public class ColissionObject : MonoBehaviour
                 itemssprite[i].gameObject.SetActive(true);
                 test = itemssprite[i].GetComponent<Image>();
                 test.sprite = item.Image;
+                itemdefinition = itemdef[i].GetComponent<TMP_Text>();
+                itemdefinition.text = item.Description;
+
             }
         }
+        for (int i = 0; i <= NumberItem; i++)
+        {
+           
+             
+                
 
+            
+        }
     }
 
     
