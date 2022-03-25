@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
     private Quaternion lastRot;
     public Quaternion LastRot { get => lastRot; set => lastRot = value; }
 
+    public UnityEvent _onMove;
+    public UnityEvent _onAttack;
+
     private void Awake()
     {
         Instantiate(GameManager.Instance.Class.ModelPrefab, _entity.Root);
@@ -72,9 +75,14 @@ public class Player : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
+                _onAttack?.Invoke();
                 _entity.Attack(true);
             }
 
+            if(direction != Vector3.zero)
+            {
+                _onMove?.Invoke();
+            }
             _characterController.Move(direction.normalized * _movespeedAttribute.GetValue(_entity.Inventory) * Time.deltaTime);
             _entity.Translation = transform.InverseTransformDirection(direction.normalized);
             lastRot = transform.rotation;
