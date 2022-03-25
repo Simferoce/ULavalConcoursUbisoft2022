@@ -64,7 +64,15 @@ public class PlayerAnimation : MonoBehaviour
         // get the signed difference in these angles
         var angleDiff = Mathf.DeltaAngle(angleA, angleB);
 
-        _animator.SetBool("RightTurn", angleDiff > 0.01f);
-        _animator.SetBool("LeftTurn", angleDiff < -0.01f);
+        if (!_player.Lock)
+        {
+            _animator.SetBool("RightTurn", angleDiff > 0.01f);
+            _animator.SetBool("LeftTurn", angleDiff < -0.01f);
+        }
+        else
+        {
+            _animator.SetBool("RightTurn", false);
+            _animator.SetBool("LeftTurn", false);
+        }
     }
 }
