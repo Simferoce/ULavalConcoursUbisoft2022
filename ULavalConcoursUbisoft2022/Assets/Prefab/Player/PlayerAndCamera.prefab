@@ -12748,6 +12748,7 @@ GameObject:
   - component: {fileID: 5951358263233617759}
   - component: {fileID: 5951358263233617758}
   - component: {fileID: 5951358263233617756}
+  - component: {fileID: 7033616911417191998}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -12861,6 +12862,52 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &7033616911417191998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951358263233617754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel:
+  - Name: LockControl
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5951358263233617758}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: LockControl
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Name: UnlockControl
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5951358263233617758}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: UnlockControl
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  _channelWithObjectParameters: []
 --- !u!1 &5951358263678322487
 GameObject:
   m_ObjectHideFlags: 0
