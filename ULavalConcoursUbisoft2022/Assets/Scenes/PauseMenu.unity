@@ -3029,8 +3029,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa34417d44f6f8f41a3248c282f99eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 61262149}
-  canvas: {fileID: 853092074}
+  _onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  _onResume:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &853092080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3057,6 +3061,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeCounter: {fileID: 922294887}
   ScoreCounter: {fileID: 103834486}
+  PlayerScore: {fileID: 0}
+  PlayerScoreDisplay: {fileID: 0}
+  PlayerMark: {fileID: 0}
+  ratingint: 0
+  LeaderboardUI: {fileID: 0}
 --- !u!114 &853092082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3069,8 +3078,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b237262271b16b246a5903fdc50e2911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 963194225}
-  leaderboardController: {fileID: 0}
+  _onOpenEndMenu:
+    m_PersistentCalls:
+      m_Calls: []
+  _delayBeforeEndMenu: 0
 --- !u!1 &876828703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3902,7 +3913,11 @@ MonoBehaviour:
   root: {fileID: 0}
   _colliders: {fileID: 0}
   _visual: {fileID: 0}
+  _inventory: {fileID: 0}
+  _damageReductionAttribute:
+    _baseDamageReduction: 0
   _characterController: {fileID: 0}
+  _translation: {x: 0, y: 0, z: 0}
 --- !u!65 &1029926870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3933,6 +3948,7 @@ MonoBehaviour:
   _animation: {fileID: 1408329537}
   _invicible: 0
   _floorHealthLoss: 0
+  _destroyOnDeath: 1
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -3950,6 +3966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingWeapon: {fileID: 11400000, guid: 18900353a2b14234b83741a50b67ce5b, type: 2}
+  _inventory: {fileID: 0}
 --- !u!1 &1043370975
 GameObject:
   m_ObjectHideFlags: 0
@@ -5602,7 +5619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1259556358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6178,19 +6195,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14989626414fbe4cba92f010cdae777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MemberID: {fileID: 578824783}
-  PlayerScore: {fileID: 1043370977}
+  MemberID: {fileID: 0}
+  PlayerScore: {fileID: 0}
   ID: 1881
   LeaderboardUI: {fileID: 1401295849}
   Entries:
-  - {fileID: 982911796}
-  - {fileID: 119199532}
-  - {fileID: 263455317}
-  - {fileID: 10607315}
-  - {fileID: 1474121096}
-  - {fileID: 552934015}
-  - {fileID: 1275617878}
-  - {fileID: 740259468}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  EntriesName: []
+  EntriesScore: []
+  Rating: []
+  ratingint: 0
 --- !u!1 &1408329531
 GameObject:
   m_ObjectHideFlags: 0
@@ -6260,9 +6281,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterController: {fileID: 1408329534}
-  _speed: 5
+  _movespeedAttribute:
+    _baseMovespeed: 5
   _aim: {fileID: 2020031071}
   _entity: {fileID: 1029926869}
+  InitRevive:
+    m_PersistentCalls:
+      m_Calls: []
+  _onRevive:
+    m_PersistentCalls:
+      m_Calls: []
+  _onPlayerDefeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!111 &1408329537
 Animation:
   m_ObjectHideFlags: 0
@@ -6645,6 +6676,7 @@ MonoBehaviour:
   - {fileID: 98791712}
   NumberItem: 0
   currentPannel: 0
+  test: 0
 --- !u!1 &1467006500
 GameObject:
   m_ObjectHideFlags: 0
@@ -7693,6 +7725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f81267f6e4fd034294a5685a05c27c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _class: {fileID: 0}
+  _isStoryMode: 1
 --- !u!4 &1769523579
 Transform:
   m_ObjectHideFlags: 0
@@ -8832,7 +8866,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8158482, y: 1}
+    m_SensorSize: {x: 2.3392406, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
