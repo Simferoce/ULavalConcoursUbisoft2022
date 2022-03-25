@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2593889913693263292}
   - component: {fileID: 1299046492287816304}
+  - component: {fileID: 4206692725462507328}
   m_Layer: 0
   m_Name: Sharpener
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 0.5
+--- !u!114 &4206692725462507328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411926753246493143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c738683d081064b4c8fe8e29b6a894a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemData: {fileID: 11400000, guid: 0ba15c7fcfb710a49ade8213a4095904, type: 2}
