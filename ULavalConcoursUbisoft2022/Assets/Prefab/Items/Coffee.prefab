@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2750281726504233334}
   - component: {fileID: 1040355118375253256}
   - component: {fileID: 2804061373669443716}
+  - component: {fileID: -1965001586469429163}
   m_Layer: 0
   m_Name: Coffee
   m_TagString: Untagged
@@ -59,3 +60,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 0.5
+--- !u!114 &-1965001586469429163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252814097748882605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c738683d081064b4c8fe8e29b6a894a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemData: {fileID: 11400000, guid: 74eb14ea2bf48174a8751ddb3a91b552, type: 2}
