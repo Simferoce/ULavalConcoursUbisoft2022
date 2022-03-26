@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         Instantiate(GameManager.Instance.Class.ModelPrefab, _entity.Root);
 
         if (GameManager.Instance.Class.StartingItem) {
+            Debug.Log("coucou");
             GameObject itemInstance = Instantiate(GameManager.Instance.Class.StartingItem.Prefab, Entity.Inventory.transform);
             Entity.Inventory.AddItems(itemInstance);
         }
