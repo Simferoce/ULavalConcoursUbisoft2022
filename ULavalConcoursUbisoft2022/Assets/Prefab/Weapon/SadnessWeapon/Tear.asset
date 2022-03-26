@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Tear
   m_EditorClassIdentifier: 
   _collider: {fileID: 1285391838402836910, guid: 62d42f23ba6041840b4c1789630f5385, type: 3}
-  _delayAttack: 1.5
-  _randomDelay: 2
+  attackSpeedAttribute:
+    _baseAttackSpeed: 0.5
+  _type: 0

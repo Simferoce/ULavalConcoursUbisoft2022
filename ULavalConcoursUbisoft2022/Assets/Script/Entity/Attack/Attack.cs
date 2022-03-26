@@ -41,4 +41,12 @@ public class Attack : MonoBehaviour
     {
         return attackDamageAttribute.GetValue(Inventory);
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Wall"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
