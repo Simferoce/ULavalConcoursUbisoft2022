@@ -63,9 +63,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecd78c6758a5cf42a9e5b450ad952fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _destroyOnHit: 1
   _owner: {fileID: 0}
   _following: {fileID: 0}
   _team: 0
+  _inventory: {fileID: 0}
+  attackDamageAttribute:
+    _baseAttackDamage: 5
   _speed: 0
 --- !u!114 &6715823665676432542
 MonoBehaviour:
