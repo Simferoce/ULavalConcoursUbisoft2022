@@ -13,11 +13,13 @@ public class Health : MonoBehaviour
     }
 
     [SerializeField] private float _maxHealth = 0.0f;
+    [SerializeField] private BonusMaxHealthAttribute _bonusMaxHealthAttribute = null;
     [SerializeField] private float _healthPoint = 0.0f;
     [SerializeField] private Animation _animation = null;
     [SerializeField] private bool _invicible = false;
     [SerializeField] private float _floorHealthLoss = 0.0f;
     [SerializeField] private bool _destroyOnDeath = true;
+    [SerializeField] private Inventory _inventory = null;
 
     [Header("Events")]
     [SerializeField] public UnityEvent<Health> OnDeath;
@@ -25,7 +27,7 @@ public class Health : MonoBehaviour
     public event Action<Health, float> OnDamage;
 
     public bool Invicible { get => _invicible; set => _invicible = value; }
-    public float MaxHealth { get { return _maxHealth; } }
+    public float MaxHealth { get { return _maxHealth + _bonusMaxHealthAttribute.GetValue(_inventory); } }
     public float HealthPoint { get { return _healthPoint; } set { _healthPoint = value; } }
     public float Percentage { get { return HealthPoint / MaxHealth; } }
 
@@ -47,6 +49,7 @@ public class Health : MonoBehaviour
     public void Awake()
     {
         HealthPoint = MaxHealth;
+        Debug.Log(HealthPoint);
     }
 
     public void Hit(float damage, Entity.Team sourceTeam)
