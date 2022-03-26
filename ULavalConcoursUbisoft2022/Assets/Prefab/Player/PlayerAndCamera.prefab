@@ -13441,6 +13441,7 @@ GameObject:
   - component: {fileID: 5951358263233617759}
   - component: {fileID: 5951358263233617758}
   - component: {fileID: 5951358263233617756}
+  - component: {fileID: 1443848456481998995}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -13540,10 +13541,34 @@ MonoBehaviour:
         m_CallState: 2
   _onMove:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7715031021202493541}
+        m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+        m_MethodName: TriggerEndMessage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 16
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onAttack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7715031021202493541}
+        m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+        m_MethodName: TriggerEndMessage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 21
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!111 &5951358263233617756
 Animation:
   m_ObjectHideFlags: 0
@@ -13560,6 +13585,52 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &1443848456481998995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951358263233617754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5789d1149b80f42499609a2c95962a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel:
+  - Name: LockControl
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5951358263233617758}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: LockControl
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Name: UnlockControl
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5951358263233617758}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: UnlockControl
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  _channelWithObjectParameters: []
 --- !u!1 &5951358263678322487
 GameObject:
   m_ObjectHideFlags: 0
@@ -15632,7 +15703,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1797469, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 3
     m_InheritPosition: 1
@@ -22408,9 +22479,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5951358263233617757}
     m_Modifications:
+    - target: {fileID: 165692182336927355, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399083111101103842, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026878201593344797, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
+      propertyPath: _offSet.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026878201593344797, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
+      propertyPath: _offSet.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636767477959035615, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6373688350654718212, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_Name
       value: BubbleText
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373688350654718212, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7894902173599606209, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_RootOrder
@@ -22455,6 +22550,10 @@ PrefabInstance:
     - target: {fileID: 7894902173599606209, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067907607479715313, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
