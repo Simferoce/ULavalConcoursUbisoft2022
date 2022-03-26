@@ -13,6 +13,8 @@ public class BackToWork : Skill
     [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
     [SerializeField] private ProximityStrikeSkill _proximityStrikeSkill = null;
+    [SerializeField] private GetCloserToPlayer _getCloseToPlayer = null;
+    [SerializeField] private CastSkill _castSkill = null;
     [SerializeField] private State _onWorkDone = null;
     [SerializeField] private State _doWork = null;
 
@@ -50,19 +52,24 @@ public class BackToWork : Skill
     {
         if (Time.time - _onWorkStart > _duration)
         {
-            enabled = false;
-            _proximityStrikeSkill.OnSkillFinish -= _proximityStrikeSkill_OnSkillFinish;
-
-           _navMeshAgent.speed = _originalSpeed;
-            _proximityStrikeSkill.PowerUp.PowerUpTime = _originalPowerUpTime;
-
-            InvokeOnSkillFinish();
-            _working = false;
+            Finish();
         }
         else
         {
             _doWork.EnableState();
         }
+    }
+
+    private void Finish()
+    {
+        enabled = false;
+        _proximityStrikeSkill.OnSkillFinish -= _proximityStrikeSkill_OnSkillFinish;
+
+        _navMeshAgent.speed = _originalSpeed;
+        _proximityStrikeSkill.PowerUp.PowerUpTime = _originalPowerUpTime;
+
+        InvokeOnSkillFinish();
+        _working = false;
     }
 
     private void Update()
@@ -72,6 +79,15 @@ public class BackToWork : Skill
             _effectiveness = _rangeSlowDown.x + (1 - (Time.time - _onWorkStart) / _duration) * (_rangeSlowDown.y - _rangeSlowDown.x);
             _navMeshAgent.speed = _originalSpeed * _effectiveness;
             _proximityStrikeSkill.PowerUp.PowerUpTime = _originalPowerUpTime * (1 + (1 - _effectiveness));
+
+            if (Time.time - _onWorkStart > _duration)
+            {
+                _proximityStrikeSkill.PowerUp.ForceDisableState();
+                _proximityStrikeSkill.ProximityStrike.ForceDisableState();
+                _getCloseToPlayer.ForceDisableState();
+                _castSkill.ForceDisableState();
+                Finish();
+            }
         }
     }
 }

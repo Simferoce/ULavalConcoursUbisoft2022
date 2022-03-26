@@ -168,6 +168,7 @@ MonoBehaviour:
   _animation: {fileID: 415337187081637787}
   _invicible: 0
   _floorHealthLoss: 0
+  _destroyOnDeath: 1
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -462,6 +463,8 @@ MonoBehaviour:
   _rangeSlowDown: {x: 0.5, y: 1}
   _navMeshAgent: {fileID: 415337187081637784}
   _proximityStrikeSkill: {fileID: 1311617074825688652}
+  _getCloseToPlayer: {fileID: 3397423350397382993}
+  _castSkill: {fileID: 3397423350397383006}
   _onWorkDone: {fileID: 415337188621807974}
   _doWork: {fileID: 3397423350397382993}
 --- !u!1 &3397423350089443121
@@ -514,9 +517,9 @@ MonoBehaviour:
   OnSkillFinishHook:
     m_PersistentCalls:
       m_Calls: []
-  _numberOfProjectile: 3
+  _numberOfProjectile: 2
   _delayBetweenEachShot: {x: 1, y: 1}
-  _heightSpawn: 2
+  _heightSpawn: 1
   _projectile: {fileID: 8739260302490239990, guid: 090da76c505991c40b2fc1536f751431, type: 3}
   _entity: {fileID: 415337187541255115}
 --- !u!1 &3397423350397383004
@@ -826,15 +829,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7894902173599606209, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7894902173599606209, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7894902173599606209, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7894902173599606209, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_LocalPosition.x
