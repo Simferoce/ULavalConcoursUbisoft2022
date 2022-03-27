@@ -28,11 +28,11 @@ public class Player : MonoBehaviour
     public UnityEvent _onMove;
     public UnityEvent _onAttack;
 
-    private void Awake()
+    private void Start()
     {
         Instantiate(GameManager.Instance.Class.ModelPrefab, _entity.Root);
 
-        if (GameManager.Instance.Class.StartingItem) {
+        if (GameManager.Instance.Class.StartingItem != null) {
             GameObject itemInstance = Instantiate(GameManager.Instance.Class.StartingItem.Prefab, Entity.Inventory.transform);
             Entity.Inventory.AddItems(itemInstance);
         }

@@ -46,7 +46,7 @@ public class Health : MonoBehaviour
         public Entity.Team SourceTeam { get; set; }
     }
 
-    public void Awake()
+    public void Start()
     {
         HealthPoint = MaxHealth;
     }
