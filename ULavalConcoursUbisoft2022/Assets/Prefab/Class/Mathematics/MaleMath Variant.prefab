@@ -103,6 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 5241182369254623041}
+  _attackMelee: {fileID: 1827226128182048838, guid: 3cefab845cc46ba40a14aaf67c180fba, type: 3}
+  _attackRange: {fileID: 1827226128182048838, guid: 7f5721db7f5a17c49a89e751526c5840, type: 3}
 --- !u!95 &5241182369254623041 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 63e390934927a0143b6dc829df3e6b39, type: 3}

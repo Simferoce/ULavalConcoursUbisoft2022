@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator = null;
+    [SerializeField] private float _attackMeleeRampUp = 1.0f;
+    [SerializeField] private float _attackRangeRampUp = 1.125f;
     private Entity _entity = null;
     private Player _player = null;
 
@@ -46,8 +48,8 @@ public class PlayerAnimation : MonoBehaviour
         _animator.SetFloat("runAngle", angle / 180);
         _animator.SetBool("isDeath", _entity.Health.IsDead());
 
-
-        _animator.SetFloat("attackSpeedMulti", (1 / _entity.WeaponHandler.WeaponData.GetAttackDelay(_entity.Inventory)));
+        float speedAnimToMake1Sec = _entity.WeaponHandler.WeaponData.Type == Weapon.WeaponType.Melee ? _attackMeleeRampUp : _attackRangeRampUp;
+        _animator.SetFloat("attackSpeedMulti", (1 / _entity.WeaponHandler.WeaponData.GetAttackDelay(_entity.Inventory)) * speedAnimToMake1Sec);
         _animator.SetFloat("Horizontal", _entity.Translation.x);
         _animator.SetFloat("Vertical", _entity.Translation.z);
         _animator.SetBool("isDeath", _entity.Health.IsDead());
