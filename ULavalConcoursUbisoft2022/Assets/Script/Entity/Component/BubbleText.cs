@@ -84,6 +84,7 @@ public class BubbleText : MonoBehaviour
         {
             _conditionFill = false;
             _canvas.gameObject.SetActive(true);
+            _conditionSucceed.SetActive(false);
             _text.SetText(message.Text);
             _endMessage = Time.time + (duration == -1 ? message.Duration : duration);
             _currentMessage = message;
