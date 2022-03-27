@@ -8148,6 +8148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2572831831072564657}
   - component: {fileID: 6233532482845448704}
+  - component: {fileID: 1835283702414822713}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -8192,6 +8193,19 @@ MonoBehaviour:
   _mainCamera: {fileID: 5951358264519969148}
   _radiusBeforeMoving: 0.25
   _maxViewDistance: 0.2
+--- !u!114 &1835283702414822713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3579164916708094036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f22c958486f5bb44bbc54889d23d4d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cinemachineVirtualCamera: {fileID: 7142564214550992508}
 --- !u!1 &3582480262854095357
 GameObject:
   m_ObjectHideFlags: 0
@@ -13937,6 +13951,21 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1835283702414822713}
+        m_TargetAssemblyTypeName: CameraShake, Assembly-CSharp
+        m_MethodName: ShakeCamera
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.15
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHealthBelowThreasholdEvents: []
 --- !u!65 &1737787253638266746
 BoxCollider:
@@ -15726,6 +15755,7 @@ GameObject:
   - component: {fileID: 7142564214813420743}
   - component: {fileID: 7142564214813420741}
   - component: {fileID: 7142564214813420742}
+  - component: {fileID: 2331830154122418486}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -15782,6 +15812,23 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!114 &2331830154122418486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7142564214813420736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 2
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: -552.3386, y: -632.9243, z: 492.49573}
 --- !u!1 &7198630893079168441
 GameObject:
   m_ObjectHideFlags: 0

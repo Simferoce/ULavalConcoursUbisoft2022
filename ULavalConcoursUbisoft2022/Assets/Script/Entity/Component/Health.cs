@@ -23,7 +23,9 @@ public class Health : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] public UnityEvent<Health> OnDeath;
+    [SerializeField] public UnityEvent<Health> OnHit;
     [SerializeField] private OnHealthBelowThreasholdEvent[] onHealthBelowThreasholdEvents = null;
+
     public event Action<Health, float> OnDamage;
 
     public bool Invicible { get => _invicible; set => _invicible = value; }
@@ -59,6 +61,7 @@ public class Health : MonoBehaviour
 
             HealthPoint -= damageTaken;
             OnDamage?.Invoke(this, damageTaken);
+            OnHit?.Invoke(this);
             Channel.Signal("DamageTaken", new HealthDamageTakenDTO() {Health = this, Damage = damageTaken, SourceTeam = sourceTeam });
             
             for(int i =0; i < onHealthBelowThreasholdEvents.Length; ++i)
