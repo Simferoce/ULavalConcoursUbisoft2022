@@ -10,7 +10,7 @@ public class HarassRanged : State
     [SerializeField] private float _stopChasingPlayerRange = 0.0f;
     [SerializeField] private float _distanceKeptBetweenItselfAndPlayer = 0.0f;
     [SerializeField] private float _randomMove = 0.0f;
-    [SerializeField] private float _speedRandom = 0.0f;
+    [SerializeField] private Vector2 _firstAttackDelay = Vector2.zero;
 
     [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
@@ -21,10 +21,12 @@ public class HarassRanged : State
     [SerializeField] private State _flee = null;
 
     private Player _player = null;
+    private float _activeStartTime = 0.0f;
 
     protected override void Init()
     {
         _player = FindObjectOfType<Player>();
+        _activeStartTime = Time.time + Random.Range(_firstAttackDelay.x, _firstAttackDelay.y);
     }
 
     protected override void OnEnter()
@@ -87,7 +89,7 @@ public class HarassRanged : State
         _navMeshAgent.SetDestination(destination);
 
         _entity.LookTowardsTarget(_player.transform.position);
-        if (seePlayer && _entity.AttackRange() > distance && _entity.CanAttack())
+        if (seePlayer && _entity.AttackRange() > distance && _entity.CanAttack() && Time.time >_activeStartTime)
         {
             _entity.Attack();
         }

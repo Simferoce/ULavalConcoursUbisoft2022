@@ -82,6 +82,7 @@ MonoBehaviour:
   _distanceKeptBetweenItselfAndPlayer: 5
   _randomMove: 1
   _speedRandom: 0
+  _firstAttackDelay: {x: 0.5, y: 1.5}
   _navMeshAgent: {fileID: 1665997102756442055}
   _entity: {fileID: 1665997103480595348}
   _wander: {fileID: 1665997102400770502}
@@ -274,11 +275,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf7b7289cb75b945b175151b520c3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5
+  _maxHealth: 50
+  _bonusMaxHealthAttribute:
+    _baseBonusHealth: 0
   _healthPoint: 0
   _animation: {fileID: 1665997102756442052}
   _invicible: 0
   _floorHealthLoss: 0
+  _destroyOnDeath: 1
+  _inventory: {fileID: 0}
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
