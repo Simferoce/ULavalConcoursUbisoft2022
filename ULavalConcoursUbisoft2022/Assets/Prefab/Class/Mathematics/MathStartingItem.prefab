@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4394524322188267632}
   - component: {fileID: 930756492767400195}
   - component: {fileID: 1748055046258878500}
+  - component: {fileID: -3785285441299310385}
   m_Layer: 0
   m_Name: MathStartingItem
   m_TagString: Untagged
@@ -59,3 +60,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusMaxHealth: 20
+--- !u!114 &-3785285441299310385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6545096599333310502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c738683d081064b4c8fe8e29b6a894a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemData: {fileID: 11400000, guid: eed44867b868f264ab1b904791f18b88, type: 2}
