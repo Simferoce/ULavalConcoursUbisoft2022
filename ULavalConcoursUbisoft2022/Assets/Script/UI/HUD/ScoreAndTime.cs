@@ -14,9 +14,35 @@ public class ScoreAndTime : MonoBehaviour
     public TMP_Text PlayerMark;
     public TMP_Text HealthRemaining;
     public TMP_Text HealthScore;
+
+    public TMP_Text Sadnesskill;
+    public TMP_Text SadnesskillScore;
+
+    public TMP_Text Wrathkill;
+    public TMP_Text WrathkillScore;
+
+    public TMP_Text Exhaustion;
+    public TMP_Text ExhaustionScore;
+
+    public TMP_Text FinalBoss;
+    public TMP_Text FinalBossScore;
+
+    public TMP_Text SadnesskillMinion;
+    public TMP_Text SadnesskillMinionScore;
+
+    public TMP_Text WrathkillMinion;
+    public TMP_Text WrathkillMinionScore;
+
+    public TMP_Text ExhaustionMinion;
+    public TMP_Text ExhaustionMinionScore;
+
+    public TMP_Text TotalScore;
+
     public int HealthRemainingint;
     public int ratingint;
     public GameObject LeaderboardUI;
+    public TMP_Text LevelStatut;
+
     private Player player = null;
     private float timer = 0.0f;
     private float score = 0f;
@@ -27,7 +53,28 @@ public class ScoreAndTime : MonoBehaviour
         ScoreCounter.text = "0";
         player = GameObject.FindObjectOfType<Player>();
         health = player.GetComponentInChildren<Health>();
+        
+        Sadnesskill.text = "x0";
+        SadnesskillScore.text = "+0";
+        
+        
+        Wrathkill.text = "x0";
+        WrathkillScore.text = "+0";
+        
+        Exhaustion.text = "x0";
+        ExhaustionScore.text = "+0";
 
+        FinalBoss.text = "x0";
+        FinalBossScore.text = "+0";
+
+        ExhaustionMinion.text = "x0";
+        ExhaustionMinionScore.text = "+0";
+
+        WrathkillMinion.text = "x0";
+        WrathkillMinionScore.text = "+0";
+
+        SadnesskillMinion.text = "x0";
+        SadnesskillMinionScore.text = "+0";
 
     }
     
@@ -60,12 +107,18 @@ public class ScoreAndTime : MonoBehaviour
 
         score += 1000;
         ScoreCounter.text = string.Format("{0000} ", score);
+        FinalBoss.text = "x1";
+        FinalBossScore.text = "+1000";
+        LevelStatut.text = "Success";
     }
     public void WrathKill()
     {
 
         score += 100;
         ScoreCounter.text = string.Format("{0000} ", score);
+        WrathkillMinion.text = "x1";
+        WrathkillMinionScore.text = "+100";
+
     }
 
     public void BossWrathKill()
@@ -73,6 +126,8 @@ public class ScoreAndTime : MonoBehaviour
 
         score += 500;
         ScoreCounter.text = string.Format("{0000} ", score);
+        Wrathkill.text = "x1";
+        WrathkillScore.text = "+500";
     }
 
     public void KillExhaustion()
@@ -80,6 +135,9 @@ public class ScoreAndTime : MonoBehaviour
 
         score += 100;
         ScoreCounter.text = string.Format("{0000} ", score);
+        ExhaustionMinion.text = "x1";
+        ExhaustionMinionScore.text = "+100";
+
     }
 
     public void KillExhaustionBoss()
@@ -87,6 +145,8 @@ public class ScoreAndTime : MonoBehaviour
 
         score += 500;
         ScoreCounter.text = string.Format("{0000} ", score);
+        Exhaustion.text = "x1";
+        ExhaustionScore.text = "+500";
     }
 
     public void SadnessKill()
@@ -94,13 +154,17 @@ public class ScoreAndTime : MonoBehaviour
 
         score += 50;
         ScoreCounter.text = string.Format("{0000} ", score);
-    }
+         SadnesskillMinion.text = "x2";
+     SadnesskillMinionScore.text = "+50";
+}
 
     public void SadnessKillBoss()
     {
 
         score += 500;
         ScoreCounter.text = string.Format("{0000} ", score);
+        Sadnesskill.text = "x1";
+        SadnesskillScore.text = "+500";
     }
 
     public void ShowScore()
@@ -140,12 +204,14 @@ public class ScoreAndTime : MonoBehaviour
     }
     public void BonusPoint()
     {
-       Debug.Log("working bonus points");
+       
        HealthRemainingint = (int)health.HealthPoint;
         score += HealthRemainingint;
         ScoreCounter.text = string.Format("{0000} ", score);
         HealthRemaining.text =  HealthRemainingint.ToString();
         HealthScore.text = "+" + HealthRemaining.text;
+
+        TotalScore.text = PlayerScore.text + "pts";
     }
 
 
