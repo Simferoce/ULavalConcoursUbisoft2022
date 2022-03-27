@@ -49,7 +49,6 @@ public class Health : MonoBehaviour
     public void Awake()
     {
         HealthPoint = MaxHealth;
-        Debug.Log(HealthPoint);
     }
 
     public void Hit(float damage, Entity.Team sourceTeam)

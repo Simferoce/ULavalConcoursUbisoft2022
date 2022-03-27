@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3931798690575394762}
   - component: {fileID: 7904377808546266844}
+  - component: {fileID: 8513420085798194378}
   m_Layer: 0
   m_Name: ArtStartingItem
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 0.2
+--- !u!114 &8513420085798194378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931798690575394765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c738683d081064b4c8fe8e29b6a894a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemData: {fileID: 11400000, guid: b17ce0166feb3904bb2957b06914f9ae, type: 2}
