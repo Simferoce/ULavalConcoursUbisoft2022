@@ -9,28 +9,32 @@ public class ScoreAndTime : MonoBehaviour
     public Text timeCounter;
     public Text ScoreCounter;
     public Text PlayerScore;
-    private float timer = 0.0f;
+    public Health health = null;
     public TMP_Text PlayerScoreDisplay;
     public TMP_Text PlayerMark;
-    private float score = 0f;
+    public TMP_Text HealthRemaining;
+    public TMP_Text HealthScore;
+    public int HealthRemainingint;
     public int ratingint;
     public GameObject LeaderboardUI;
+    private Player player = null;
+    private float timer = 0.0f;
+    private float score = 0f;
 
     private void Start()
     {
         timeCounter.text = "00:00";
         ScoreCounter.text = "0";
+        player = GameObject.FindObjectOfType<Player>();
+        health = player.GetComponentInChildren<Health>();
 
 
-        if (LeaderboardUI.activeInHierarchy)
-        {
-            ShowMark();
-
-        }
     }
     
     void Update()
     {
+        
+        
         if (MenuPause.GameIsPaused == false)
         {
             timer += Time.deltaTime;
@@ -106,6 +110,7 @@ public class ScoreAndTime : MonoBehaviour
     }
     public void ShowMark()
     {
+        Debug.Log("showmark working");
         ratingint = int.Parse(PlayerScore.text);
         if (ratingint > 2500)
         {
@@ -132,6 +137,15 @@ public class ScoreAndTime : MonoBehaviour
 
             PlayerMark.text = "F";
         }
+    }
+    public void BonusPoint()
+    {
+       Debug.Log("working bonus points");
+       HealthRemainingint = (int)health.HealthPoint;
+        score += HealthRemainingint;
+        ScoreCounter.text = string.Format("{0000} ", score);
+        HealthRemaining.text =  HealthRemainingint.ToString();
+        HealthScore.text = "+" + HealthRemaining.text;
     }
 
 

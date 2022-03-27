@@ -2342,6 +2342,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7097013434167892745}
+        m_TargetAssemblyTypeName: Channel, Assembly-CSharp
+        m_MethodName: Signal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BonusPoint
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7097013434167892745}
+        m_TargetAssemblyTypeName: Channel, Assembly-CSharp
+        m_MethodName: Signal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ShowMark
+          m_BoolArgument: 0
+        m_CallState: 2
   _delayBeforeEndMenu: 4
 --- !u!1 &1052570407715044330
 GameObject:
@@ -11191,10 +11215,14 @@ MonoBehaviour:
   timeCounter: {fileID: 914396411079673617}
   ScoreCounter: {fileID: 6151440807096405963}
   PlayerScore: {fileID: 6151440807096405963}
+  health: {fileID: 0}
   PlayerScoreDisplay: {fileID: 5740562871768234759}
   PlayerMark: {fileID: 1540704110005568721}
+  HealthRemaining: {fileID: 3821848720554930574}
+  HealthScore: {fileID: 3259493074995973367}
+  HealthRemainingint: 0
   ratingint: 0
-  LeaderboardUI: {fileID: 2307127586932810559}
+  LeaderboardUI: {fileID: 1379003342595268399}
 --- !u!114 &7744981576409207593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11371,6 +11399,22 @@ MonoBehaviour:
         - m_Target: {fileID: 1968635357249820323}
           m_TargetAssemblyTypeName: ScoreAndTime, Assembly-CSharp
           m_MethodName: ShowMark
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Name: BonusPoint
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1968635357249820323}
+          m_TargetAssemblyTypeName: ScoreAndTime, Assembly-CSharp
+          m_MethodName: BonusPoint
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -15545,7 +15589,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.1797469, y: 1}
   m_Transitions:
     m_BlendHint: 3
     m_InheritPosition: 1
@@ -19148,7 +19192,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: name
+  m_text: Health Remaining
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ca865c6e2228284fad0dadf9a795808, type: 2}
   m_sharedMaterial: {fileID: -5153150929352281648, guid: 3ca865c6e2228284fad0dadf9a795808, type: 2}
@@ -21966,17 +22010,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f9a7a0a0b054743ac5ea2969baa6e1, type: 3}
---- !u!1 &2307127586932810559 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7039976071298621853, guid: 10f9a7a0a0b054743ac5ea2969baa6e1, type: 3}
-  m_PrefabInstance: {fileID: 4735417081055625890}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4443503896191619919 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8943563914557493741, guid: 10f9a7a0a0b054743ac5ea2969baa6e1, type: 3}
   m_PrefabInstance: {fileID: 4735417081055625890}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2307127586932810559}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a14989626414fbe4cba92f010cdae777, type: 3}
