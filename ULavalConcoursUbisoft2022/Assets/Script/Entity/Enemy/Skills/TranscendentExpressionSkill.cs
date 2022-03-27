@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TranscendentExpressionSkill : Skill
 {
@@ -12,6 +13,8 @@ public class TranscendentExpressionSkill : Skill
     [Header("Reference")]
     [SerializeField] private GameObject _projectile = null;
     [SerializeField] private Entity _entity = null;
+
+    public UnityEvent OnShoot;
 
     public override bool CanUse()
     {
@@ -30,6 +33,7 @@ public class TranscendentExpressionSkill : Skill
         {
             Vector2 randomDirection = Random.insideUnitCircle.normalized;
             Instantiate(_projectile, new Vector3(_entity.transform.position.x, _heightSpawn, _entity.transform.position.z), Quaternion.LookRotation(new Vector3(randomDirection.x, 0, randomDirection.y), Vector3.up));
+            OnShoot?.Invoke();
             yield return new WaitForSeconds(Random.Range(_delayBetweenEachShot.x, _delayBetweenEachShot.y));
         }
 

@@ -41,6 +41,8 @@ public class BackToWork : Skill
         base.Use();
         _proximityStrikeSkill.OnSkillFinish += _proximityStrikeSkill_OnSkillFinish;
 
+        _navMeshAgent.isStopped = false;
+
         _onWorkStart = Time.time;
         _working = true;
 
@@ -67,6 +69,7 @@ public class BackToWork : Skill
 
         _navMeshAgent.speed = _originalSpeed;
         _proximityStrikeSkill.PowerUp.PowerUpTime = _originalPowerUpTime;
+        _navMeshAgent.isStopped = true;
 
         InvokeOnSkillFinish();
         _working = false;

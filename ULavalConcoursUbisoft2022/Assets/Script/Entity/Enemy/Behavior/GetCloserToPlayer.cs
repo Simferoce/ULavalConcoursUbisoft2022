@@ -73,6 +73,9 @@ public class GetCloserToPlayer : State
 
     private void OnDestroy()
     {
-        _navMeshAgent.isStopped = true;
+        if(_navMeshAgent != null)
+        {
+            _navMeshAgent.isStopped = true;
+        }
     }
 }
