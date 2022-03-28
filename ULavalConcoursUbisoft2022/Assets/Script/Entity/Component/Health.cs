@@ -64,7 +64,7 @@ public class Health : MonoBehaviour
             OnHit?.Invoke(this);
             Channel.Signal("DamageTaken", new HealthDamageTakenDTO() {Health = this, Damage = damageTaken, SourceTeam = sourceTeam });
             
-            for(int i =0; i < onHealthBelowThreasholdEvents.Length; ++i)
+            for(int i = 0; i < onHealthBelowThreasholdEvents.Length; ++i)
             {
                 if(!onHealthBelowThreasholdEvents[i].HasBeenInvoke && HealthPoint / MaxHealth < onHealthBelowThreasholdEvents[i].PercentageThreashold)
                 {
