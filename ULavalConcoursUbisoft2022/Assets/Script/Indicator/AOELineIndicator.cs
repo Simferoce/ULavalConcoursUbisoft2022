@@ -6,6 +6,8 @@ public class AOELineIndicator : Indicator
 {
     private Vector3 _size = Vector3.zero;
 
+    [SerializeField] private bool _colliderWithWall = true;
+
     private float _groundHeight = 0.0f;
     public override void Init(float timeBeforeImpact, Vector2 size, Transform followDirection = null)
     {
@@ -33,13 +35,16 @@ public class AOELineIndicator : Indicator
             float fullSize = _size.y;
 
             Vector3 positionAtGroundLevel = new Vector3(transform.position.x, _groundHeight + 0.1f, transform.position.z);
-            RaycastHit hit;
-            if (Physics.Raycast(positionAtGroundLevel, _source.transform.forward, out hit, _size.y, LayerMask.GetMask("Wall")))
+
+            if (_colliderWithWall)
             {
-                fullSize = Vector3.Distance(Vector3.ProjectOnPlane(transform.position, Vector3.up), Vector3.ProjectOnPlane(hit.point, Vector3.up));
+                RaycastHit hit;
+                if (Physics.Raycast(positionAtGroundLevel, _source.transform.forward, out hit, _size.y, LayerMask.GetMask("Wall")))
+                {
+                    fullSize = Vector3.Distance(Vector3.ProjectOnPlane(transform.position, Vector3.up), Vector3.ProjectOnPlane(hit.point, Vector3.up));
+                }
             }
-
-
+            
             float _percentageTimeBeforeImpact = (Time.time - _startTime) / _timeBeforeImpact;
             _projector.pivot = new Vector3(0, fullSize / 2, 0);
             _projector.size = new Vector3(_size.x, fullSize, 10);

@@ -78,12 +78,6 @@ public class Health : MonoBehaviour
                 Kill();
 
             }
-
-            if (_animation)
-            {
-                //Old Animation system only for protype. Do not use that for final. Use the Animator
-                _animation.Play();
-            }
         }
     }
 
@@ -95,8 +89,6 @@ public class Health : MonoBehaviour
         {
             Destroy(transform.parent.gameObject, 0.1f);
         }
-
-        _animation.Play("tempAnimOnDeath");
     }
 
     public bool IsDead()

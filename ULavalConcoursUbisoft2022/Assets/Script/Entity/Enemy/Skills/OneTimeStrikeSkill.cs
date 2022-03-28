@@ -11,7 +11,6 @@ public class OneTimeStrikeSkill : Skill
 
     [Header("Override Parameters")]
     [SerializeField] private float _range = 0.0f;
-    [SerializeField] private Vector3 _offset = Vector3.zero;
 
     [Header("Reference")]
     [SerializeField] private Entity _entity = null;
@@ -40,7 +39,7 @@ public class OneTimeStrikeSkill : Skill
 
     private void _powerUp_OnLock()
     {
-        _oneTimeStrike.Target = _entity.transform.position + _entity.transform.rotation * _offset;
+        _oneTimeStrike.Target = _entity.transform.position;
     }
 
     private void Health_OnDeath(Health obj)
@@ -82,7 +81,7 @@ public class OneTimeStrikeSkill : Skill
         _entity.LookTowardsTarget(target);
         _oneTimeStrike.Target = target;
 
-        GameObject gameObject = Instantiate(_indicator, _entity.transform.position + _entity.transform.rotation * _offset, Quaternion.identity);
+        GameObject gameObject = Instantiate(_indicator, _entity.transform.position, Quaternion.identity);
         _instancedIndicator = gameObject.GetComponentInChildren<AOELineIndicator>();
         _instancedIndicator.Init(_powerUp.PowerUpTime, new Vector3(2, _range), _entity.transform);
 

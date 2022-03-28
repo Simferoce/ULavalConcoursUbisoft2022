@@ -32,6 +32,7 @@ public class OneTimeStrike : State
         GameObject attackObject = Instantiate(_attackPrefab, Vector3.ProjectOnPlane(_target, Vector3.up) + new Vector3(0, 0.5f, 0), _entity.transform.rotation);
         Attack attack = attackObject.GetComponent<Attack>();
         attack.Team = Entity.Team.Foe;
+
         BoxCollider collider = attackObject.GetComponentInChildren<BoxCollider>();
         collider.size = new Vector3(collider.size.x, collider.size.y, _range);
         collider.center = new Vector3(collider.center.x, collider.center.y, _range / 2);

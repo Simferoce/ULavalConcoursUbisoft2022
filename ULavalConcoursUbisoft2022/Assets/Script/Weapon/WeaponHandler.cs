@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WeaponHandler : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class WeaponHandler : MonoBehaviour
     public bool IsAttacking { get => _isAttacking; set => _isAttacking = value; }
 
     private Transform _weaponAnchor = null;
+
+    public UnityEvent OnAttack;
 
     private void Start()
     {
@@ -87,6 +90,7 @@ public class WeaponHandler : MonoBehaviour
             GameObject attackCollider = Instantiate(_weaponData.Collider, spawnPosition, Quaternion.LookRotation(source.forward, Vector3.up));
             attackCollider.GetComponent<Attack>().Team = team;
             attackCollider.GetComponent<Attack>().Inventory = inventory;
+            OnAttack?.Invoke();
         };
 
         if(!waitAnimation)

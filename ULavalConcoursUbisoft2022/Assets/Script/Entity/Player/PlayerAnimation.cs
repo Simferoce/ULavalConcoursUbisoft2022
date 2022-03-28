@@ -37,7 +37,8 @@ public class PlayerAnimation : MonoBehaviour
 
     private void OnReviveInit()
     {
-        _animator.SetTrigger("Revive");
+        _animator.SetTrigger("ReviveTop");
+        _animator.SetTrigger("ReviveBot");
     }
 
     private void Update()
