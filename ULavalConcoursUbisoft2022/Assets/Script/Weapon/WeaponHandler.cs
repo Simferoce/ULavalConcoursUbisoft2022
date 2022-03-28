@@ -83,7 +83,8 @@ public class WeaponHandler : MonoBehaviour
 
         _triggerAttack = () =>
         {
-            GameObject attackCollider = Instantiate(_weaponData.Collider, source.position, Quaternion.LookRotation(source.forward, Vector3.up));
+            Vector3 spawnPosition = _weaponAnchor != null ? _weaponAnchor.position : source.position;
+            GameObject attackCollider = Instantiate(_weaponData.Collider, spawnPosition, Quaternion.LookRotation(source.forward, Vector3.up));
             attackCollider.GetComponent<Attack>().Team = team;
             attackCollider.GetComponent<Attack>().Inventory = inventory;
         };
