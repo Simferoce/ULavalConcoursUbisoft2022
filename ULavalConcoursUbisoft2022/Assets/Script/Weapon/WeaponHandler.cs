@@ -19,7 +19,9 @@ public class WeaponHandler : MonoBehaviour
     private bool _isAttacking = false;
     public bool IsAttacking { get => _isAttacking; set => _isAttacking = value; }
 
-    private void Awake()
+    private Transform _weaponAnchor = null;
+
+    private void Start()
     {
         if(_startingWeapon != null)
         {
@@ -29,6 +31,12 @@ public class WeaponHandler : MonoBehaviour
 
     public void SetWeapon(Weapon weapon)
     {
+        if(weapon.WeaponModel != null)
+        {
+            _weaponAnchor = this.transform.parent.GetComponentInChildren<WeaponAnchor>().transform;
+            Instantiate(weapon.WeaponModel, _weaponAnchor);
+        }
+
         _weaponData = weapon;
         _attack = weapon.Collider.GetComponent<Attack>();
         
