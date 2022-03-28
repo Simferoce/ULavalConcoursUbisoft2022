@@ -14334,6 +14334,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startingWeapon: {fileID: 0}
   _inventory: {fileID: 7287570021905515810}
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5951358264766311329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19063,18 +19066,6 @@ MonoBehaviour:
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: Close
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4046880425422174654}
-        m_TargetAssemblyTypeName: ColissionObject, Assembly-CSharp
-        m_MethodName: NewObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   _addHp: {fileID: 800635134784492088}

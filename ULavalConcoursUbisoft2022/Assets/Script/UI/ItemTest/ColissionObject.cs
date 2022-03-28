@@ -24,29 +24,43 @@ public class ColissionObject : MonoBehaviour
         player.Entity.Inventory.OnItemReceived.AddListener(OnitemReceived);
     }
 
-    private void OnitemReceived(ItemData item)
+    public void OnitemReceived(ItemData item)
     {
-        
+        NumberItem += 1;
         for (int i = 0; i <= NumberItem; i++)
         {
-            if (!itemssprite[i].gameObject.activeInHierarchy)
+            panels[i].gameObject.SetActive(true);
+            if (item.Image == test.sprite && itemssprite[i].gameObject.activeInHierarchy)
             {
+                Debug.Log("same item");
+                NumberItem -= 1;
+                return;
+
+            }
+            else if (!itemssprite[i].gameObject.activeInHierarchy)
+            {
+                
                 itemssprite[i].gameObject.SetActive(true);
                 test = itemssprite[i].GetComponent<Image>();
                 test.sprite = item.Image;
                 itemdefinition = itemdef[i].GetComponent<TMP_Text>();
                 itemdefinition.text = item.Description;
-
-            }
-        }
-        for (int i = 0; i <= NumberItem; i++)
-        {
-           
-             
                 
 
-            
+
+
+            }
+             
+            else
+            {
+                Debug.Log("different items");
+            }
+
+
+
         }
+       
+
     }
 
     
@@ -55,21 +69,14 @@ public class ColissionObject : MonoBehaviour
 
     public void NewObject()
     {
+        Debug.Log("wtf why");
         NumberItem += 1;
         for (int i = 0; i < NumberItem; i++)
         {
             panels[i].gameObject.SetActive(true);
-
-            if (panels[i].gameObject.transform.childCount == 0)
-            {
-
-
-            }
-
-
         }
 
 
     }
-
+    
 }
