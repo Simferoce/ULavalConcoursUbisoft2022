@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 
 public class WeaponHandler : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class WeaponHandler : MonoBehaviour
     public bool IsAttacking { get => _isAttacking; set => _isAttacking = value; }
 
     private Transform _weaponAnchor = null;
+    private VisualEffect _slash = null;
 
     public UnityEvent OnAttack;
 
@@ -37,7 +39,8 @@ public class WeaponHandler : MonoBehaviour
         if(weapon.WeaponModel != null)
         {
             _weaponAnchor = this.transform.parent.GetComponentInChildren<WeaponAnchor>().transform;
-            Instantiate(weapon.WeaponModel, _weaponAnchor);
+            GameObject weaponObject = Instantiate(weapon.WeaponModel, _weaponAnchor);
+            _slash = weaponObject.GetComponentInChildren<VisualEffect>();
         }
 
         _weaponData = weapon;
@@ -90,6 +93,7 @@ public class WeaponHandler : MonoBehaviour
             GameObject attackCollider = Instantiate(_weaponData.Collider, spawnPosition, Quaternion.LookRotation(source.forward, Vector3.up));
             attackCollider.GetComponent<Attack>().Team = team;
             attackCollider.GetComponent<Attack>().Inventory = inventory;
+            _slash?.Play();
             OnAttack?.Invoke();
         };
 
