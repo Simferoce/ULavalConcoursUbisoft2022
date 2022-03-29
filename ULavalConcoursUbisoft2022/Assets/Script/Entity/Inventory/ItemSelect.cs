@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,8 +8,6 @@ using UnityEngine.UI;
 
 public class ItemSelect : MonoBehaviour
 {
-    
-
     [System.Serializable]
     public class PopupSelectionBox
     {
@@ -24,6 +23,8 @@ public class ItemSelect : MonoBehaviour
     [SerializeField] private UnityEvent _onItemSelected = null;
     [SerializeField] private TextMeshProUGUI _addHp = null;
     [SerializeField] private float _healthAmount = 0.0f;
+    [SerializeField] private ToggleGroup _toggleGroup = null;
+    [SerializeField] private Button _acceptButton = null;
 
     private string _stressText = "<color=\"purple\">-{0}<color=\"white\"> Stress";
     private float _timeSinceOpen = 0.0f;
@@ -72,14 +73,37 @@ public class ItemSelect : MonoBehaviour
         return choosenIndex;
     }
 
-    public void OnClick(int index)
+    public void Accept()
+    {
+        Toggle toggle = _toggleGroup.ActiveToggles().FirstOrDefault();
+        if(toggle.name == "Item 1")
+        {
+            GetItem(0);
+        }
+        else if (toggle.name == "Item 2")
+        {
+            GetItem(1);
+        }
+        else if(toggle.name == "HP")
+        {
+            OnAddHp();
+        }
+    }
+
+    public void OnValueChange()
+    {
+        Toggle toggle = _toggleGroup.ActiveToggles().FirstOrDefault();
+        _acceptButton.interactable = toggle != null;
+    }
+
+    public void GetItem(int index)
     {
         Player player = GameObject.FindObjectOfType<Player>();
         Inventory inventory = player.Entity.Inventory;
 
         GameObject itemInstance = Instantiate(_itemBoxes[index].ItemData.Prefab, inventory.transform);
         inventory.AddItems(itemInstance);
-        
+
         Close();
     }
 
