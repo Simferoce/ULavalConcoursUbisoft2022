@@ -19,13 +19,26 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+        GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
+
         SceneManager.LoadScene(_bossWingName, LoadSceneMode.Additive);
         SceneManager.LoadScene(_safeZoneName, LoadSceneMode.Additive);
 
         List<int> randomWings = GenerateRandomsWithoutRepeat(2, _wingsName.Count);
 
+        if(gameManager.AlreadyPlayedWing.Count != _wingsName.Count)
+        {
+            while(randomWings.All(x => gameManager.AlreadyPlayedWing.Contains(_wingsName[x])))
+            {
+                randomWings = GenerateRandomsWithoutRepeat(2, _wingsName.Count);
+            }
+        }
+
         SceneManager.LoadScene(_wingsName[randomWings[0]], LoadSceneMode.Additive);
         SceneManager.LoadScene(_wingsName[randomWings[1]], LoadSceneMode.Additive);
+
+        gameManager.AlreadyPlayedWing.Add(_wingsName[randomWings[0]]);
+        gameManager.AlreadyPlayedWing.Add(_wingsName[randomWings[1]]);
     }
 
     private void Start()

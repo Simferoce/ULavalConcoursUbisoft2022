@@ -34,4 +34,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private bool _isStoryMode = true;
     public bool IsStoryMode { get => _isStoryMode; set => _isStoryMode = value; }
+
+    public HashSet<string> AlreadyPlayedWing { get; set; } = new HashSet<string>();
 }
