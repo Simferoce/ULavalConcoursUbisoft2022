@@ -39,9 +39,9 @@ public class BubbleText : MonoBehaviour
         {1, new Message() {Id = 1, Source = Source.Wrath, Text = "Yeah. Give us more work because of the \"exceptional\" circumstances.", Duration = 3.0f } },
         {2, new Message() {Id = 2, Source = Source.Wrath, Text = "I cannot ... conti...", Duration = 2.0f } },
         {3, new Message() {Id = 3, Source = Source.Wrath, Text = "ARGGGGHHH !!!", Duration = 2.0f } },
-        {4, new Message() {Id = 4, Source = Source.Exhaustion, Text = "I need zzzzz to work zzzzzz", Duration = 2.0f } },
-        {5, new Message() {Id = 5, Source = Source.Exhaustion, Text = "No ! I was not sleeping.", Duration = 2.0f } },
-        {6, new Message() {Id = 6, Source = Source.Exhaustion, Text = "So much work... I need to stay awake...", Duration = 2.0f } },
+        {4, new Message() {Id = 4, Source = Source.Exhaustion, Text = "I need zzzzz to work zzzzzz", Duration = 4.0f } },
+        {5, new Message() {Id = 5, Source = Source.Exhaustion, Text = "No ! I was not sleeping.", Duration = 4.0f } },
+        {6, new Message() {Id = 6, Source = Source.Exhaustion, Text = "So much work... I need to stay awake...", Duration = 4.0f } },
         {7, new Message() {Id = 7, Source = Source.Depression, Text = "There is nothing to do. Everyone is sick, everything is closed.", Duration = 4.0f } },
         {8, new Message() {Id = 8, Source = Source.Depression, Text = "The only thing that have not changed is the amount of work.", Duration = 4.0f } },
         {9, new Message() {Id = 9, Source = Source.Depression, Text = "I am lonely. Only my thoughts are staying with me.", Duration = 4.0f } },
@@ -57,6 +57,10 @@ public class BubbleText : MonoBehaviour
         {19, new Message() {Id = 19, Source = Source.Player, Text = "They are everywhere !!!", Duration = 3.0f } },
         {20, new Message() {Id = 20, Source = Source.Player, Text = "It is blocked by mysterious energy. I should look around for a way to disable it.", Duration = 5.0f } },
         {21, new Message() {Id = 21, Source = Source.Player, Text = "That is not a friendly companion. Let's teach him a lesson or two. (Left Click to attack)", Duration = 3.0f, ConditionBase = true } },
+        {22, new Message() {Id = 22, Source = Source.Player, Text = "Feeling empty, bored is not abnormal. But if it persists it is important to seek help.", Duration = 10.0f } },
+        {23, new Message() {Id = 23, Source = Source.Player, Text = "Feeling angry is totally normal. Talking to someone or pratice peacefull activity can help.", Duration = 10.0f } },
+        {24, new Message() {Id = 24, Source = Source.Player, Text = "Work that piles up, no times to sleep, everbody felt that at least once. When it happens, you need to act before you burn out.", Duration = 10.0f } },
+        {25, new Message() {Id = 25, Source = Source.Player, Text = "The door lock seem to loose up. 1 more push and it should open.", Duration = 5.0f } },
     };
 
     private void Start()
