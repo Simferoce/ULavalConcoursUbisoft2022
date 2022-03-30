@@ -12584,7 +12584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed4ea5bf30f0acf419e738ba1ca9c908, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.79005
+      value: 35.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed4ea5bf30f0acf419e738ba1ca9c908, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12592,7 +12592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed4ea5bf30f0acf419e738ba1ca9c908, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.0256453
+      value: 5.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed4ea5bf30f0acf419e738ba1ca9c908, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17336,6 +17336,9 @@ MonoBehaviour:
           m_StringArgument: AwardItem
           m_BoolArgument: 0
         m_CallState: 2
+  _onReceiveInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1286142237
 PrefabInstance:
   m_ObjectHideFlags: 0
