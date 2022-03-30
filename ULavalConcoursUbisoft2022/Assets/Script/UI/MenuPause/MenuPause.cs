@@ -24,7 +24,7 @@ public class MenuPause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && _levelManager.IsGameInProgress)
+        if (Input.GetKeyDown(KeyCode.Escape) && (_levelManager?.IsGameInProgress ?? true))
         {
             if (_menuOpened)
             {
