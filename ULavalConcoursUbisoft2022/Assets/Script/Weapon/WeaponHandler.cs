@@ -40,7 +40,7 @@ public class WeaponHandler : MonoBehaviour
         {
             _weaponAnchor = this.transform.parent.GetComponentInChildren<WeaponAnchor>().transform;
             GameObject weaponObject = Instantiate(weapon.WeaponModel, _weaponAnchor);
-            _slash = weaponObject.GetComponentInChildren<VisualEffect>();
+            _slash = Instantiate(weapon.Slash, this.transform.parent).GetComponentInChildren<VisualEffect>();
         }
 
         _weaponData = weapon;
