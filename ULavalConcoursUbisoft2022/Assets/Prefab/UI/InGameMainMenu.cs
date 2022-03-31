@@ -92,7 +92,7 @@ public class InGameMainMenu : MonoBehaviour
         _pause--;
         if (_pause <= 0)
         {
-            _targetBloom = 9;
+            _targetBloom = 6.25f;
             _lerpT = 0.0f;
             Time.timeScale = 1f;
             MenuPause.GameIsPaused = false;
