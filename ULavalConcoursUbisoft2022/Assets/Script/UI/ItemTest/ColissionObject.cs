@@ -26,8 +26,8 @@ public class ColissionObject : MonoBehaviour
 
     public void OnitemReceived(ItemData item)
     {
-        NumberItem += 1;
-        for (int i = 1; i <= NumberItem; i++)
+        
+        for (int i = 0; i < NumberItem; i++)
         {
             panels[i].gameObject.SetActive(true);
             if (item.Image == test.sprite && itemssprite[i].gameObject.activeInHierarchy)
@@ -56,10 +56,10 @@ public class ColissionObject : MonoBehaviour
                 Debug.Log("different items");
             }
 
-
+            
 
         }
-       
+        NumberItem += 1;
 
     }
 
