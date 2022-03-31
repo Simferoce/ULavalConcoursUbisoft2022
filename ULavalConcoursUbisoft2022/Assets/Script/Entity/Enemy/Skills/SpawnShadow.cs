@@ -14,6 +14,9 @@ public class SpawnShadow : Skill
     private float _lastTimeSpawn = 0.0f;
 
     private bool _firstUse = true;
+
+    private List<GameObject> _minions = new List<GameObject>();
+
     private void Awake()
     {
         _player = GameObject.FindObjectOfType<Player>();
@@ -54,8 +57,18 @@ public class SpawnShadow : Skill
         if(Time.time - _lastTimeSpawn > _delay)
         {
             Vector2 pos = Random.insideUnitCircle.normalized * _shadowDistance;
-            Instantiate(_shadowPrefab, _player.transform.position + new Vector3(pos.x, _player.transform.position.y, pos.y), Quaternion.identity);
+            _minions.Add(Instantiate(_shadowPrefab, _player.transform.position + new Vector3(pos.x, _player.transform.position.y, pos.y), Quaternion.identity));
             _lastTimeSpawn = Time.time;
         }
+    }
+
+    private void OnDestroy()
+    {
+        foreach(GameObject minion in _minions)
+        {
+            Destroy(minion);
+        }
+
+        _minions.Clear();
     }
 }

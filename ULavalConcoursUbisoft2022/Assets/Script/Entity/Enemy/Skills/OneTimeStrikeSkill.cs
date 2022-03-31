@@ -44,16 +44,16 @@ public class OneTimeStrikeSkill : Skill
 
     private void Health_OnDeath(Health obj)
     {
-        if (_instancedIndicator != null)
-        {
-            _instancedIndicator.Destroy();
-        }
-
         _entity.Health.OnDeath.RemoveListener(Health_OnDeath);
     }
 
     private void OnDestroy()
     {
+        if (_instancedIndicator != null)
+        {
+            _instancedIndicator.Destroy();
+        }
+
         _oneTimeStrike.OnStateDisable -= _proximityStrike_OnStateDisable;
         _powerUp.OnLock -= _powerUp_OnLock;
     }
