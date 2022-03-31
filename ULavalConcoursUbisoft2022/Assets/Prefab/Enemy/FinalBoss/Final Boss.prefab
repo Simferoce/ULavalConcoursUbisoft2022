@@ -261,7 +261,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnStateEnableHook:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6124877849166164723}
+        m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+        m_MethodName: ShowMessage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 27
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStateDisableHook:
     m_PersistentCalls:
       m_Calls: []
@@ -667,10 +679,90 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 6124877849166164723}
+        m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+        m_MethodName: ShowMessage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 34
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnHit:
     m_PersistentCalls:
       m_Calls: []
-  onHealthBelowThreasholdEvents: []
+  onHealthBelowThreasholdEvents:
+  - HasBeenInvoke: 0
+    PercentageThreashold: 0.9
+    OnHealthBelowThreashold:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6124877849166164723}
+          m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+          m_MethodName: ShowMessage
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 33
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - HasBeenInvoke: 0
+    PercentageThreashold: 0.75
+    OnHealthBelowThreashold:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6124877849166164723}
+          m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+          m_MethodName: ShowMessage
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 35
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - HasBeenInvoke: 0
+    PercentageThreashold: 0.25
+    OnHealthBelowThreashold:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6124877849166164723}
+          m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+          m_MethodName: ShowMessage
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 31
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - HasBeenInvoke: 0
+    PercentageThreashold: 0.1
+    OnHealthBelowThreashold:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6124877849166164723}
+          m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+          m_MethodName: ShowMessage
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 32
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &4474971314343617129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,7 +827,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnStateEnableHook:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6124877849166164723}
+        m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+        m_MethodName: ShowMessage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 28
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStateDisableHook:
     m_PersistentCalls:
       m_Calls: []
@@ -847,7 +951,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnStateEnableHook:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6124877849166164723}
+        m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+        m_MethodName: ShowMessage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 29
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStateDisableHook:
     m_PersistentCalls:
       m_Calls: []
@@ -1015,7 +1131,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnStateEnableHook:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6124877849166164723}
+        m_TargetAssemblyTypeName: BubbleText, Assembly-CSharp
+        m_MethodName: ShowMessage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStateDisableHook:
     m_PersistentCalls:
       m_Calls: []
@@ -1075,7 +1203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2818006952928948153, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
       propertyPath: _size
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 2818006952928948153, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
       propertyPath: _entity
@@ -1909,7 +2037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2399083111101103842, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2399083111101103842, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_IsActive
@@ -1925,7 +2053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4636767477959035615, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6373688350654718212, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_Name
@@ -1977,7 +2105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9067907607479715313, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}

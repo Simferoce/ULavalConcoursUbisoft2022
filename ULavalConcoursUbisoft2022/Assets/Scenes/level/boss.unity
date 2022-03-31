@@ -2829,7 +2829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4474971312661450466, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4474971312661450466, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3764,7 +3764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 244920611}
   - component: {fileID: 244920610}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider Extra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7026,7 +7026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 474003304}
   - component: {fileID: 474003305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider Extra (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8701,7 +8701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4474971312661450466, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4474971312661450466, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8822,7 +8822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 585993812}
   - component: {fileID: 585993813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider Extra (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11217,7 +11217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757492510}
   - component: {fileID: 757492511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider Extra (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22947,9 +22947,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1668802557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider Extra
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22985,7 +22985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1671270330}
   - component: {fileID: 1671270331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26038,7 +26038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2015469205}
   - component: {fileID: 2015469206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider Extra (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28709,13 +28709,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 33643358}
     m_Modifications:
+    - target: {fileID: 2218614889204483103, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541346185639889713, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4474971312661450465, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
       propertyPath: m_Name
       value: Final Boss - (Wrath - Exhaustion)
       objectReference: {fileID: 0}
     - target: {fileID: 4474971312661450466, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4474971312661450466, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28756,6 +28764,10 @@ PrefabInstance:
     - target: {fileID: 4474971312661450466, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780279567641804556, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5648393475168040142, guid: 7df84e7e628c04448af8b3db7af2bf84, type: 3}
       propertyPath: _spawns.Array.data[0].points.Array.data[0]

@@ -15,6 +15,7 @@ public class BubbleText : MonoBehaviour
     private Message _currentMessage = null;
     public enum Source
     {
+        Anxiety,
         Depression,
         Exhaustion,
         Wrath,
@@ -62,6 +63,15 @@ public class BubbleText : MonoBehaviour
         {24, new Message() {Id = 24, Source = Source.Player, Text = "Work that piles up, no times to sleep, everbody felt that at least once. When it happens, you need to act before you burn out.", Duration = 10.0f } },
         {25, new Message() {Id = 25, Source = Source.Player, Text = "The door lock seem to loose up. One more push and it should open.", Duration = 5.0f } },
         {26, new Message() {Id = 26, Source = Source.Player, Text = "It seems like I am not welcome here. I should get out before it is too late", Duration = 5.0f } },
+        {27, new Message() {Id = 27, Source = Source.Anxiety, Text = "Let's see what we have here. Oh a little calf.", Duration = 5.0f } },
+        {28, new Message() {Id = 28, Source = Source.Anxiety, Text = "Don't you feel the pressure. ", Duration = 5.0f } },
+        {29, new Message() {Id = 29, Source = Source.Anxiety, Text = "You are shaking a lot. Are you afraid of something ?", Duration = 5.0f } },
+        {30, new Message() {Id = 30, Source = Source.Anxiety, Text = "Ah ah ah, you are falling appart.", Duration = 5.0f } },
+        {31, new Message() {Id = 31, Source = Source.Anxiety, Text = "You will ne-never succeed.", Duration = 5.0f } },
+        {32, new Message() {Id = 32, Source = Source.Anxiety, Text = "I can-cannot lose here.", Duration = 5.0f } },
+        {33, new Message() {Id = 33, Source = Source.Anxiety, Text = "You should have taken time to prepared while you had the chance.", Duration = 5.0f } },
+        {34, new Message() {Id = 34, Source = Source.Anxiety, Text = "No ! No ! It is not the end. I will be back.", Duration = 5.0f } },
+        {35, new Message() {Id = 35, Source = Source.Anxiety, Text = "Look at you. You are a disgrace.", Duration = 5.0f } },
     };
 
     private void Start()

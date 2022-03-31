@@ -352,6 +352,9 @@ MonoBehaviour:
           m_StringArgument: UnlockEndZone
           m_BoolArgument: 0
         m_CallState: 2
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
   onHealthBelowThreasholdEvents: []
 --- !u!1 &415337187575507053
 GameObject:
@@ -1242,7 +1245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2399083111101103842, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4026878201593344797, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: _offSet.x
@@ -1254,7 +1257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4636767477959035615, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6373688350654718212, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_Name
@@ -1318,7 +1321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9067907607479715313, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2a719d175fa8c14bae2b9644d1c37ce, type: 3}

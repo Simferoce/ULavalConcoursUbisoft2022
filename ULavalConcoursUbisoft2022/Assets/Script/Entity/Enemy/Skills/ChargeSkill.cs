@@ -35,7 +35,22 @@ public class ChargeSkill : Skill
         _incapacited.OnStateDisable += OnIncapicitedStateDisable;
         _charge.OnStateDisable += _charge_OnStateDisable;
         _entity.Health.OnDeath.AddListener(OnDeath);
+        Charge.OnStateEnable += Charge_OnStateEnable;
         _lastUse = Time.time - _cooldown;
+    }
+
+    private void Charge_OnStateEnable(State obj)
+    {
+        if (!_entity.Health.IsDead())
+        {
+            _attackInstance = Instantiate(_attack).GetComponentInChildren<AttackStopOnTrigger>();
+            _attackInstance.Team = Entity.Team.Neutral;
+            _attackInstance.Following = _entity.transform;
+            _attackInstance.Owner = _entity.gameObject;
+            BoxCollider collider = _attackInstance.GetComponentInChildren<BoxCollider>();
+            collider.enabled = true;
+            collider.size = new Vector3(_size, 1, 1);
+        }
     }
 
     private void OnDeath(Health health)
@@ -60,6 +75,7 @@ public class ChargeSkill : Skill
     {
         _incapacited.OnStateDisable -= OnIncapicitedStateDisable;
         _charge.OnStateDisable -= _charge_OnStateDisable;
+        _powerup.OnStateEnable -= Charge_OnStateEnable;
     }
 
     private void OnIncapicitedStateDisable(State state)
@@ -75,13 +91,6 @@ public class ChargeSkill : Skill
             Indicator indicator = _indicatorInstance.GetComponentInChildren<Indicator>();
             indicator.Init(_powerup.PowerUpTime, new Vector3(_size, _maxRange), _entity.transform);
 
-            _attackInstance = Instantiate(_attack).GetComponentInChildren<AttackStopOnTrigger>();
-            _attackInstance.Team = Entity.Team.Neutral;
-            _attackInstance.Following = _entity.transform;
-            _attackInstance.Owner = _entity.gameObject;
-            BoxCollider collider = _attackInstance.GetComponentInChildren<BoxCollider>();
-            collider.enabled = true;
-            collider.size = new Vector3(_size, 1, 1);
             _lastUse = Time.time;
             _powerup.EnableState();
         }

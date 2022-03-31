@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6543448252805454042}
   - component: {fileID: 1005560835104449579}
   - component: {fileID: 6191823308433640529}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,13 +88,13 @@ GameObject:
   - component: {fileID: 5266122572666942205}
   - component: {fileID: 7807854195232349212}
   - component: {fileID: 7821397192341315647}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1387157892322014249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.7500014, y: 1.5000002}
-  m_SizeDelta: {x: 3.2, y: 1.7}
+  m_SizeDelta: {x: 3.3, y: 1.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5266122572666942205
 Canvas:
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 4266600138089496365}
   - component: {fileID: 930947387620619840}
   - component: {fileID: 2705875813564369147}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7894902173599606209}
   - component: {fileID: 4026878201593344797}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: BubbleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 4302380099415562737}
   - component: {fileID: 5994884153821573693}
   - component: {fileID: 6983944212989758648}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
