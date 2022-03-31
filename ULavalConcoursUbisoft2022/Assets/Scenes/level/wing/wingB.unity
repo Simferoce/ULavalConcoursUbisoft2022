@@ -24388,8 +24388,16 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8858315822131122287, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858315822131122287, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: Priority
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858315822131122287, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: m_Volume
-      value: 0.507
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}

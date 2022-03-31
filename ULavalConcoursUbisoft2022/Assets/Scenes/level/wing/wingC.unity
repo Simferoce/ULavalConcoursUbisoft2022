@@ -16129,8 +16129,16 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6152168173379928239, guid: 0e9fd29917b05814b8b600b9d78ec968, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152168173379928239, guid: 0e9fd29917b05814b8b600b9d78ec968, type: 3}
+      propertyPath: Priority
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152168173379928239, guid: 0e9fd29917b05814b8b600b9d78ec968, type: 3}
       propertyPath: m_Volume
-      value: 0.502
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514062309535506951, guid: 0e9fd29917b05814b8b600b9d78ec968, type: 3}
       propertyPath: Priority
@@ -18835,8 +18843,16 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6152168173379928239, guid: 0e9fd29917b05814b8b600b9d78ec968, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152168173379928239, guid: 0e9fd29917b05814b8b600b9d78ec968, type: 3}
+      propertyPath: Priority
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152168173379928239, guid: 0e9fd29917b05814b8b600b9d78ec968, type: 3}
       propertyPath: m_Volume
-      value: 0.502
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 8514062309535506951, guid: 0e9fd29917b05814b8b600b9d78ec968, type: 3}
       propertyPath: Priority
@@ -23126,6 +23142,10 @@ PrefabInstance:
     - target: {fileID: 1152314940471528362, guid: f567b79ee0948234599dffd994fa01b6, type: 3}
       propertyPath: Priority
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152314940471528362, guid: f567b79ee0948234599dffd994fa01b6, type: 3}
+      propertyPath: m_Volume
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6703604898203015244, guid: f567b79ee0948234599dffd994fa01b6, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
