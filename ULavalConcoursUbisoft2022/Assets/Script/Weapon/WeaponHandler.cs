@@ -26,6 +26,8 @@ public class WeaponHandler : MonoBehaviour
 
     public UnityEvent OnAttack;
 
+    private List<GameObject> _attackObjects = new List<GameObject>();
+
     private void Start()
     {
         if(_startingWeapon != null)
@@ -93,6 +95,8 @@ public class WeaponHandler : MonoBehaviour
             GameObject attackCollider = Instantiate(_weaponData.Collider, spawnPosition, Quaternion.LookRotation(source.forward, Vector3.up));
             attackCollider.GetComponent<Attack>().Team = team;
             attackCollider.GetComponent<Attack>().Inventory = inventory;
+
+            _attackObjects.Add(attackCollider);
             _slash?.Play();
             OnAttack?.Invoke();
         };
@@ -117,5 +121,16 @@ public class WeaponHandler : MonoBehaviour
     public void EndAttack()
     {
         _isAttacking = false;
+    }
+
+    private void OnDestroy()
+    {
+        foreach(GameObject obj in _attackObjects)
+        {
+            if(obj != null)
+            {
+                Destroy(obj);
+            }
+        }
     }
 }

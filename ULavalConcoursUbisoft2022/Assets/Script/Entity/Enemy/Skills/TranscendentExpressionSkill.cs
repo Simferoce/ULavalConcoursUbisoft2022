@@ -16,6 +16,8 @@ public class TranscendentExpressionSkill : Skill
 
     public UnityEvent OnShoot;
 
+    public List<GameObject> _projectiles = new List<GameObject>();
+
     public override bool CanUse()
     {
         return true;
@@ -32,11 +34,23 @@ public class TranscendentExpressionSkill : Skill
         for (int i = 0; i < _numberOfProjectile; ++i)
         {
             Vector2 randomDirection = Random.insideUnitCircle.normalized;
-            Instantiate(_projectile, new Vector3(_entity.transform.position.x, _heightSpawn, _entity.transform.position.z), Quaternion.LookRotation(new Vector3(randomDirection.x, 0, randomDirection.y), Vector3.up));
+            _projectiles.Add(Instantiate(_projectile, new Vector3(_entity.transform.position.x, _heightSpawn, _entity.transform.position.z), Quaternion.LookRotation(new Vector3(randomDirection.x, 0, randomDirection.y), Vector3.up)));
             OnShoot?.Invoke();
             yield return new WaitForSeconds(Random.Range(_delayBetweenEachShot.x, _delayBetweenEachShot.y));
         }
 
         InvokeOnSkillFinish();
+    }
+
+    public void OnDestroy()
+    {
+        StopAllCoroutines();
+
+        foreach(GameObject obj in _projectiles)
+        {
+            Destroy(obj);
+        }
+
+        _projectiles.Clear();
     }
 }

@@ -22,6 +22,8 @@ public class SummonSkill : Skill
 
     public int NumberToSummon { get => _numberToSummon; set => _numberToSummon = value; }
 
+    private List<GameObject> _minions = new List<GameObject>();
+
     public override bool CanUse()
     {
         return true;
@@ -40,8 +42,8 @@ public class SummonSkill : Skill
         for(int i = 0; i < _numberToSummon; ++i)
         {
             int index = UnityEngine.Random.Range(0, points.Count);
-            GameObject minons = Instantiate(_summonPrefab, points[index].position, Quaternion.identity);
-
+            GameObject minion = Instantiate(_summonPrefab, points[index].position, Quaternion.identity);
+            _minions.Add(minion);
             points.RemoveAt(index);
 
             if(points.Count == 0)
@@ -51,5 +53,15 @@ public class SummonSkill : Skill
         }
 
         InvokeOnSkillFinish();
+    }
+
+    public void OnDestroy()
+    {
+        foreach (GameObject obj in _minions)
+        {
+            Destroy(obj);
+        }
+
+        _minions.Clear();
     }
 }

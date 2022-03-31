@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebfdff5ce50d514682f2f69cdca23e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyOnHit: 1
+  _destroyOnHit: 0
+  _destroyOnHitWall: 0
   _owner: {fileID: 0}
   _following: {fileID: 0}
   _team: 2
@@ -54,6 +55,8 @@ MonoBehaviour:
   attackDamageAttribute:
     _baseAttackDamage: 10
   _speed: 0
+  _spin: 0
+  _visual: {fileID: 0}
 --- !u!54 &8573301266550765397
 Rigidbody:
   m_ObjectHideFlags: 0
