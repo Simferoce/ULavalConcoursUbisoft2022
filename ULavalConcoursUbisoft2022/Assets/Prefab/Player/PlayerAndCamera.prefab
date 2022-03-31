@@ -19467,6 +19467,7 @@ GameObject:
   - component: {fileID: 8667520925003821610}
   - component: {fileID: 2127363278138857179}
   - component: {fileID: 3394314043041962108}
+  - component: {fileID: 4187295959871530970}
   m_Layer: 0
   m_Name: MenuPopUp
   m_TagString: Untagged
@@ -19549,9 +19550,9 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3394314043041962108}
-          m_TargetAssemblyTypeName: ItemSelect, Assembly-CSharp
-          m_MethodName: GenerateItems
+        - m_Target: {fileID: 4187295959871530970}
+          m_TargetAssemblyTypeName: DelayAction, Assembly-CSharp
+          m_MethodName: Execute
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -19559,19 +19560,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 5651831269863529657}
-          m_TargetAssemblyTypeName: InGameMainMenu, Assembly-CSharp
-          m_MethodName: Enable
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
   _channelWithObjectParameters: []
 --- !u!114 &3394314043041962108
@@ -19621,6 +19610,46 @@ MonoBehaviour:
   _healthAmount: 20
   _toggleGroup: {fileID: 9209917861897115959}
   _acceptButton: {fileID: 7512878327396509304}
+--- !u!114 &4187295959871530970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706837948761991814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dfbf82978b66049a4f350eee255731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3394314043041962108}
+        m_TargetAssemblyTypeName: ItemSelect, Assembly-CSharp
+        m_MethodName: GenerateItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5651831269863529657}
+        m_TargetAssemblyTypeName: InGameMainMenu, Assembly-CSharp
+        m_MethodName: Enable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _timer: 0.1
 --- !u!1 &8731005765703624249
 GameObject:
   m_ObjectHideFlags: 0

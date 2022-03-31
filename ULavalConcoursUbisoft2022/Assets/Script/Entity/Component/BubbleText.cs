@@ -60,7 +60,8 @@ public class BubbleText : MonoBehaviour
         {22, new Message() {Id = 22, Source = Source.Player, Text = "Feeling empty, bored is not abnormal. But if it persists it is important to seek help.", Duration = 10.0f } },
         {23, new Message() {Id = 23, Source = Source.Player, Text = "Feeling angry is totally normal. Talking to someone or pratice peacefull activity can help.", Duration = 10.0f } },
         {24, new Message() {Id = 24, Source = Source.Player, Text = "Work that piles up, no times to sleep, everbody felt that at least once. When it happens, you need to act before you burn out.", Duration = 10.0f } },
-        {25, new Message() {Id = 25, Source = Source.Player, Text = "The door lock seem to loose up. 1 more push and it should open.", Duration = 5.0f } },
+        {25, new Message() {Id = 25, Source = Source.Player, Text = "The door lock seem to loose up. One more push and it should open.", Duration = 5.0f } },
+        {26, new Message() {Id = 26, Source = Source.Player, Text = "It seems like I am not welcome here. I should get out before it is too late", Duration = 5.0f } },
     };
 
     private void Start()
