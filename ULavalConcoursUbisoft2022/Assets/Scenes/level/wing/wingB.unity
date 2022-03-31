@@ -20952,6 +20952,10 @@ PrefabInstance:
       propertyPath: _numberOfSpawns
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 548586535360979430, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2987156633257054505, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -21039,6 +21043,10 @@ PrefabInstance:
     - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604935770704622825, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: Priority
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 893be637cd524b24593de1db3cc36381, type: 3}
@@ -24378,6 +24386,10 @@ PrefabInstance:
     - target: {fileID: 8004721724877820619, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8858315822131122287, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}
+      propertyPath: m_Volume
+      value: 0.507
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c06bf174702ae1a46be92b24ed5bbeeb, type: 3}

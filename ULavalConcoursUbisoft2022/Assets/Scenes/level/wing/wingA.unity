@@ -3259,11 +3259,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 54803110456842251, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: Priority
-      value: 256
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 54803110456842251, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 54803110456842251, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -3275,11 +3275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4058381272743955625, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: Priority
-      value: 256
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4058381272743955625, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4143202438244006020, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: Priority
@@ -3287,7 +3287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4143202438244006020, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: m_Volume
-      value: 0.817
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4143202438244006020, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -3299,7 +3299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4160290909246297388, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4160290909246297388, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -3579,7 +3579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8478727871964483282, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e07a63cb878804d920b0630e6dbd5c, type: 3}
