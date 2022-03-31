@@ -102,13 +102,13 @@ public class InGameMainMenu : MonoBehaviour
 
     public void Update()
     {
-        if(_lerpT > 1.0f) {
-            _bloom.intensity.value = _targetBloom;
-        }
-        else
-        {
-            _bloom.intensity.value = Mathf.Lerp(_bloom.intensity.value, _targetBloom, _lerpT);
-            _lerpT += 0.5f * Time.unscaledDeltaTime * _lerpSpeed;
-        }
+        //if(_lerpT > 1.0f) {
+        //    _bloom.intensity.value = _targetBloom;
+        //}
+        //else
+        //{
+        //    _bloom.intensity.value = Mathf.Lerp(_bloom.intensity.value, _targetBloom, _lerpT);
+        //    _lerpT += 0.5f * Time.unscaledDeltaTime * _lerpSpeed;
+        //}
     }
 }
