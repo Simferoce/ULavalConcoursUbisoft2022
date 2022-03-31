@@ -36,6 +36,9 @@ public class ScoreAndTime : MonoBehaviour
     public TMP_Text ExhaustionMinion;
     public TMP_Text ExhaustionMinionScore;
 
+    public TMP_Text time;
+    public TMP_Text timepoint;
+
     public TMP_Text TotalScore;
 
     public int HealthRemainingint;
@@ -43,16 +46,20 @@ public class ScoreAndTime : MonoBehaviour
     public GameObject LeaderboardUI;
     public TMP_Text LevelStatut;
 
+    
+
     private Player player = null;
     private float timer = 0.0f;
     private float score = 0f;
-
+    private int timeint;
+    private bool bossdead;
     private void Start()
     {
         timeCounter.text = "00:00";
         ScoreCounter.text = "0";
         player = GameObject.FindObjectOfType<Player>();
         health = player.GetComponentInChildren<Health>();
+        
         
         Sadnesskill.text = "x0";
         SadnesskillScore.text = "+0";
@@ -76,6 +83,7 @@ public class ScoreAndTime : MonoBehaviour
         SadnesskillMinion.text = "x0";
         SadnesskillMinionScore.text = "+0";
 
+        bossdead = false;
     }
     
     void Update()
@@ -110,6 +118,7 @@ public class ScoreAndTime : MonoBehaviour
         FinalBoss.text = "x1";
         FinalBossScore.text = "+1000";
         LevelStatut.text = "Success";
+         bossdead = true;
     }
     public void WrathKill()
     {
@@ -214,6 +223,28 @@ public class ScoreAndTime : MonoBehaviour
         TotalScore.text = PlayerScore.text + "pts";
     }
 
+    public void TimePoint()
+    {
+        time.text = timeCounter.text;
+        if (timer>= 900 | bossdead == false)
+          {
+            timeint = 0;
 
+        }
+        else
+        {
+            timeint = (int)(float)((250000/timer)-(timer)/4);
+
+        }
+        
+        score += timeint;       
+        timepoint.text = "+ "+ timeint.ToString();
+        TotalScore.text = PlayerScore.text + "pts";
+
+
+        ScoreCounter.text = string.Format("{0000} ", score);
+
+
+    }
 }
 
