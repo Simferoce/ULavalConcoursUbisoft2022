@@ -49,7 +49,7 @@ public class ChargeSkill : Skill
             _attackInstance.Owner = _entity.gameObject;
             BoxCollider collider = _attackInstance.GetComponentInChildren<BoxCollider>();
             collider.enabled = true;
-            collider.size = new Vector3(_size, 1, 1);
+            collider.size = new Vector3(_size * 0.8f, 1, 1);
         }
     }
 

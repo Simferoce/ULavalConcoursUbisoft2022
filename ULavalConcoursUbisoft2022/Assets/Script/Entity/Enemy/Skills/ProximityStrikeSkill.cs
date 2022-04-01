@@ -29,7 +29,7 @@ public class ProximityStrikeSkill : Skill
     private void Awake()
     {
         _powerUp.OnLock += _powerUp_OnLock;
-        _proximityStrike.Radius = _range;
+        _proximityStrike.Radius = _range * 0.9f;
         _proximityStrike.OnStateDisable += _proximityStrike_OnStateDisable;
         _lastTimeUsed = -_cooldown - _powerUp.PowerUpTime;
         _entity.Health.OnDeath.AddListener(Health_OnDeath);
