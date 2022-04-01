@@ -39,12 +39,12 @@ public class Charge : State
         _navMeshAgent.speed = _speed;
         _navMeshAgent.acceleration = 100;
 
-        Debug.DrawLine(_navMeshAgent.transform.position, _navMeshAgent.transform.position + _navMeshAgent.transform.forward * _maxRange, Color.blue, 2);
+        //Debug.DrawLine(_navMeshAgent.transform.position, _navMeshAgent.transform.position + _navMeshAgent.transform.forward * _maxRange, Color.blue, 2);
 
         RaycastHit hit;
         if (Physics.Raycast(_navMeshAgent.transform.position, _navMeshAgent.transform.forward, out hit, _maxRange, LayerMask.GetMask("Wall")))
         {
-            _destination = hit.point;
+            _destination = hit.point - _navMeshAgent.transform.forward;
         }
         else
         {

@@ -16,6 +16,8 @@ public class AddSummonState : State
     [Header("State")]
     [SerializeField] private State _nextState = null;
 
+    private bool _messageShown = false;
+
     public override bool CanChangeState()
     {
         return _health.Percentage < _percentageTriggerState;
@@ -29,7 +31,13 @@ public class AddSummonState : State
     protected override void OnEnter()
     {
         _summonSkill.NumberToSummon = _setNumbersOfSummonTo;
-        _bubbleText.ShowMessage(1);
+
+        if(!_messageShown)
+        {
+            _bubbleText.ShowMessage(1);
+            _messageShown = true;
+        }
+
         ChangeState(_nextState);
     }
 
