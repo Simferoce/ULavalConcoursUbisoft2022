@@ -1193,6 +1193,7 @@ Transform:
   - {fileID: 290695571}
   - {fileID: 105579577}
   - {fileID: 642950916}
+  - {fileID: 415670085}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1973,11 +1974,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 216875506}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 47f1adc5b0f73e14d9cd3d0d84351f4b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47f1adc5b0f73e14d9cd3d0d84351f4b, type: 3}
       propertyPath: m_LocalScale.x
@@ -2041,6 +2042,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47f1adc5b0f73e14d9cd3d0d84351f4b, type: 3}
+--- !u!4 &415670085 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47f1adc5b0f73e14d9cd3d0d84351f4b, type: 3}
+  m_PrefabInstance: {fileID: 415670084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &425687072
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2922,7 +2928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5497566023149619102, guid: c31fd47eb6db0904d9b535f74e652a88, type: 3}
       propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5497566023149619102, guid: c31fd47eb6db0904d9b535f74e652a88, type: 3}
       propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -4900,6 +4906,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: UnlockControl
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 642950915}
+        m_TargetAssemblyTypeName: PlayerBubbleMessage, Assembly-CSharp
+        m_MethodName: ShowMessage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 21
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   _timer: 3

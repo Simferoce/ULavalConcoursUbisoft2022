@@ -72,6 +72,7 @@ public class BubbleText : MonoBehaviour
         {33, new Message() {Id = 33, Source = Source.Anxiety, Text = "You should have taken time to prepared while you had the chance.", Duration = 5.0f } },
         {34, new Message() {Id = 34, Source = Source.Anxiety, Text = "No ! No ! It is not the end. I will be back.", Duration = 5.0f } },
         {35, new Message() {Id = 35, Source = Source.Anxiety, Text = "Look at you. You are a disgrace.", Duration = 5.0f } },
+        {36, new Message() {Id = 36, Source = Source.Player, Text = "The exit has been opened !", Duration = 5.0f } },
     };
 
     private void Start()

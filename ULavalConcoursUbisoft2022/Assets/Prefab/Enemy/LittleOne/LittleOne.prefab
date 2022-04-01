@@ -237,6 +237,7 @@ MonoBehaviour:
   _speed: 3
   _stopChasingPlayerRange: 9
   _distanceKeptBetweenItselfAndPlayer: 0.75
+  _attackDelay: 0.2
   _navMeshAgent: {fileID: 7218801385976619079}
   _entity: {fileID: 7218801387661779763}
   _wander: {fileID: 7218801386941064835}
@@ -377,12 +378,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 1
+  _bonusMaxHealthAttribute:
+    _baseBonusHealth: 0
   _healthPoint: 0
   _animation: {fileID: 7218801385976619078}
   _invicible: 0
   _floorHealthLoss: 0
   _destroyOnDeath: 1
+  _inventory: {fileID: 0}
   OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHit:
     m_PersistentCalls:
       m_Calls: []
   onHealthBelowThreasholdEvents: []
@@ -400,6 +407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startingWeapon: {fileID: 11400000, guid: 6519800e67b6e024482658620b2a834e, type: 2}
   _inventory: {fileID: 0}
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9033064567283115501
 GameObject:
   m_ObjectHideFlags: 0

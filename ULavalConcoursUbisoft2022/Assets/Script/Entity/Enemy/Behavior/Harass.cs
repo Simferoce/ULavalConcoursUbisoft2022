@@ -9,6 +9,7 @@ public class Harass : State
     [SerializeField] private float _speed = 0.0f;
     [SerializeField] private float _stopChasingPlayerRange = 0.0f;
     [SerializeField] private float _distanceKeptBetweenItselfAndPlayer = 0.0f;
+    [SerializeField] private float _attackDelay = 0.5f;
 
     [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
@@ -19,6 +20,8 @@ public class Harass : State
     [SerializeField] private State _flee = null;
 
     private Player _player = null;
+
+    private bool _attacking = false;
 
     protected override void Init()
     {
@@ -32,7 +35,7 @@ public class Harass : State
 
     protected override void OnExit()
     {
-
+        StopAllCoroutines();
     }
 
     protected override void OnUpdate()
@@ -58,12 +61,21 @@ public class Harass : State
             destination = _player.transform.position;
         }
 
-        _navMeshAgent.SetDestination(destination);
+        if(!_attacking)
+        {
+            _navMeshAgent.SetDestination(destination);
+        }
+
 
         _entity.LookTowardsTarget(_player.transform.position);
         if (seePlayer && _entity.AttackRange() > distance && _entity.CanAttack())
         {
-            _entity.Attack();
+            if(!_attacking)
+            {
+                _navMeshAgent.isStopped = true;
+                _attacking = true;
+                StartCoroutine(Attack());
+            }
         }
 
         if(_flee != null && _flee.CanChangeState())
@@ -75,5 +87,18 @@ public class Harass : State
         {
             ChangeState(_wander);
         }
+    }
+
+    private IEnumerator Attack()
+    {
+        yield return new WaitForSeconds(_attackDelay);
+        _entity.Attack();
+        _attacking = false;
+        _navMeshAgent.isStopped = false;
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }
