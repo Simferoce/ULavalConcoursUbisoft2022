@@ -13,6 +13,13 @@ public class Inventory : MonoBehaviour
     public void AddItems(GameObject item)
     {
         _items.Add(item);
+
+        ItemAction action;
+        if(item.TryGetComponent<ItemAction>(out action))
+        {
+            action.Execute();
+        }
+
         OnItemReceived?.Invoke(item.GetComponent<Item>().ItemData);
 
     }

@@ -51,7 +51,7 @@ public class BubbleText : MonoBehaviour
         {12, new Message() {Id = 12, Source = Source.Depression, Text = "It is futile to stuggle.", Duration = 4.0f } },
         {13, new Message() {Id = 13, Source = Source.Depression, Text = "Empty. Drain. Tarnish.", Duration = 4.0f } },
         {14, new Message() {Id = 14, Source = Source.Depression, Text = "Nothing matters; School, Love, Friends, all is ephemeral.", Duration = 4.0f } },
-        {15, new Message() {Id = 15, Source = Source.Player, Text = "Death is only an illusion", Duration = 3.0f } },
+        {15, new Message() {Id = 15, Source = Source.Player, Text = "Hey you are not dead, you are sleeping!", Duration = 3.0f } },
         {16, new Message() {Id = 16, Source = Source.Player, Text = "The school library? What I am doing here? I should not be there. (W, A, S, D) to move", Duration = 3.0f, ConditionBase = true } },
         {17, new Message() {Id = 17, Source = Source.Player, Text = "That was scary. I need to get out.", Duration = 3.0f } },
         {18, new Message() {Id = 18, Source = Source.Player, Text = "Oh no...", Duration = 3.0f } },

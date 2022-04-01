@@ -19,33 +19,36 @@ public class ItemSelect : MonoBehaviour
     }
 
     [SerializeField] private List<ItemData> _items = new List<ItemData>();
+    [SerializeField] private ItemData _reliefItem = null;
     [SerializeField] private List<PopupSelectionBox> _itemBoxes = new List<PopupSelectionBox>();
     [SerializeField] private UnityEvent _onItemSelected = null;
-    [SerializeField] private TextMeshProUGUI _addHp = null;
     [SerializeField] private float _healthAmount = 0.0f;
     [SerializeField] private ToggleGroup _toggleGroup = null;
     [SerializeField] private Button _acceptButton = null;
 
-    private string _stressText = "<color=\"purple\">-{0}<color=\"white\"> Stress";
     private float _timeSinceOpen = 0.0f;
 
 
     public void GenerateItems()
     {
         _timeSinceOpen = Time.time;
-        _addHp.text = string.Format(_stressText, _healthAmount);
         Player player = GameObject.FindObjectOfType<Player>();
         player.LockControl();
 
-        List<int> itemsIndex = GenerateRandomsWithoutRepeat(_itemBoxes.Count, _items.Count);
+        List<int> itemsIndex = GenerateRandomsWithoutRepeat(2, _items.Count);
 
-        for (int i = 0; i < _itemBoxes.Count; ++i)
+        for (int i = 0; i < 2; ++i)
         {
             _itemBoxes[i].ItemData = _items[itemsIndex[i]];
             _itemBoxes[i].Image.sprite = _items[itemsIndex[i]].Image;
             _itemBoxes[i].Name.text = _items[itemsIndex[i]].Name;
             _itemBoxes[i].Description.text = _items[itemsIndex[i]].Description;
         }
+
+        _itemBoxes[2].ItemData = _reliefItem;
+        _itemBoxes[2].Image.sprite = _reliefItem.Image;
+        _itemBoxes[2].Name.text = _reliefItem.Name;
+        _itemBoxes[2].Description.text = _reliefItem.Description;
     }
 
     private List<int> GenerateRandomsWithoutRepeat(int numberOfChoosen, int size)
@@ -84,9 +87,9 @@ public class ItemSelect : MonoBehaviour
         {
             GetItem(1);
         }
-        else if(toggle.name == "HP")
+        else if(toggle.name == "Item 3")
         {
-            OnAddHp();
+            GetItem(2);
         }
     }
 
