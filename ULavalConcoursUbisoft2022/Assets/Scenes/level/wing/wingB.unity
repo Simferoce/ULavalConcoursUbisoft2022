@@ -21001,8 +21001,12 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: _heightSpawn
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: _numberOfProjectile
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: _delayBetweenEachShot.x
