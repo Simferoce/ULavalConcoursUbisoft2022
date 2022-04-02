@@ -12,8 +12,8 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Awake()
     {
-        _entity = transform.parent.GetComponentInChildren<Entity>();
-        _player = GetComponentInParent<Player>();
+        _player = GameObject.FindObjectOfType<Player>();
+        _entity = _player.GetComponentInChildren<Entity>();
         _entity.OnAttack += _entity_OnAttack;
         _player.InitRevive.AddListener(OnReviveInit);
     }

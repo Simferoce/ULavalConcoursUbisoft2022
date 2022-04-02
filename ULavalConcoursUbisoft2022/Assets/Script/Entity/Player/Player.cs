@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
             GameObject itemInstance = Instantiate(GameManager.Instance.Class.StartingItem.Prefab, Entity.Inventory.transform);
             Entity.Inventory.AddItems(itemInstance);
         }
-        
+
         _entity.WeaponHandler.SetWeapon(GameManager.Instance.Class.Weapon);
         _entity.Health.OnDeath.AddListener(OnDead);
     }

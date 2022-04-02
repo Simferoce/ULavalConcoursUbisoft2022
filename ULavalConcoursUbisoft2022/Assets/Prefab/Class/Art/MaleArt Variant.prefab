@@ -89,15 +89,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c30756a6a7c86404ea13e6d70373e553, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -26.702084
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c30756a6a7c86404ea13e6d70373e553, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 1.023284
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c30756a6a7c86404ea13e6d70373e553, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 11.271092
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c30756a6a7c86404ea13e6d70373e553, type: 3}
       propertyPath: m_LocalRotation.w
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c30756a6a7c86404ea13e6d70373e553, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c30756a6a7c86404ea13e6d70373e553, type: 3}
       propertyPath: m_LocalRotation.y
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4d55745e8956d46a3889b865193c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6250419905967627593
+--- !u!114 &2121868125952001750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,9 +173,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 5495804651792998971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1dea4ecd08ddb147bf1373d8a844c3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 812b222b312e31b4ebaabcfcf056e0e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _names:
+  - Attack
+  _actions:
+  - actions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &9198945292165333754
 MonoBehaviour:
   m_ObjectHideFlags: 0

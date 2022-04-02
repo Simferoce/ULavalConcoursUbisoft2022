@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class TriggerAttack : MonoBehaviour
 {
+    private WeaponHandler _weaponHandler = null;
+
+
+    private void Awake()
+    {
+        _weaponHandler = GameObject.FindObjectOfType<Player>().GetComponentInChildren<WeaponHandler>();
+    }
+
     public void TriggerAttackFromAnimation()
     {
-        transform.parent.GetComponentInChildren<WeaponHandler>().TriggerAttackFromAnimation();
+        _weaponHandler.TriggerAttackFromAnimation();
     }
 
     public void EndAttack()
     {
-        transform.parent.GetComponentInChildren<WeaponHandler>().EndAttack();
+        _weaponHandler.EndAttack();
     }
 }
