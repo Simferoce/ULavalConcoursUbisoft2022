@@ -344,9 +344,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _attacks:
-  - Percentage: 0.8
+  - Percentage: 0.7
     State: {fileID: 4474971313146365057}
-  - Percentage: 0.2
+  - Percentage: 0.3
     State: {fileID: 8894911255485299610}
 --- !u!114 &8894911255485299610
 MonoBehaviour:
@@ -1348,66 +1348,66 @@ PrefabInstance:
       objectReference: {fileID: 3566405856888454373}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
       propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2549174046756894775}
-    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2549174046756894775}
-    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2549174046756894775}
+    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2549174046756894775}
+    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetTrue
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetFalse
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SetAnimatorValue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SetAnimatorValue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: isCharging
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: isCharging
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499113, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
-      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2818006953025499114, guid: eccf77b19d2d4474a9773cc15a1ba958, type: 3}
@@ -1919,7 +1919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401668639775204891, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
       propertyPath: OnSkillStartHook.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4401668639775204891, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
       propertyPath: OnSkillStartHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2008,6 +2008,70 @@ PrefabInstance:
     - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
       propertyPath: _lockPercentage
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2549174046756894775}
+    - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SetAnimatorValue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: isSlamming
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459853, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateEnableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459854, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459854, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459854, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2549174046756894775}
+    - target: {fileID: 4401668641583459854, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459854, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetFalse
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459854, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SetAnimatorValue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459854, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: isSlamming
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401668641583459854, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
+      propertyPath: OnStateDisableHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e40e62f83dde2642a2681b393ec39c0, type: 3}
