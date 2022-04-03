@@ -24336,11 +24336,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2312987307555433993, guid: 7257ea7e939d1134eb14168d7645e678, type: 3}
   m_PrefabInstance: {fileID: 1843127905}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1843127907 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7991268479976286527, guid: 7257ea7e939d1134eb14168d7645e678, type: 3}
+  m_PrefabInstance: {fileID: 1843127905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1843127908 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1200150908942940886, guid: 7257ea7e939d1134eb14168d7645e678, type: 3}
   m_PrefabInstance: {fileID: 1843127905}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1843127909 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4357644213275182409, guid: 7257ea7e939d1134eb14168d7645e678, type: 3}
+  m_PrefabInstance: {fileID: 1843127905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1843127910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 294421619253454591, guid: 7257ea7e939d1134eb14168d7645e678, type: 3}
+  m_PrefabInstance: {fileID: 1843127905}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812b222b312e31b4ebaabcfcf056e0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1843647435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28945,6 +28966,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: door
       objectReference: {fileID: 0}
+    - target: {fileID: 4430468044819328587, guid: 3093ff39550339a4c9c4aee02185925b, type: 3}
+      propertyPath: _onAwake.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430468044819328587, guid: 3093ff39550339a4c9c4aee02185925b, type: 3}
+      propertyPath: _onAwake.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430468044819328587, guid: 3093ff39550339a4c9c4aee02185925b, type: 3}
+      propertyPath: _onAwake.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8921551052932413224}
+    - target: {fileID: 4430468044819328587, guid: 3093ff39550339a4c9c4aee02185925b, type: 3}
+      propertyPath: _onAwake.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430468044819328587, guid: 3093ff39550339a4c9c4aee02185925b, type: 3}
+      propertyPath: _onAwake.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Execute
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430468044819328587, guid: 3093ff39550339a4c9c4aee02185925b, type: 3}
+      propertyPath: _onAwake.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DelayAction, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430468044819328587, guid: 3093ff39550339a4c9c4aee02185925b, type: 3}
+      propertyPath: _onAwake.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6617712933890607185, guid: 3093ff39550339a4c9c4aee02185925b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -29339,3 +29388,91 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _timer: 0.2
+--- !u!114 &8921551052932413224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8921551052932413219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dfbf82978b66049a4f350eee255731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1843127910}
+        m_TargetAssemblyTypeName: ExecuteNamedAction, Assembly-CSharp
+        m_MethodName: ActivateAction
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OpenDoorSound
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1843127910}
+        m_TargetAssemblyTypeName: ExecuteNamedAction, Assembly-CSharp
+        m_MethodName: ActivateAction
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CloseDoorSound
+          m_BoolArgument: 0
+        m_CallState: 2
+  _timer: 1
+--- !u!114 &8921551052932413225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8921551052932413219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812b222b312e31b4ebaabcfcf056e0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _names:
+  - OpenDoorSound
+  - CloseDoorSound
+  _actions:
+  - Active: 0
+    actions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1843127909}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Active: 0
+    actions:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1843127907}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

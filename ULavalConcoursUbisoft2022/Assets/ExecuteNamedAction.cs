@@ -9,6 +9,7 @@ public class ExecuteNamedAction : MonoBehaviour
     [Serializable]
     public class Action
     {
+        public bool Active = true;
         public UnityEvent actions = null;
     }
 
@@ -17,6 +18,16 @@ public class ExecuteNamedAction : MonoBehaviour
 
     public void ExecuteAction(string action)
     {
-        _actions[_names.IndexOf(action)]?.actions?.Invoke();
+        Action actionObj = _actions[_names.IndexOf(action)];
+        if(actionObj.Active)
+        {
+            actionObj?.actions?.Invoke();
+        }
+    }
+
+    public void ActivateAction(string action)
+    {
+        Action actionObj = _actions[_names.IndexOf(action)];
+        actionObj.Active = true;
     }
 }
