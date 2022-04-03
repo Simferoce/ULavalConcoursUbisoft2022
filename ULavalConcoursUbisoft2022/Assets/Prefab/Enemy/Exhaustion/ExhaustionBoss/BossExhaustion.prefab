@@ -912,6 +912,102 @@ MonoBehaviour:
   _skills:
   - {fileID: 1311617074825688652}
   _resumeState: {fileID: 0}
+--- !u!1 &4368178106418180647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3924879518363343028}
+  - component: {fileID: 5585416292081521051}
+  - component: {fileID: 6162505133847505592}
+  - component: {fileID: 7045742382216206272}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3924879518363343028
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368178106418180647}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 28.6, y: 28.6, z: 28.6}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 7012351852404786570}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3169, y: 967}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5585416292081521051
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368178106418180647}
+  m_CullTransparentMesh: 1
+--- !u!114 &6162505133847505592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368178106418180647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.97647065, g: 0.7058824, b: 0.019607844, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 3826143e40cc9da48a82a3855236cb3c, type: 3}
+    m_FontSize: 88
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 8
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Exhaustion
+--- !u!114 &7045742382216206272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368178106418180647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.50980395, g: 0.2901961, b: 0.5764706, a: 1}
+  m_EffectDistance: {x: 2.56, y: 3.69}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4927701108894285847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,11 +1497,20 @@ PrefabInstance:
       propertyPath: _health
       value: 
       objectReference: {fileID: 415337187541255126}
+    - target: {fileID: 3488609693438435039, guid: 39ff10cf2d0e63b4aa9ceb02615d1730, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39ff10cf2d0e63b4aa9ceb02615d1730, type: 3}
 --- !u!4 &1625180139179356761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 764096128928609909, guid: 39ff10cf2d0e63b4aa9ceb02615d1730, type: 3}
+  m_PrefabInstance: {fileID: 2024176547170370604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &7012351852404786570 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9027378604705022374, guid: 39ff10cf2d0e63b4aa9ceb02615d1730, type: 3}
   m_PrefabInstance: {fileID: 2024176547170370604}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3397423349835845719
