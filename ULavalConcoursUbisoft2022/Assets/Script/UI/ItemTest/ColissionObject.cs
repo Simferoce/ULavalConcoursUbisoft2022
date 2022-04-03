@@ -41,7 +41,9 @@ public class ColissionObject : MonoBehaviour
             if (item.Image == test.sprite && itemssprite[i].gameObject.activeInHierarchy)
             {
                 instancemultitext = instancemulti[i].GetComponent<TMP_Text>();
-                instancemultitext.text = "X1";
+
+
+               
                 Debug.Log("same item");
                 NumberItem -= 1;
                 
@@ -57,13 +59,14 @@ public class ColissionObject : MonoBehaviour
                     instancemultitext.text = "X3";
 
                 }
-
                 else if (instancemultitext.text == "X3")
                 {
                     instancemultitext = instancemulti[i].GetComponent<TMP_Text>();
                     instancemultitext.text = "X4";
 
                 }
+
+
                 return;
 
             }
