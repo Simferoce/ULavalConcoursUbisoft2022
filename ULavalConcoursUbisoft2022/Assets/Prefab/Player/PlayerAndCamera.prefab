@@ -8434,7 +8434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -144.5, y: -115.099976}
+  m_AnchoredPosition: {x: -144.5, y: -110.9}
   m_SizeDelta: {x: 207.5929, y: 198.01941}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3514172994004629376
@@ -14522,7 +14522,19 @@ MonoBehaviour:
   m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7692423647762486557}
+        m_TargetAssemblyTypeName: HealthDisplay, Assembly-CSharp
+        m_MethodName: healthbareffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7692423647762486557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14536,9 +14548,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 0}
+  barr: {fileID: 7002692198877599282}
   maxHealth: 5
   slider: {fileID: 6193009379871809606}
   currentHealth: 0
+  barrimage: {fileID: 0}
+  endColor: {r: 1, g: 1, b: 1, a: 1}
+  speed: 1
 --- !u!1 &5836506393620652797
 GameObject:
   m_ObjectHideFlags: 0
