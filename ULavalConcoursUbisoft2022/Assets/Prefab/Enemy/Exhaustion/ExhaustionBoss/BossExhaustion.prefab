@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf7b7289cb75b945b175151b520c3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 600
+  _maxHealth: 1200
   _bonusMaxHealthAttribute:
     _baseBonusHealth: 0
   _healthPoint: 0
@@ -834,6 +834,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _projectiles: []
 --- !u!1 &3397423350397383004
 GameObject:
   m_ObjectHideFlags: 0

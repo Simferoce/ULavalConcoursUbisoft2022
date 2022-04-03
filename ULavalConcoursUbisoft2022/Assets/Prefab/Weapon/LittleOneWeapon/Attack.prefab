@@ -122,10 +122,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destroyOnHit: 1
+  _destroyOnHitWall: 1
   _owner: {fileID: 0}
   _following: {fileID: 0}
   _team: 0
   _inventory: {fileID: 0}
   attackDamageAttribute:
-    _baseAttackDamage: 5
+    _baseAttackDamage: 10
   _speed: 0
+  _spin: 0
+  _visual: {fileID: 0}
