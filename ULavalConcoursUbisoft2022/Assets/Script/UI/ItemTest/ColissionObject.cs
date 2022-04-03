@@ -8,11 +8,14 @@ public class ColissionObject : MonoBehaviour
 {
     public GameObject[] panels;
     public GameObject[] itemssprite;
+    public GameObject[] instancemulti;
     public int NumberItem;
     public int currentPannel;
+    public int itemindex;
     public Image test;
     public GameObject[] itemdef;
     public TMP_Text itemdefinition;
+
     
     private Player player = null;
 
@@ -26,14 +29,17 @@ public class ColissionObject : MonoBehaviour
 
     public void OnitemReceived(ItemData item)
     {
+        
         NumberItem += 1;
         for (int i = 0; i < NumberItem; i++)
         {
+            test = itemssprite[i].GetComponent<Image>();
             panels[i].gameObject.SetActive(true);
             if (item.Image == test.sprite && itemssprite[i].gameObject.activeInHierarchy)
             {
                 Debug.Log("same item");
                 NumberItem -= 1;
+                
                 return;
 
             }
@@ -54,6 +60,7 @@ public class ColissionObject : MonoBehaviour
             else
             {
                 Debug.Log("different items");
+                
             }
 
             
