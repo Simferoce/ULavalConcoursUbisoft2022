@@ -9,6 +9,7 @@ public class Charge : State
     [SerializeField] private float _speed = 0.0f;
     [SerializeField] private float _acceleration = 0.0f;
     [SerializeField] private float _maxRange = 0.0f;
+    
 
     [Header("Reference")]
     [SerializeField] private NavMeshAgent _navMeshAgent = null;
@@ -23,6 +24,8 @@ public class Charge : State
 
     private float _originAcceleration = 0.0f;
     private Vector3 _destination;
+    private float _currentTravelDistance = 0.0f;
+    private float _travelDistance = 0.0f;
 
     protected override void Init()
     {
@@ -32,12 +35,8 @@ public class Charge : State
 
     protected override void OnEnter()
     {
-        _navMeshAgent.isStopped = false;
-
-        _originAcceleration = _navMeshAgent.acceleration;
-
-        _navMeshAgent.speed = _speed;
-        _navMeshAgent.acceleration = 100;
+        _currentTravelDistance = 0.0f;
+        _navMeshAgent.enabled = false;
 
         //Debug.DrawLine(_navMeshAgent.transform.position, _navMeshAgent.transform.position + _navMeshAgent.transform.forward * _maxRange, Color.blue, 2);
 
@@ -49,24 +48,33 @@ public class Charge : State
         else
         {
             _destination = _navMeshAgent.transform.position + _navMeshAgent.transform.forward * _maxRange;
-
         }
 
+        Vector3 entityOnPlane = Vector3.ProjectOnPlane(_entity.transform.position, Vector3.up);
+        Vector3 destinationOnPlane = Vector3.ProjectOnPlane(_destination, Vector3.up);
+
         _entity.LookTowardsTarget(_destination);
-        _navMeshAgent.SetDestination(_destination);
+        _travelDistance = Vector3.Distance(entityOnPlane, destinationOnPlane);
 
     }
 
     protected override void OnExit()
     {
-        _navMeshAgent.acceleration = _originAcceleration;
+
     }
 
     protected override void OnUpdate()
     {
-        if (_navMeshAgent.remainingDistance == 0 && !_navMeshAgent.pathPending)
+        if (_currentTravelDistance > _travelDistance)
         {
+            _navMeshAgent.enabled = true;
+            _entity.Teleport(_destination);
             ChangeState(_chargeStateFinish);
+        }
+        else
+        {
+            _entity.Move(_entity.transform.forward * Time.deltaTime * _speed);
+            _currentTravelDistance += Time.deltaTime * _speed;
         }
     }
 }
