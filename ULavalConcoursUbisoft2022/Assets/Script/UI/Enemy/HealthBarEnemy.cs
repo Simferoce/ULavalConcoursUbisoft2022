@@ -11,9 +11,11 @@ public class HealthBarEnemy : MonoBehaviour
     [SerializeField] private float _comboTime = 0.0f;
     [SerializeField] private float _speed = 0.0f;
 
+
+    
     private Camera _cam;
     private float _lastTimeLostHealth = 0.0f;
-
+    
     private bool _drainningComboBar = false;
     private void Awake()
     {
@@ -22,6 +24,7 @@ public class HealthBarEnemy : MonoBehaviour
 
     private void Start()
     {
+        _healthbarSprite.color = new Color32(255, 0, 0, 255);
         _cam = Camera.main;
         transform.rotation = Quaternion.Euler(Vector3.Scale((Quaternion.Inverse(_cam.transform.rotation)).eulerAngles, new Vector3(0, 1, 1)));
     }
@@ -55,6 +58,18 @@ public class HealthBarEnemy : MonoBehaviour
             {
                 _drainningComboBar = false;
             }
+        }
+
+        if( _health.Invicible)
+        {
+            _healthbarSprite.color = new Color32(173, 173, 173, 200);
+            Debug.Log("invicible");
+
+        }
+        if(!_health.Invicible)
+        {
+            _healthbarSprite.color = new Color32(255, 0, 0, 255);
+
         }
     }
 
