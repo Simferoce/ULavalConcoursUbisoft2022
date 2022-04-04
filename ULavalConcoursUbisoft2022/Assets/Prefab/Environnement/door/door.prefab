@@ -531,6 +531,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b12ad9c3147298243a851ec89452fe03, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 21217c9883a8f9b47809000c5563234b, type: 2}
     - target: {fileID: 919132149155446097, guid: b12ad9c3147298243a851ec89452fe03, type: 3}
       propertyPath: m_Name
       value: doorFrame_GEO
@@ -620,6 +624,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6de2ebdd0a0a13b4faf791030c4170aa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32e9ca1bdd3278545b015d8637cc9f30, type: 2}
     - target: {fileID: 919132149155446097, guid: 6de2ebdd0a0a13b4faf791030c4170aa, type: 3}
       propertyPath: m_Name
       value: column_doorFrame_GEO
@@ -709,6 +717,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 229ce307557f8bc40be76770975acf27, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32e9ca1bdd3278545b015d8637cc9f30, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 229ce307557f8bc40be76770975acf27, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 113bda1ca571380469252244320053d4, type: 2}
     - target: {fileID: -5754084199372789682, guid: 229ce307557f8bc40be76770975acf27, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -806,6 +822,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6de2ebdd0a0a13b4faf791030c4170aa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32e9ca1bdd3278545b015d8637cc9f30, type: 2}
     - target: {fileID: 919132149155446097, guid: 6de2ebdd0a0a13b4faf791030c4170aa, type: 3}
       propertyPath: m_Name
       value: column_doorFrame_GEO (1)
@@ -895,6 +915,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b12ad9c3147298243a851ec89452fe03, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 21217c9883a8f9b47809000c5563234b, type: 2}
     - target: {fileID: 919132149155446097, guid: b12ad9c3147298243a851ec89452fe03, type: 3}
       propertyPath: m_Name
       value: doorFrame_GEO (1)
@@ -984,6 +1008,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 229ce307557f8bc40be76770975acf27, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32e9ca1bdd3278545b015d8637cc9f30, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 229ce307557f8bc40be76770975acf27, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 113bda1ca571380469252244320053d4, type: 2}
     - target: {fileID: -5754084199372789682, guid: 229ce307557f8bc40be76770975acf27, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1081,6 +1113,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7d8795c67608c3d4c9f4c206de58c352, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 21217c9883a8f9b47809000c5563234b, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 7d8795c67608c3d4c9f4c206de58c352, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32e9ca1bdd3278545b015d8637cc9f30, type: 2}
     - target: {fileID: 919132149155446097, guid: 7d8795c67608c3d4c9f4c206de58c352, type: 3}
       propertyPath: m_Name
       value: doorWindowed_GEO
@@ -1174,6 +1214,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7d8795c67608c3d4c9f4c206de58c352, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 21217c9883a8f9b47809000c5563234b, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 7d8795c67608c3d4c9f4c206de58c352, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32e9ca1bdd3278545b015d8637cc9f30, type: 2}
     - target: {fileID: 919132149155446097, guid: 7d8795c67608c3d4c9f4c206de58c352, type: 3}
       propertyPath: m_Name
       value: doorWindowed_GEO (1)
