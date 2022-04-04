@@ -22224,6 +22224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossExhaustion
       objectReference: {fileID: 0}
+    - target: {fileID: 415337187081637730, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 415337187081637734, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -22510,7 +22514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6162505133847505592, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: m_Text
-      value: Exhausted emotion
+      value: Exhaustion
       objectReference: {fileID: 0}
     - target: {fileID: 8604935770704622825, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: Priority
