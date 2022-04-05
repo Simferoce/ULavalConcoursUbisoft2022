@@ -21,11 +21,17 @@ public class AudioPlayer : MonoBehaviour
         _player = GameObject.FindObjectOfType<Player>();
         _entity = _player.GetComponentInChildren<Entity>();
         _entity.Health.OnHit.AddListener(PlayOnHitSound);
+        _entity.Health.OnDeath.AddListener(PlayOnDeathSound);
     }
 
     private void PlayOnHitSound(Health health)
     {
         GetSound("OnHit").Play();
+    }
+
+    private void PlayOnDeathSound(Health health)
+    {
+        GetSound("OnDeath").Play();
     }
 
     public void PlaySound(string name)
@@ -78,5 +84,6 @@ public class AudioPlayer : MonoBehaviour
     private void OnDestroy()
     {
         _entity.Health.OnHit.RemoveListener(PlayOnHitSound);
+        _entity.Health.OnHit.RemoveListener(PlayOnDeathSound);
     }
 }

@@ -2172,7 +2172,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -6822641388148963430, guid: 0b03a1f449fd9254cba9e3f0e1e87461, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9a45a64b113b9a147bba694e67942273, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2624,6 +2624,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _destroyOnTrigger: 0
+  _once: 0
 --- !u!1001 &159400801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20304,6 +20305,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _destroyOnTrigger: 0
+  _once: 0
 --- !u!114 &1343130615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28397,6 +28399,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _destroyOnTrigger: 1
+  _once: 1
 --- !u!65 &2073570125
 BoxCollider:
   m_ObjectHideFlags: 0

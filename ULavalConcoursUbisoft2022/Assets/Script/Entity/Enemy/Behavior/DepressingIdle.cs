@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DepressingIdle : State
 {
@@ -15,6 +16,8 @@ public class DepressingIdle : State
 
     [Header("State")]
     [SerializeField] private State _nextState = null;
+
+    public UnityEvent OnTeleport;
 
     private float _damageReceiveSinceLastTeleport = 0.0f;
     private int _numberOfTeleport = 0;
@@ -51,6 +54,7 @@ public class DepressingIdle : State
             else
             {
                 _damageReceiveSinceLastTeleport = 0;
+                OnTeleport?.Invoke();
                 _entity.Teleport(FindTeleportPosition(Random.insideUnitCircle.normalized, _entity.transform.position - _middleRoom.position, _minDistance) + _middleRoom.position);
                 _numberOfTeleport++;
             }
