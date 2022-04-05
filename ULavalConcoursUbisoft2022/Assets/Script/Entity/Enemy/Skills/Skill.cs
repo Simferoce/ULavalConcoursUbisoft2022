@@ -23,4 +23,9 @@ public abstract class Skill : MonoBehaviour
         OnSkillFinish?.Invoke(this);
         OnSkillFinishHook?.Invoke();
     }
+
+    public virtual void ForceDisable()
+    {
+
+    }
 }

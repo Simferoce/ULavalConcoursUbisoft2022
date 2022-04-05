@@ -59,7 +59,7 @@ public abstract class State : MonoBehaviour
         this.enabled = true;
     }
 
-    public void ForceDisableState()
+    public virtual void ForceDisableState()
     {
         this.enabled = false;
     }

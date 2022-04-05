@@ -63,7 +63,6 @@ public class HealthBarEnemy : MonoBehaviour
         if( _health.Invicible)
         {
             _healthbarSprite.color = new Color32(173, 173, 173, 200);
-            Debug.Log("invicible");
 
         }
         if(!_health.Invicible)

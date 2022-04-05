@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destroyOnHit: 1
+  _destroyOnHitWall: 1
   _owner: {fileID: 0}
   _following: {fileID: 0}
   _team: 2
@@ -71,6 +72,8 @@ MonoBehaviour:
   attackDamageAttribute:
     _baseAttackDamage: 10
   _speed: 0
+  _spin: 0
+  _visual: {fileID: 0}
 --- !u!114 &9012290584897409406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8e55ba5d944ad42908a8391e9ffe15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToLive: 0.1
+  _timeToLive: 0.05
 --- !u!1 &6772364542398808357
 GameObject:
   m_ObjectHideFlags: 0

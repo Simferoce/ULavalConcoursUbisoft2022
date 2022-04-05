@@ -81,4 +81,16 @@ public class ProximityStrikeSkill : Skill
         _lastTimeUsed = Time.time;
         _powerUp.EnableState();
     }
+
+    public override void ForceDisable()
+    {
+        base.ForceDisable();
+        PowerUp.ForceDisableState();
+        ProximityStrike.ForceDisableState();
+
+        if (_instancedIndicator != null)
+        {
+            _instancedIndicator.Destroy();
+        }
+    }
 }

@@ -83,7 +83,7 @@ public class BackToWork : Skill
             _navMeshAgent.speed = _originalSpeed * _effectiveness;
             _proximityStrikeSkill.PowerUp.PowerUpTime = _originalPowerUpTime * (1 + (1 - _effectiveness));
 
-            if (Time.time - _onWorkStart > _duration)
+            if (Time.time - _onWorkStart > _duration && _getCloseToPlayer.enabled == true)
             {
                 _proximityStrikeSkill.PowerUp.ForceDisableState();
                 _proximityStrikeSkill.ProximityStrike.ForceDisableState();
