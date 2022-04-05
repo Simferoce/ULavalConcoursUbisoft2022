@@ -91,6 +91,11 @@ public class ItemSelect : MonoBehaviour
         {
             GetItem(2);
         }
+
+        foreach(Toggle activeToggle in _toggleGroup.ActiveToggles())
+        {
+            activeToggle.isOn = false;
+        }
     }
 
     public void OnValueChange()

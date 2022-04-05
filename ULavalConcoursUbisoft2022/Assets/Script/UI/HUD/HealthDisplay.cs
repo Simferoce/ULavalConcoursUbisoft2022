@@ -43,9 +43,6 @@ public class HealthDisplay : MonoBehaviour
     }
     public void healthbareffect()
     {
-
-        Debug.Log("hit");
         barrimage.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * speed, 1));
-        
     }
 }
