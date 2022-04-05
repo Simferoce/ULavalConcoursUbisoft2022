@@ -3069,6 +3069,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   _destroyOnTrigger: 1
+  _once: 1
 --- !u!1001 &183384306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3739,6 +3740,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _destroyOnTrigger: 1
+  _once: 1
 --- !u!1001 &223686778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9869,6 +9871,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   _destroyOnTrigger: 1
+  _once: 1
 --- !u!4 &673210726
 Transform:
   m_ObjectHideFlags: 0
@@ -23091,6 +23094,26 @@ PrefabInstance:
     - target: {fileID: 3397423350089443123, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: OnSkillFinishHook.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999665426179825759, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999665426179825759, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999665426179825759, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999665426179825759, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999665426179825759, guid: 893be637cd524b24593de1db3cc36381, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6162505133847505592, guid: 893be637cd524b24593de1db3cc36381, type: 3}
       propertyPath: m_Text
